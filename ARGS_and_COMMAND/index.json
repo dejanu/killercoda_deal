@@ -1,0 +1,21 @@
+{
+  "title": "Command and Arguments for a Containers",
+  "description": "This scenario shows how to define commands and arguments when you run a container in a Pod",
+  "details": {
+    "intro": {
+      "text": "intro.md"
+    },
+    "steps": [
+      {
+        "title": "Start pod",
+        "text": "step1.md"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-1node"
+  }
+}
