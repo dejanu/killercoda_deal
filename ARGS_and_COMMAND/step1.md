@@ -37,7 +37,7 @@
 * Check the logs of the pod, **What differences do you observe?**:
 `kubectl logs cowsay`{{exec}} 
 
-* If we inspect the `CMD` for our pod `kubectl get po cowsay -ojsonpath="{.spec.containers[0].command}"` we can see that we've overriden the default behaviour of our app, more exactly the container's ENTRYPOINT, if by default the container starts `cowsay Hello World!` now we've managed to start only `cowsay` app without any arguments.
+* If we inspect the `CMD` for our pod `kubectl get po cowsay -ojsonpath="{.spec.containers[0].command}"`{{exec}} we can see that we've overriden the default behaviour of our app, more exactly the container's ENTRYPOINT, if by default the container starts `cowsay Hello World!` now we've managed to start only `cowsay` app without any arguments.
 
 
 
