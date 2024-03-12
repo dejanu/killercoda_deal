@@ -1,2 +1,2 @@
 # killecoda_deal
-Scenario examples for Killercoda.com
+Scenario examples for Killercoda.com [dejanualex](https://killercoda.com/dejanualex)
