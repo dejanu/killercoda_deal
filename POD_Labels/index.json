@@ -4,7 +4,7 @@
   "details": {
     "intro": {
       "text": "intro.md",
-      "background": "background.sh"
+      "background": "create_po.sh"
     },
     "steps": [
       {
@@ -13,7 +13,8 @@
       }
     ],
     "finish": {
-      "text": "finish.md"
+      "text": "finish.md",
+      "background": "delete_po.sh"
     }
   },
   "backend": {
