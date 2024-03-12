@@ -13,7 +13,7 @@
 The returned list should contain only the pod names and nothing else.
 `kubectl get po -l "env in (prod,preprod)" -oname`{{copy}}
 
-* Get a list of all pod names running in the **default** namespace which have their **env**** label different from `dev` value.
+* Get a list of all pod names running in the **default** namespace which have their **env** label different from `dev` value.
 The returned list should contain only the pod names and nothing else.
 `kubectl get pods -l 'environment notin (dev)'`{{copy}}
 
