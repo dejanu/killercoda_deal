@@ -1,6 +1,6 @@
 {
   "title": "Labels",
-  "description": "This scenario shows how to select resources using lables",
+  "description": "This scenario shows how to select resources using labels.",
   "details": {
     "intro": {
       "text": "intro.md",
@@ -17,6 +17,6 @@
     }
   },
   "backend": {
-    "imageid": "kubernetes-kubeadm-1node"
+    "imageid": "kubernetes-kubeadm-2nodes"
   }
 }

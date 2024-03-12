@@ -9,6 +9,11 @@
 
 ### Select pods based on label
 
-* Get a list of all pod names running in the rep namespace which have their colour label set to either orange, red, or yellow. 
-The returned pod name list should contain only the pod names and nothing else:
-`kubectl get po -l "colour in (red,orange,yellow)" -oname`{{copy}}
+* Get a list of all pod names running in the **default** namespace which have their **env**** label either **prod**, or **preprod**.
+The returned list should contain only the pod names and nothing else.
+`kubectl get po -l "env in (prod,preprod)" -oname`{{copy}}
+
+* Get a list of all pod names running in the **default** namespace which have their **env**** label different from `dev` value.
+The returned list should contain only the pod names and nothing else.
+`kubectl get pods -l 'environment notin (dev)'`{{copy}}
+
