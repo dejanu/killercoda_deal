@@ -15,7 +15,7 @@
 * Start a pod named `cowsay` using  `my args` string as `ARGS`:
 `kubectl run cowsay --image=dejanualex/dockersay:1.1 --restart=Never -- my args`{{exec}}
 
-* Check the logs of the pod, **What differences do you observe?**:
+* Check the logs of the pod, **What differences do you observe?**
 `kubectl logs cowsay`{{exec}}
 
 * We've overridden the default arguments of our app `cowsay` by passing our custom arguments, furthermore we can inspect the pod and see what are the args: 
@@ -39,5 +39,6 @@
 
 * If we inspect the `CMD` for our pod `kubectl get po cowsay -ojsonpath="{.spec.containers[0].command}"`{{exec}} we can see that we've overriden the default behaviour of our app, more exactly the container's ENTRYPOINT, if by default the container starts `cowsay Hello World!` now we've managed to start only `cowsay` app without any arguments.
 
-
+* Delete pod `cowsay`:
+`kubectl delete po cowsay`{{exec}}
 
