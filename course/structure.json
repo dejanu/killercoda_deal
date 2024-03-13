@@ -1,0 +1,8 @@
+{
+    "title": "CKA/CKAD prep",
+    "description": "Set of scenarios for CKA and CKAD exams",
+    "items": [
+      { "path": "POD_Labels" },
+      { "path": "ARGS_and_COMMAND" }
+    ]
+}
