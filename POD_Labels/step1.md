@@ -15,5 +15,5 @@ The returned list should contain only the pod names and nothing else.
 
 * Get a list of all pod names running in the **default** namespace which have their **env** label different from `dev` value.
 The returned list should contain only the pod names and nothing else.
-`kubectl get pods -l 'environment notin (dev)'`{{copy}}
+`kubectl get pods -l 'env notin (dev)'`{{copy}}
 
