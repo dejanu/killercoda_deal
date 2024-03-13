@@ -1,6 +1,6 @@
 {
   "title": "Command and Arguments for Containers",
-  "description": "This scenario shows how to define commands and arguments when you run a container in a Pod.",
+  "description": "This scenario shows how to define commands and arguments when running a container in a Pod.",
   "details": {
     "intro": {
       "text": "intro.md"
