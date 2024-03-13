@@ -1,0 +1,21 @@
+{
+  "title": "Kubernetes architecture",
+  "description": "This scenario provides a glimpse into the architecture of Kubernetes ",
+  "details": {
+    "intro": {
+      "text": "intro.md"
+    },
+    "steps": [
+      {
+        "title": "Kubernetes components",
+        "text": "step1.md"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-1node"
+  }
+}
