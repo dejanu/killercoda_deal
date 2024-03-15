@@ -9,6 +9,10 @@
       {
         "title": "Kubernetes components",
         "text": "step1.md"
+      },
+      {
+        "title": "Control plane",
+        "text": "step2.md"
       }
     ],
     "finish": {
