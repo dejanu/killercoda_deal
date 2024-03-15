@@ -7,7 +7,7 @@ In this scenario we'll learn how to start a container in a pod, leveraging `comm
 
 For this scenario we have our app `cowsay` containerized, available [here](https://hub.docker.com/repository/docker/dejanualex/dockersay/general).
 
-Inside the pod we run `cowsay Hello World!` generating an ASCII art of a Docker whale with the message "Hello World!" written to STDOUT.
+Inside the pod we run `cowsay Hello World!` generating an ASCII art of a cow with the message "Hello World!" written to STDOUT.
 
 ```bash
  ______________

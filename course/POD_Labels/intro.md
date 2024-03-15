@@ -9,6 +9,4 @@ Labels allow for efficient queries and watches and are ideal for use in UIs and 
 
 In this scenario we'll learn how to leverage labels to create queries in order to identify pods.
 
-* `kubernetes.io/` and `k8s.io/` prefixes are reserved for Kubernetes core components
-
 ![Scan results](./assets/labels.png)
