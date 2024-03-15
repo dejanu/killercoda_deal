@@ -1,7 +1,7 @@
 
 ### Default start
 
-* Start a pod named `cowsay` using the default behaviour of the container:
+* Start a pod named `cowsay` using the **default** behaviour of the container:
 `kubectl run cowsay --image=dejanualex/dockersay:1.1 --restart=Never`{{exec}}
 
 * Since Kubernetes it will capture anything written to STDOUT as a log message we can check the logs of the pod:
