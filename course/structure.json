@@ -3,7 +3,7 @@
     "description": "Set of scenarios for CKA and CKAD exams",
     "items": [
       { "path": "k8s_architecture"},
-      { "path": "imperative_vs_declarative" },
+      { "path": "imperative_vs_declarative"},
       { "path": "ARGS_and_COMMAND" },
       { "path": "POD_Labels" }
     ]
