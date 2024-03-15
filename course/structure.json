@@ -2,8 +2,8 @@
     "title": "Kubernetes hands-on",
     "description": "Set of scenarios for CKA and CKAD exams",
     "items": [
+      { "path": "k8s_architecture"},
       { "path": "ARGS_and_COMMAND" },
-      { "path": "POD_Labels" },
-      {"path": "k8s_architecture"}
+      { "path": "POD_Labels" }
     ]
 }
