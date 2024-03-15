@@ -1,10 +1,10 @@
 {
   "title": "Labels",
-  "description": "This scenario shows how to select resources using labels.",
+  "description": "This scenario demonstrates the methods for creating objects using both declarative and imperative approaches.",
   "details": {
     "intro": {
       "text": "intro.md",
-      "background": "create_po.sh"
+      "background": "create_ns.sh"
     },
     "steps": [
       {
@@ -14,7 +14,6 @@
     ],
     "finish": {
       "text": "finish.md",
-      "background": "delete_po.sh"
     }
   },
   "backend": {
