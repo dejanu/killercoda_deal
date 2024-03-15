@@ -3,6 +3,6 @@
 
 ### WELL DONE !
 
-You solved this challenge!
+* Kubernetes architecture [here](https://kubernetes.io/docs/concepts/architecture/)
 
-* Kubernetes documentation for Command and Args [here](https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/)
+* Kubelet documentation [here](https://kubernetes.io/docs/reference/command-line-tools-reference/kubelet/)

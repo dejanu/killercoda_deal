@@ -18,8 +18,8 @@
 
     * A set of **worker** nodes that run your workloads by placing containerized them into pods, and most importantly contains the services necessary to run pods: `kubelet`, `kube-proxy`, and `container-runtime` (implementing the Container Runtime Interface).
 
-![Scan results](./assets/k8s_archi.png
-)
+![Scan results](./assets/k8s_archi.png)
+
 
 
 

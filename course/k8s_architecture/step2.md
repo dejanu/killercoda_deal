@@ -1,14 +1,24 @@
 
 ### Control plane
 
-* Running `kubectl get nodes -owide`{{exec}} will give us a general idea about the cluster siz (the number of workers and master nodes).
+* Currently we're on the controlplane node. Each control plane node runs an instance of the `kube-apiserver`, `kube-scheduler`, and `kube-controller-manager` and `ectd`.
 
-* Kubernetes architecture is fully API-driven, the API Server is the core of Kubernetes’s control-plane, to inspect it we can enhance the verbosity level of `kubectl`, in order to take a look at the HTTP requests which are running behind the scenes:
-`kubectl get no -v=8`{{exec}}
+* When `etcd` runs in the cluster's control-plane nodes we're dealing with a stacked etcd topology, in contrast to configurations where etcd is external to the cluster.
 
-* If we take a look at the `kube-system` namespace (which is the namespace for objects created by the Kubernetes system) `kubectl -n kube-system get po`{{exec}} we can see the: **apiserver**, **controller-manager**, **scheduler components**.
+* A stacked HA cluster architecture
 
-* 
+![Scan results](./assets/stacked_etcd.png)
+
+* `kubelet` is the primary "node-agent" that runs on each node (`which kubelet`{{exec}}), running as a service in the OS, to check its status just: `status kubelet.service`{{exec}}
+
+* The `kubelet` service needs to be up and running permanently. This way it will be able to execute pod requirements (take any new PodSpec definition from the Kubernetes API as soon as the Pod is scheduled to run on the node), manage resources and register a node with the *apiserver* (if needed).
+
+* If the `kubelet` is not working properly, has crashed, or it is down for any reason, the Kubernetes node will go into a **NotReady** state, and no new pods will be created on that node.
+
+
+
+
+
 
 
 
