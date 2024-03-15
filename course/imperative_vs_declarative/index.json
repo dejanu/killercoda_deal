@@ -1,0 +1,23 @@
+{
+  "title": "Labels",
+  "description": "This scenario shows how to select resources using labels.",
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "background": "create_po.sh"
+    },
+    "steps": [
+      {
+        "title": "Start pod",
+        "text": "step1.md"
+      }
+    ],
+    "finish": {
+      "text": "finish.md",
+      "background": "delete_po.sh"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-2nodes"
+  }
+}
