@@ -1,6 +1,6 @@
 {
   "title": "Kubernetes architecture",
-  "description": "This scenario provides a glimpse into the architecture of Kubernetes ",
+  "description": "This scenario provides a glimpse into the architecture of Kubernetes.",
   "details": {
     "intro": {
       "text": "intro.md"
