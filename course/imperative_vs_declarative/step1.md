@@ -3,16 +3,16 @@
 
 * To obtain a comprehensive list of available objects, you can simply execute the command: `kubectl api-resources -oname`{{exec}}
 
-* Check the pods running in `playground` namespace: `kubectl -n playground get po`
+* Check the pods running in `playground` namespace: `kubectl -n playground get po`{{exec}}
 
 * To get the declarative reporesentation of the objects, we can simply: `kubectl -n playground get po basic -o yaml`{{exec}}
 
 ### Creating objects
 
-* Create a deployment named `nginx-reverse-proxy` with 2 replicas, based on an  `nginx` image:
+* Create a deployment named `nginx-reverse-proxy` with 2 replicas, based on an `nginx` image:
 
 * Imperative way:
-`kubectl -n playground create deployment nginx-reverse-proxy --image=nginx:stable-alpine-perl --replicas=2`{{exec}}, check the pod in the `playground` namespace: `kubectl -n playground get po`
+`kubectl -n playground create deployment nginx-reverse-proxy --image=nginx:stable-alpine-perl --replicas=2`{{exec}}, check the pod in the `playground` namespace: `kubectl -n playground get po`{{exec}}
 
 * Declarative way:
 
@@ -39,7 +39,7 @@ spec:
         ports:
         - containerPort: 80
 EOF
-```
+```{{exec}}
 
 * Now simply: `kubectl apply -f web_app.yaml` to create `declarative-nginx-reverse-proxy` deployment.
 
