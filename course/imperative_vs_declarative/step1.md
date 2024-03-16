@@ -47,6 +47,6 @@ EOF
 
 * Now simply: `kubectl apply -f web_app.yaml`{{exec}} to create `declarative-nginx-reverse-proxy` deployment.
 
-* Check the status of pods and deployments: `kubectl -n playground get po,deploy`{{exec}}, if any of the pods are deleted, observe that they will be automatically recreated.
+* Check the status of pods and deployments: `kubectl -n playground get po,deploy`{{exec}}, furthermore if any of the pods are deleted (`kubectl -n playground delete po nginx-reverse-proxy-...`) observe that they will be automatically **recreated**
 
-* Delete deployments: `kubectl delete deploy nginx-reverse-proxy` and `kubectl delete -f web_app.yaml`{{exec}} to delete `declarative-nginx-reverse-proxy`.
+* Delete deployments: `kubectl delete deploy nginx-reverse-proxy`{{exec}} and `kubectl delete -f web_app.yaml`{{exec}} to delete `declarative-nginx-reverse-proxy`.
