@@ -1,7 +1,7 @@
 
 ### Objects
 
-* To obtain a comprehensive list of available objects, you can simply execute the command: `kubectl api-resources -oname`{{exec}}
+* To obtain a comprehensive list of available objects, you can simply execute the command: `kubectl api-resources`{{exec}}
 
 * Check the pods running in `playground` namespace: `kubectl -n playground get po`{{exec}}
 
