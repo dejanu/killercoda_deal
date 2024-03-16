@@ -4,8 +4,7 @@
 * Start a pod named `cowsay` using the **default** behaviour of the container:
 `kubectl run cowsay --image=dejanualex/dockersay:1.1 --restart=Never`{{exec}}
 
-* Since Kubernetes it will capture anything written to STDOUT as a log message we can check the logs of the pod:
- `kubectl logs cowsay`{{exec}}
+* Since Kubernetes it will capture anything written to STDOUT as a log message we can check the logs of the pod, wait for the pod to start and run: `kubectl logs cowsay`{{exec}}
 
 * Delete pod `cowsay`:
 `kubectl delete po cowsay`{{exec}}
