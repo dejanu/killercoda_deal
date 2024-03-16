@@ -18,9 +18,9 @@
 * Imperative way:
 `kubectl -n playground create deployment nginx-reverse-proxy --image=nginx:stable-alpine-perl --replicas=2`{{exec}}, check the pod in the `playground` namespace: `kubectl -n playground get po`{{exec}}
 
-* Declarative way:
+* **Declarative** way, by creating `web_app.yaml` manifest, and applying the configuration:
 
-```
+```bash
 cat<<EOF>>web_app.yaml
 apiVersion: apps/v1
 kind: Deployment
@@ -39,7 +39,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: nginx:latest
+        image: nginx:stable-alpine-perl
         ports:
         - containerPort: 80
 EOF
@@ -49,4 +49,4 @@ EOF
 
 * Check pods and deployments: `kubectl -n playground get po,deploy`{{exec}}
 
-* Delete deployments: `kubectl delete deploy nginx-reverse-proxy` and `kubectl delete -f web_app.yaml` to delete `declarative-nginx-reverse-proxy`
+* Delete deployments: `kubectl delete deploy nginx-reverse-proxy` and `kubectl delete -f web_app.yaml`{{exec}} to delete `declarative-nginx-reverse-proxy`.
