@@ -1,11 +1,15 @@
 
 ### Objects
 
-* To obtain a comprehensive list of available objects, you can simply execute the command: `kubectl api-resources`{{exec}}
+* To obtain a comprehensive list of available objects, simply run the command: `kubectl api-resources`{{exec}}
 
-* Check the pods running in `playground` namespace: `kubectl -n playground get po`{{exec}}
+* To view the deployments and pods running in the `playground` namespace using the objects shortname : `kubectl -n playground get po,deploy`{{exec}}
 
-* To get the declarative reporesentation of the objects, we can simply: `kubectl -n playground get po basic -o yaml`{{exec}}
+* Within the namespace there is a pod named `basic` which is NOT bound to a ReplicaSet or Deployment, commonly referred to as a "naked pod").
+
+* To get the declarative reporesentation of the pod just execute: `kubectl -n playground get po basic -o yaml`{{exec}}
+
+* Moreover if this pod is deleted `kubectl -n playground delete po basic`{{exec}}, it won't be automatically recreated since it's a "naked pod".
 
 ### Creating objects
 
@@ -16,7 +20,7 @@
 
 * Declarative way:
 
-```bash
+```
 cat<<EOF>>web_app.yaml
 apiVersion: apps/v1
 kind: Deployment
