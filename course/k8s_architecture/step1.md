@@ -9,7 +9,7 @@
 * If we take a look at the `kube-system` namespace (which is the namespace for objects created by the Kubernetes system) `kubectl -n kube-system get po`{{exec}} we can see the: **apiserver**, **controller-manager**, **scheduler components**.
 
 * A quick way the to check the components status is by running `kubectl get componentstatuses`{{exec}} which is a call to
-`kubectl get --raw /api/v1/componentstatuses | jq .`{{copy}}.
+`kubectl get --raw /api/v1/componentstatuses | jq .`{{exec}}.
 
 
 
