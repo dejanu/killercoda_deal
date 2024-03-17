@@ -1,6 +1,6 @@
 {
-    "title": "Docker hands-on",
-    "description": "Set of scenarios Docker ",
+    "title": "Containers hands-on",
+    "description": "Set of scenarios focusing on containerization - Docker",
     "items": [
       { "path": "docker_101"}
     ]

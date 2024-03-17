@@ -1,23 +1,16 @@
 
 <br>
 
-### Setup 
+### Containers
 
-In this scenario we'll learn how to start a container in a pod, leveraging `command` and `args` field.
+* In this scenario we'll learn the basis of containerisation.
 
-For this scenario we have our app `cowsay` containerized, available [here](https://hub.docker.com/repository/docker/dejanualex/dockersay/general).
+* Containers have become the de facto compute units of modern cloud-native applications.
 
-Inside the pod we run `cowsay Hello World!` generating an ASCII art of a cow with the message "Hello World!" written to STDOUT.
+* Containers are often referred to as *“lightweight”* because they share the machine’s OS kernel. Containers are **unix processes**, not lightweight VMs, a container provides operating-system-level virtualization by abstracting the *"user space"*.
 
-```bash
- ______________
-< Hello World! >
- --------------
-        \   ^__^
-         \  (oo)\_______
-            (__)\       )\/\
-                ||----w |
-                ||     ||
-```
+* [Docker](https://hub.docker.com/) is one of the most well-known and somehow highly used container engine technologies, but it isn’t the only option. There are other alternatives  like [Podman](https://podman.io/) or LXD [https://linuxcontainers.org/lxd/].
+
+
 
 
