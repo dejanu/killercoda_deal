@@ -2,6 +2,6 @@
     "title": "Docker hands-on",
     "description": "Set of scenarios Docker ",
     "items": [
-      { "path": "docker_101"},
+      { "path": "docker_101"}
     ]
 }
