@@ -1,0 +1,16 @@
+{
+    "title": "Docker quiz",
+    "description": "Docker quick quiz",
+    "details": {
+      "steps": [
+        {
+          "title": "Quiz 1",
+          "text": "quiz_1.md",
+          "verify": "verify.sh"
+        }
+      ]
+    },
+    "backend": {
+      "imageid": "ubuntu"
+    }
+  }
