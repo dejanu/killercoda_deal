@@ -9,3 +9,5 @@
 
 * Docker utilizes [runC](https://github.com/opencontainers/runc) as a lightweight, portable container runtime under the hood, and [containerd](https://containerd.io/) to provides a runtime environment for Docker containers.
 Subsequently donated runC to [OCI](https://opencontainers.org/about/overview/) as a reference implementation, and containerd to [CNCF](https://www.cncf.io/projects/containerd/).
+
+* runC includes all of the plumbing code used by Docker to interact with system features related to containers. Check the container runtime used by Docker: `docker system info --format "{{ .DefaultRuntime }}"`{{exec}}

@@ -3,7 +3,8 @@
   "description": "This scenario demonstrates the fundamentals of containers.",
   "details": {
     "intro": {
-      "text": "intro.md"
+      "text": "intro.md",
+      "background": "oci_bundle.sh"
     },
     "steps": [
       {
