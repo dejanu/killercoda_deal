@@ -33,6 +33,6 @@ EOF
 ```{{exec}}
 
 * Build the image  `cowsayimage`, using as a build context the current directory containing the Dockerfile:
-`docker build -t cowsayimage .` 
+`docker build -t cowsayimage .`{{exec}}
 
-* Check the images `docker images }| grep cowsayimage` and start a container based on `cowsayimage`: `docker run cowsayimage`
+* Check the images `docker images }| grep cowsayimage`{{exec}} and start a container based on `cowsayimage`: `docker run cowsayimage`{{exec}}
