@@ -13,4 +13,4 @@ runc spec
 
 # update terminal handling
 mv config.json bkp.config.json
-jq '.process.terminal = false | .process.args = ["sleep", "5"]' config.json  > config.json
+jq '.process.terminal = false | .process.args = ["sleep", "5"]' bkp.config.json  > config.json

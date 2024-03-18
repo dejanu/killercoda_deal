@@ -12,7 +12,5 @@ Subsequently donated runC to [OCI](https://opencontainers.org/about/overview/) a
 
 * **runC** includes all of the plumbing code used by **Docker** to interact with system features related to containers, check Docker's container runtime: `docker system info --format "{{ .DefaultRuntime }}"`{{exec}}
 
+* Although **runC** is primarily utilized by higher-level container software such as **containerd**, it is still possible to create and launch a container directly using `runc`. A setup (root filesystem + spec) has been created in `cd /mycontainer`{{exec}} for a [busybox](https://hub.docker.com/_/busybox) based container.
 
-* Although **runC** is primarily utilized by higher-level container software such as **containerd**, it is still possible to create and launch a container directly using `runc`.
-
-* A setup (root filesystem + spec) has been created in `cd /mycontainer`{{exec}} for a [busybox](https://hub.docker.com/_/busybox) based container.
