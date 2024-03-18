@@ -36,4 +36,4 @@ EOF
 * Build image `cowsayimage`, using as a build context the current directory containing the **Dockerfile**:
 `docker build -t cowsayimage .`{{exec}}
 
-* Check images `docker images | grep cowsayimage`{{exec}} and start a container based on `cowsayimage`: `docker run cowsayimage`{{exec}}
+* Check if the image has been successfully built `docker images | grep cowsayimage`{{exec}} and start a container based on `cowsayimage`: `docker run cowsayimage`{{exec}}.
