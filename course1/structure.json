@@ -3,6 +3,7 @@
     "description": "Set of scenarios focusing on containerization - Docker",
     "items": [
       { "path": "docker_101"},
-      { "path": "docker_workflow"}
+      { "path": "docker_workflow"},
+      { "path": "quiz"}
     ]
 }
