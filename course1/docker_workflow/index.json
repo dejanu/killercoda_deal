@@ -1,0 +1,22 @@
+{
+  "title": "Docker workflow",
+  "description": "This scenario demonstrates the fundamentals of Docker workflow.",
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "background": "oci_bundle.sh"
+    },
+    "steps": [
+      {
+        "title": "Start pod",
+        "text": "step1.md"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-1node"
+  }
+}
