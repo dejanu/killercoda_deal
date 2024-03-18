@@ -10,3 +10,7 @@ docker export $(docker create busybox) | tar -C rootfs -xvf -
 
 # root filesystem is populated you just generate config.json spec
 runc spec
+
+# update terminal handling
+mv config.json bkp.config.json
+jq '.process.terminal = false | .process.args = ["sleep", "5"]' config.json  > config.json
