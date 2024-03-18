@@ -1,6 +1,6 @@
 {
   "title": "Docker workflow",
-  "description": "This scenario demonstrates the fundamentals of Docker workflow.",
+  "description": "This scenario demonstrates the fundamentals of Docker workflow",
   "details": {
     "intro": {
       "text": "intro.md",
@@ -8,7 +8,7 @@
     },
     "steps": [
       {
-        "title": "Start container",
+        "title": "Start containers",
         "text": "step1.md"
       }
     ],
