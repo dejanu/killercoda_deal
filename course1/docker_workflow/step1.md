@@ -13,7 +13,7 @@
 
 * Let's take a simple example and containerize an app from our machine: `file /usr/games/cowsay`{{exec}}
 
-* **cowsay** is a Perl capable of creating ASCII art representations featuring a cow along with a custom message, `/usr/games/cowsay helloo`{[exec]}
+* **cowsay** is a Perl capable of creating ASCII art representations featuring a cow along with a custom message, `/usr/games/cowsay helloo`{{exec}}
 
 * Let's create a Dockerfile:
 
@@ -31,3 +31,8 @@ ENTRYPOINT ["cowsay"]
 CMD ["Hello World!"]
 EOF
 ```{{exec}}
+
+* Build the image  `cowsayimage`, using as a build context the current directory containing the Dockerfile:
+`docker build -t cowsayimage .` 
+
+* Check the images `docker images }| grep cowsayimage` and start a container based on `cowsayimage`: `docker run cowsayimage`
