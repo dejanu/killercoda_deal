@@ -11,3 +11,23 @@
 
 * A **container** is a runnable instance of an image.
 
+* Let's take a simple example and containerize an app from our machine: `file /usr/games/cowsay`{{exec}}
+
+* **cowsay** is a Perl capable of creating ASCII art representations featuring a cow along with a custom message, `/usr/games/cowsay helloo`{[exec]}
+
+* Let's create a Dockerfile:
+
+```bash
+cat<<EOF>>Dockerfile
+FROM ubuntu:14.04
+
+# install cowsay: "cowsay" default installs to /usr/games
+RUN apt-get update && apt-get install -y cowsay --no-install-recommends \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/*
+ENV PATH $PATH:/usr/games
+
+ENTRYPOINT ["cowsay"]
+CMD ["Hello World!"]
+EOF
+```{{exec}}

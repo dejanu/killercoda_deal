@@ -3,7 +3,8 @@
   "description": "This scenario demonstrates the fundamentals of Docker workflow.",
   "details": {
     "intro": {
-      "text": "intro.md"
+      "text": "intro.md",
+      "background": "cowsay.sh"
     },
     "steps": [
       {
@@ -16,6 +17,6 @@
     }
   },
   "backend": {
-    "imageid": "kubernetes-kubeadm-1node"
+    "imageid": "ubuntu"
   }
 }
