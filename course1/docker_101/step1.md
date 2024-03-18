@@ -14,6 +14,6 @@ Subsequently donated runC to [OCI](https://opencontainers.org/about/overview/) a
 
 * Although **runC** is primarily utilized by higher-level container software such as **containerd**, it is still possible to create and launch a container directly using `runc`. A setup (root filesystem + spec) has been created in `mycontainer`{{exec}} for a [busybox](https://hub.docker.com/_/busybox) based container.
 
-* Running containers: `cd /mycontainer` and create `busybox` container `runc run busybox -d`{{exec}}, check the status of the container using `runc list`{[exec]}. The container should run for 5 seconds and stop afterwards (since this is the desired behaviour described in the specs `grep -A2 "args" config.json `{{exec}}).
+* Running containers: `cd /mycontainer`{{exec}} and create `busybox` container `runc run busybox -d`{{exec}}, check the status of the container using `runc list`{{exec}}. The container should run for 5 seconds and stop afterwards (since this is the desired behaviour described in the specs `grep -A2 "args" config.json `{{exec}}).
 
 * Now we can delete the container `runc delete busybox`{{exec}}
