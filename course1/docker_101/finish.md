@@ -3,4 +3,6 @@
 
 ### WELL DONE !
 
-* Kubernetes documentation for Command and Args [here](https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/)
+* Kubernetes documentation for container runtimes [here](https://kubernetes.io/docs/setup/production-environment/container-runtimes/)
+
+* CNCF container runtime definition [here](https://landscape.cncf.io/guide#runtime--container-runtime)
