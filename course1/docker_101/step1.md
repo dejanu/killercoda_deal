@@ -5,9 +5,8 @@
 
 ![Scan results](./assets/container_runtimes.png)
 
-* Interesting fact, Kubernetes doesn’t know how to run containers it relies on the container runtime for running and managing containers on a host.
 
-* Docker utilizes [runC](https://github.com/opencontainers/runc) as a lightweight, portable container runtime under the hood, and [containerd](https://containerd.io/) to provide a runtime environment for containers. Subsequently donated runC to [OCI](https://opencontainers.org/about/overview/) as a reference implementation, and containerd to [CNCF](https://www.cncf.io/projects/containerd/).
+* Docker Engine utilizes [runC](https://github.com/opencontainers/runc) as a lightweight, portable container runtime under the hood, and [containerd](https://containerd.io/) to provide a runtime environment for containers. Subsequently donated runC to [OCI](https://opencontainers.org/about/overview/) as a reference implementation, and containerd to [CNCF](https://www.cncf.io/projects/containerd/).
 
 * **runC** includes all of the plumbing code used by **Docker** to interact with system features related to containers, check Docker's container runtime: `docker system info --format "{{ .DefaultRuntime }}"`{{exec}}
 
