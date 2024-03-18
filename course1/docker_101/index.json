@@ -1,10 +1,9 @@
 {
-  "title": "Command and Arguments for Containers",
-  "description": "This scenario shows how to define commands and arguments when running a container in a Pod.",
+  "title": "Container runtimes",
+  "description": "This scenario demonstrates the fundamentals of containers.",
   "details": {
     "intro": {
-      "text": "intro.md",
-      "background": "pull_image.sh"
+      "text": "intro.md"
     },
     "steps": [
       {
