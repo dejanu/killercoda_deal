@@ -3,6 +3,5 @@
 
 ### WELL DONE !
 
-* Kubernetes documentation for container runtimes [here](https://kubernetes.io/docs/setup/production-environment/container-runtimes/)
+* Dockerfile reference [here](https://docs.docker.com/reference/dockerfile/)
 
-* CNCF container runtime definition [here](https://landscape.cncf.io/guide#runtime--container-runtime)

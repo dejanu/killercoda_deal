@@ -3,12 +3,11 @@
   "description": "This scenario demonstrates the fundamentals of Docker workflow.",
   "details": {
     "intro": {
-      "text": "intro.md",
-      "background": "oci_bundle.sh"
+      "text": "intro.md"
     },
     "steps": [
       {
-        "title": "Start pod",
+        "title": "Start container",
         "text": "step1.md"
       }
     ],

@@ -10,3 +10,4 @@
 * An **image** is a read-only template that provides instructions for creating a Docker containe, it consists a combination of a JSON manifest and individual layer files.
 
 * A **container** is a runnable instance of an image.
+
