@@ -1,4 +1,5 @@
-cat<<EOF>>/tmp/one
+# heredoc
+cat>/tmp/one<<<<- "EOF"
 CMD:
 ENTRYPOINT:
 EOF
