@@ -7,6 +7,6 @@
 
 ```
 # /tmp/one content
-CMD: <inser value or NA>
-Entrypoint: <inser value or NA>
+CMD: <insert value or NA>
+Entrypoint: <insert value or NA>
 ```
