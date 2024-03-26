@@ -23,7 +23,7 @@
           "text": "quiz_3.md",
           "background": "start_containers.sh",
           "verify": "verify3.sh"
-        },
+        }
       ]
     },
     "backend": {
