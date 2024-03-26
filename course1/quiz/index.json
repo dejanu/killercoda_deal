@@ -16,7 +16,14 @@
           "title": "Quiz 2",
           "text": "quiz_2.md",
           "verify": "verify2.sh"
-        }
+        },
+
+        {
+          "title": "Quiz 3",
+          "text": "quiz_3.md",
+          "background": "start_containers.sh",
+          "verify": "verify3.sh"
+        },
       ]
     },
     "backend": {
