@@ -10,3 +10,5 @@ done
 
 # start container in background
 docker run -d nginx:alpine-slim
+
+docker run busybox:latest
