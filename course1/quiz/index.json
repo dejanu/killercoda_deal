@@ -8,9 +8,9 @@
       "steps": [
         {
           "title": "Quiz 1",
-          "text": "quiz_1.md",
-          "background": "create_structure.sh",
-          "verify": "verify1.sh"
+          "text": "quiz_3.md",
+          "background": "start_containers.sh",
+          "verify": "verify3.sh"
         },
         {
           "title": "Quiz 2",
@@ -20,9 +20,9 @@
 
         {
           "title": "Quiz 3",
-          "text": "quiz_3.md",
-          "background": "start_containers.sh",
-          "verify": "verify3.sh"
+          "text": "quiz_1.md",
+          "background": "create_structure.sh",
+          "verify": "verify1.sh"
         }
       ]
     },
