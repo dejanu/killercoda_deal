@@ -1,6 +1,6 @@
 {
     "title": "Docker quiz",
-    "description": "Docker quick quiz",
+    "description": "Interactive Docker quiz",
     "details": {
       "intro": {
         "text": "intro.md"
