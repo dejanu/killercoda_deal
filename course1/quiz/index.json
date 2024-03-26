@@ -10,7 +10,12 @@
           "title": "Quiz 1",
           "text": "quiz_1.md",
           "background": "create_structure.sh",
-          "verify": "verify.sh"
+          "verify": "verify1.sh"
+        },
+        {
+          "title": "Quiz 2",
+          "text": "quiz_2.md",
+          "verify": "verify2.sh"
         }
       ]
     },
