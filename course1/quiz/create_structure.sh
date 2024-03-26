@@ -1,5 +1,3 @@
-# heredoc
-cat>/tmp/one<<<<- "EOF"
-CMD:
+echo 'CMD:
 ENTRYPOINT:
-EOF
+' > /tmp/one
