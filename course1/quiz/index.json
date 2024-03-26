@@ -9,6 +9,7 @@
         {
           "title": "Quiz 1",
           "text": "quiz_1.md",
+          "background": "create_structure.sh",
           "verify": "verify.sh"
         }
       ]
