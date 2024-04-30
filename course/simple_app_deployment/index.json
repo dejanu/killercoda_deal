@@ -4,7 +4,7 @@
     "details": {
       "intro": {
         "text": "intro.md",
-        "background": "create_po.sh"
+        "background": "create_structure.sh"
       },
       "steps": [
         {
