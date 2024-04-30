@@ -1,5 +1,5 @@
 {
-    "title": "Labels",
+    "title": "App deployment",
     "description": "This scenario shows how to deploy app in Kubernetes.",
     "details": {
       "intro": {
