@@ -1,7 +1,6 @@
 
 mkdir demo && cd demo
 
-
 cat > Dockerfile <<- "EOF"
 # Use an official Golang runtime as a base image
 FROM golang:latest AS builder
