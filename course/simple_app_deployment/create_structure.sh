@@ -1,8 +1,6 @@
 
 mkdir demo && cd demo
 
-go mod init dejanu.com/demo
-
 cat > Dockerfile <<- "EOF"
 # Use an official Golang runtime as a base image
 FROM golang:latest AS builder
@@ -52,3 +50,5 @@ func main() {
 	http.ListenAndServe(":3333", nil)
 }
 EOF
+
+go mod init dejanu.com/demo

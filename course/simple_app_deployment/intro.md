@@ -6,4 +6,4 @@
 
 In this scenario we'll learn how to package a simple app and deploy it in Kubernetes
 
-![Scan results](./assets/app_deployment.PNG)
+![Scan results](./assets/deployment.PNG)
