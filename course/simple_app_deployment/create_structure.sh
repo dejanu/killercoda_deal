@@ -1,6 +1,8 @@
 
 mkdir demo && cd demo
 
+go mod init dejanu.com/demo
+
 cat > Dockerfile <<- "EOF"
 # Use an official Golang runtime as a base image
 FROM golang:latest AS builder
@@ -41,7 +43,7 @@ import (
 )
 
 func getRoot(w http.ResponseWriter, r *http.Request) {
-	fmt.Printf("got / request\n")
+	fmt.Printf("got /hello request\n")
 	io.WriteString(w, "Hello world!\n")
 }
 

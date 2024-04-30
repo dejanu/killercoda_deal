@@ -7,7 +7,7 @@ import (
 )
 
 func getRoot(w http.ResponseWriter, r *http.Request) {
-	fmt.Printf("got / request\n")
+	fmt.Printf("got /hello request\n")
 	io.WriteString(w, "Hello world!\n")
 }
 
