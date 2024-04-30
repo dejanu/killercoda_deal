@@ -15,9 +15,9 @@ Hello world!
 
 * Create go module `cd demo`{{exec}} and run `go mod init example.com/demo`{{exec}} 
 
-* Build the image `docker build -t dejanualex/demo:v1.0 .` using `demo` directory as build context
+* Build the image `docker build -t dejanualex/demo:v1.0 .`{{exec}} using `demo` directory as build context
 
-* Create deployment for our app `kubectl create deployment demo-app --image=dejanualex/demo:v1.0 --dry-run=client -oyaml > deploy.yaml` and deploy the app `kubectl apply -f deploy.yaml`
+* Create deployment for our app `kubectl create deployment demo-app --image=dejanualex/demo:v1.0 --dry-run=client -oyaml > deploy.yaml` and deploy the app `kubectl apply -f deploy.yaml`{{exec}}
 
 * Create **service** to expose `demo-app` deployment `kubectl  expose deploy demo-app --name=demo-svc --port=3333 --target-port=3333`{{exec}}
 
