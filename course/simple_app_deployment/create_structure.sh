@@ -50,5 +50,3 @@ func main() {
 	http.ListenAndServe(":3333", nil)
 }
 EOF
-
-go mod init dejanu.com/demo
