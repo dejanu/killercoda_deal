@@ -1,26 +1,27 @@
-# Use an official Golang runtime as a base image
-FROM golang:latest AS builder
+# syntax=docker/dockerfile:1
+  
+FROM golang:1.21
 
-# Set the Current Working Directory inside the container
+# Set destination for COPY
 WORKDIR /app
 
-# Copy the source code from the current directory to the Working Directory inside the container
-COPY . .
+# Download Go modules
+COPY go.mod ./
+RUN go mod download
 
-# Build the Go app
-RUN go build -o main .
+# Copy the source code. Note the slash at the end, as explained in
+# https://docs.docker.com/reference/dockerfile/#copy
+COPY *.go ./
 
-# Start a new stage from scratch
-FROM debian:buster-slim
+# Build
+RUN CGO_ENABLED=0 GOOS=linux go build -o /main
 
-# Set the Current Working Directory inside the container
-WORKDIR /root/
-
-# Copy the Pre-built binary file from the previous stage
-COPY --from=builder /app/main .
-
-# Expose port 3333 to the outside world
+# Optional:
+# To bind to a TCP port, runtime parameters must be supplied to the docker command.
+# But we can document in the Dockerfile what ports
+# the application is going to listen on by default.
+# https://docs.docker.com/reference/dockerfile/#expose
 EXPOSE 3333
 
-# Command to run the executable
-CMD ["./main"]
+# Run
+CMD ["/main"]
