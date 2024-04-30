@@ -1,5 +1,5 @@
 
-mkdir demo
+mkdir demo && cd demo
 
 
 cat > Dockerfile <<- "EOF"
@@ -29,4 +29,25 @@ EXPOSE 3333
 
 # Command to run the executable
 CMD ["./main"]
+EOF
+
+
+cat > main.go <<- "EOF"
+package main
+
+import (
+	"fmt"
+	"io"
+	"net/http"
+)
+
+func getRoot(w http.ResponseWriter, r *http.Request) {
+	fmt.Printf("got / request\n")
+	io.WriteString(w, "Hello world!\n")
+}
+
+func main() {
+	http.HandleFunc("/hello", getRoot)
+	http.ListenAndServe(":3333", nil)
+}
 EOF
