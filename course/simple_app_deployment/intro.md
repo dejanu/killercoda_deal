@@ -6,6 +6,6 @@
 
 In this scenario we'll learn how to package a simple app and deploy it in Kubernetes.
 
-Kuberntes objects:
+Kuberntes setup:
 
 ![Scan results](./assets/setup.png)
