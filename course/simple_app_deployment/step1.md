@@ -17,8 +17,11 @@ Hello world!
 
 * Build the image `docker build -t dejanualex/demo:v1.0 .`{{exec}} using `demo` directory as build context
 
-* Create deployment for our app `kubectl create deployment demo-app --image=dejanualex/demo:v1.0 --dry-run=client -oyaml > deploy.yaml`{{exec}} and deploy the app `kubectl apply -f deploy.yaml`{{exec}}
+
+### Deploy the app
+
+* Create **deployment** for our app `kubectl create deployment demo-app --image=dejanualex/demo:v1.0 --dry-run=client -oyaml > deploy.yaml`{{exec}} and deploy the app `kubectl apply -f deploy.yaml`{{exec}}
 
 * Create **service** to expose `demo-app` deployment `kubectl  expose deploy demo-app --name=demo-svc --port=3333 --target-port=3333`{{exec}}
 
-* Spin up pod with curl `kubectl  run curlopenssl -i --tty --image=dejanualex/curlopenssl:1.0  -- sh`{{exec}} and run `curl demo-svc.default.svc.cluster.local:3333/hello`{{exec}}
+* Spin up pod with curl `kubectl  run curlopenssl -i --tty --image=dejanualex/curlopenssl:1.0  -- sh`{{exec}} and run `curl demo-svc.default.svc.cluster.local:3333/hello`{{exec}} to test our app.
