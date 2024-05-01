@@ -6,6 +6,7 @@
       { "path": "imperative_vs_declarative"},
       { "path": "simple_app_deployment"},
       { "path": "ARGS_and_COMMAND" },
+      { "path": "init_container" },
       { "path": "POD_Labels" }
     ]
 }
