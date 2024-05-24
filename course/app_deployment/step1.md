@@ -13,15 +13,21 @@ Hello world!
 
 <hr>
 
-* Create go module `cd demo`{{exec}} and run `go mod init example.com/demo`{{exec}} 
+* Create go module: `go mod init example.com/demo`{{exec}} 
 
-* Build the image `docker build -t dejanualex/demo:v1.0 .`{{exec}} using `demo` directory as build context
+* Build the image `docker build -t dejanualex/demo:v1.0 .`{{exec}} using `demo` directory as build context.
 
 
 ### Deploy the app
 
-* Create **deployment** for our app `kubectl create deployment demo-app --image=dejanualex/demo:v1.0 --dry-run=client -oyaml > deploy.yaml`{{exec}} and deploy the app `kubectl apply -f deploy.yaml`{{exec}}
+* Create **deployment** for our app `kubectl create deployment demo-app --image=dejanualex/demo:v1.0 --dry-run=client -oyaml > deploy.yaml`{{exec}}.
+Inspect the deployment manifest file `cat deploy.yaml`{{exec}} and deploy the app `kubectl apply -f deploy.yaml`{{exec}}
 
-* Create **service** to expose `demo-app` deployment `kubectl  expose deploy demo-app --name=demo-svc --port=3333 --target-port=3333`{{exec}}
+* Create **service** to expose `demo-app` deployment `kubectl expose deploy demo-app --name=demo-svc --port=3333 --target-port=3333`{{exec}}, verify that the services was created `kubectl get svc`{{exec}}
 
-* Spin up pod with curl `kubectl  run curlopenssl -i --tty --image=dejanualex/curlopenssl:1.0  -- sh`{{exec}} and run `curl demo-svc.default.svc.cluster.local:3333/hello`{{exec}} to test our app.
+* Spin up pod with curl `kubectl  run curlopenssl -i --tty --image=dejanualex/curlopenssl:1.0  -- sh`{{exec}} and run `curl demo-svc.default.svc.cluster.local:3333/hello`{{exec}} to test our app. You should be able to have:
+
+```bash
+/ # curl demo-svc.default.svc.cluster.local:3333/hello
+Hello world!
+```
