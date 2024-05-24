@@ -16,7 +16,13 @@
 * Create a deployment named `nginx-reverse-proxy` with 2 replicas, based on an `nginx` image:
 
 * **Imperative** way, directly against the API:
-`kubectl -n playground create deployment nginx-reverse-proxy --image=nginx:stable-alpine-perl --replicas=2`{{exec}}, check the pod in the `playground` namespace: `kubectl -n playground get po`{{exec}}
+`kubectl -n playground create deployment nginx-reverse-proxy --image=nginx:stable-alpine-perl --replicas=2`{{exec}}, check the pod in the `playground` namespace: `kubectl -n playground get po`{{exec}}, you should see something like this:
+
+```bash
+NAME                                   READY   STATUS    RESTARTS   AGE
+nginx-reverse-proxy-55d9dfc748-99gq7   1/1     Running   0          6s
+nginx-reverse-proxy-55d9dfc748-h4694   1/1     Running   0          6s
+```
 
 * **Declarative** way, by defining the object as a manifest `web_app.yaml`, and applying the configuration to the cluster:
 
