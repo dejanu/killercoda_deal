@@ -4,9 +4,9 @@
     "items": [
       { "path": "docker_101"},
       { "path": "docker_workflow"},
+      { "path": "k8s_architecture"},
       { "path": "imperative_vs_declarative"},
       { "path": "app_deployment"},
-      { "path": "k8s_architecture"},
       { "path": "ARGS_and_COMMAND" },
       { "path": "init_container" },
       { "path": "POD_Labels" }
