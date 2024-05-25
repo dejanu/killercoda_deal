@@ -1,7 +1,9 @@
 {
-    "title": "Kubernetes hands-on",
-    "description": "Set of scenarios for CKA and CKAD exams",
+    "title": "Kubernetes and Docker Labs",
+    "description": "Hands-on scenarios: containerization and Kubernetes",
     "items": [
+      { "path": "docker_101"},
+      { "path": "docker_workflow"},
       { "path": "imperative_vs_declarative"},
       { "path": "app_deployment"},
       { "path": "k8s_architecture"},
