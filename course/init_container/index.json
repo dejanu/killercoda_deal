@@ -3,7 +3,8 @@
   "description": "This scenario shows how to define and use a init container in a Pod.",
   "details": {
     "intro": {
-      "text": "intro.md"
+      "text": "intro.md",
+      "background": "create_deploy.sh"
     },
     "steps": [
       {
