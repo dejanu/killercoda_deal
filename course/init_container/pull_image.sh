@@ -1,1 +1,0 @@
-docker pull dejanualex/dockersay:2.1
