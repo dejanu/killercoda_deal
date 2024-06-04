@@ -27,7 +27,7 @@ spec:
         - name: nginx-init
           image: docker/whalesay
           command: [sh, -c]
-          args: [echo "<pre>$(cowsay -b 'Hello Kubernetes')</pre>" > /data/index.html]
+          args: [echo "<pre>\$(cowsay -b 'Hello Kubernetes')</pre>" > /data/index.html]
           volumeMounts:
             - name: data
               mountPath: /data
