@@ -1,1 +1,1 @@
-docker pull dejanualex/dockersay:1.1
+docker pull dejanualex/dockersay:2.1
