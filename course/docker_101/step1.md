@@ -6,11 +6,13 @@
 ![Scan results](./assets/container_runtimes.png)
 
 
-* Docker Engine utilizes [runC](https://github.com/opencontainers/runc) as a lightweight, portable container runtime under the hood, and [containerd](https://containerd.io/) to provide a runtime environment for containers. Subsequently donated runC to [OCI](https://opencontainers.org/about/overview/) as a reference implementation, and containerd to [CNCF](https://www.cncf.io/projects/containerd/).
+* Docker Engine utilizes [runc](https://github.com/opencontainers/runc) as a lightweight, portable container runtime under the hood, and [containerd](https://containerd.io/) to provide a runtime environment for containers. Subsequently donated [runc](https://github.com/opencontainers/runc) to [OCI](https://opencontainers.org/about/overview/) as a reference implementation, and [containerd](https://containerd.io/) to [CNCF](https://www.cncf.io/projects/containerd/).
 
-* **runC** includes all of the plumbing code used by **Docker** to interact with system features related to containers, check Docker's container runtime: `docker system info --format "{{ .DefaultRuntime }}"`{{exec}}
+* **runC** includes all of the plumbing code used by **Docker** to interact with system features related to containers. 
+You can check what container runtimes Docker uses just run `docker system info --format "{{ .Runtimes }}"`{{exec}} and `docker system info --format "{{ .DefaultRuntime }}"`{{exec}}
 
-* Although **runC** is primarily utilized by higher-level container software such as **containerd**, it is still possible to create and launch a container directly using `runc`. A setup (root filesystem + spec) has been created in `mycontainer` for a [busybox](https://hub.docker.com/_/busybox) based container.
+
+* Although **runC** is primarily utilized by higher-level container software such as **containerd**, it is still possible to create and launch a container directly using `runc`. A setup (root filesystem + spec) has been created in `mycontainer` directory for a [busybox](https://hub.docker.com/_/busybox) based container.
 
 * Running containers: `cd /mycontainer`{{exec}} and create `busybox` container `runc run busybox -d`{{exec}}, check the status of the container using `runc list`{{exec}}. The container should run for 5 seconds and stop afterwards (since this is the desired behaviour described in the specs `grep -A2 "args" config.json `{{exec}}).
 
