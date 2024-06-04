@@ -25,7 +25,7 @@ spec:
           emptyDir: {}
       initContainers:
         - name: nginx-init
-          image: dejanualex/dockersay:2.1
+          image: dejanualex/dockersay:2.0
           command: [sh, -c]
           args: [echo "<pre>$(cowsay -b 'Hello Kubernetes')</pre>" > /data/index.html]
           volumeMounts:
