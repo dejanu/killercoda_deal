@@ -1,6 +1,6 @@
 {
   "title": "Container runtimes",
-  "description": "This scenario demonstrates the fundamentals of containers.",
+  "description": "This scenario illustrates the basics of container runtimes.",
   "details": {
     "intro": {
       "text": "intro.md",
