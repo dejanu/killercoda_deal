@@ -37,3 +37,6 @@ EOF
 `docker build -t cowsayimage .`{{exec}}
 
 * Check if the image has been successfully built `docker images | grep cowsayimage`{{exec}} and start a container based on `cowsayimage`: `docker run cowsayimage`{{exec}}.
+
+* Try-it on you local machine [repo here](https://hub.docker.com/repository/docker/dejanualex/dockersay/general)
+`docker run --rm dejanualex/dockersay:1.0`
