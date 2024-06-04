@@ -25,7 +25,7 @@ Inspect the deployment manifest file `cat deploy.yaml`{{exec}} and deploy the ap
 
 * Create **service** to expose `demo-app` deployment `kubectl expose deploy demo-app --name=demo-svc --port=3333 --target-port=3333`{{exec}}, verify that the services was created `kubectl get svc`{{exec}}
 
-* Spin up pod with curl `kubectl  run curlopenssl -i --tty --image=dejanualex/curlopenssl:1.0  -- sh`{{exec}} and run `curl demo-svc.default.svc.cluster.local:3333/hello`{{exec}} to test our app. You should be able to have:
+* Spin up pod with curl `kubectl  run curlopenssl -i --tty --image=dejanualex/curlopenssl:1.0  -- sh`{{exec}} (If you don't see a command prompt, try pressing enter.) and run `curl demo-svc.default.svc.cluster.local:3333/hello`{{exec}} to test our app. You should be able to have:
 
 ```bash
 / # curl demo-svc.default.svc.cluster.local:3333/hello
