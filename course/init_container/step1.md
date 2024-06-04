@@ -9,5 +9,5 @@
 
 ```
 
-* Wait for the pod to have STATUS Running `kubectl get po`{{exec}} and then perform forward connection to a local port i.e. 8080 to pod's port 80
-`kubectl port-forward $(kubectl  get po -oname) 8080:80 &`{{exec}} (hit ENTER and send it in the background)
+* Wait for the pod to have STATUS Running `kubectl get po`{{exec}} and then forward connection to a local port i.e. 8080 to pod's port 80
+`kubectl port-forward $(kubectl  get po -oname) 8080:80 &`{{exec}} (hit ENTER and send it in the background).
