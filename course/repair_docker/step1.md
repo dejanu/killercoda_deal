@@ -12,5 +12,5 @@ Run command: `docker ps`{{exec}}, check the state of docker service using `syste
 
 <details>
 <summary>Solution</summary>
-Check the status of `docker.socket`
+Check the status of `docker.socket` and use systemctl to start the unit `systemctl start docker.socket` 
 </details>
