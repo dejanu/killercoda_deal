@@ -1,0 +1,23 @@
+{
+    "title": "Docker Engine",
+    "description": "This scenario shows debug Docker Engine on a ubuntu machine.",
+    "details": {
+      "intro": {
+        "text": "intro.md",
+        "background": "stopdockersocket.sh"
+      },
+      "steps": [
+        {
+          "title": "Docker engine",
+          "text": "step1.md"
+        }
+      ],
+      "finish": {
+        "text": "finish.md"
+      }
+    },
+    "backend": {
+      "imageid": "ubuntu"
+    }
+  }
+  
