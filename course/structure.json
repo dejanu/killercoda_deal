@@ -3,7 +3,7 @@
     "description": "Hands-on scenarios: containerization and Kubernetes",
     "items": [
       { "path": "repair_docker" },
-      { "path": "docker_101"},
+      { "path": "container_runtimes"},
       { "path": "docker_workflow"},
       { "path": "k8s_architecture"},
       { "path": "imperative_vs_declarative"},
