@@ -1,0 +1,22 @@
+{
+  "title": "Container runtimes",
+  "description": "This scenario illustrates the basics of container runtimes.",
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "background": "oci_bundle.sh"
+    },
+    "steps": [
+      {
+        "title": "runc",
+        "text": "step1.md"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "ubuntu"
+  }
+}
