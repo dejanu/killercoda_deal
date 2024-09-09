@@ -11,7 +11,6 @@ Run command: `docker ps`{{exec}}, check the state of docker service using `syste
 
 
 <details>
-<summary>Hints</summary>
-<br>
+<summary>Solution</summary>
 Check the status of `docker.socket`
 </details>
