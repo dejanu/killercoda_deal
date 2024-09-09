@@ -10,7 +10,7 @@
       { "path": "ARGS_and_COMMAND" },
       { "path": "init_container" },
       { "path": "POD_Labels" },
-      {"path":"repair_docker"},
-      {"path": "quiz"}
+      { "path":"repair_docker" },
+      { "path": "quiz" }
     ]
 }
