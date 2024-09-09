@@ -7,7 +7,7 @@ Docker engine ubuntu setup:
 
 * Check the status: 
 
-Run command: `docker ps`{{exec}}, check the state of docker service using `systemctl` query systemd journal `journalctl  -xeu docker.service`{{exec}}.
+Run command: `docker ps`{{exec}}, check the state of docker service using `systemctl` to query systemd journal: `journalctl  -xeu docker.service`{{exec}}.
 
 
 <details>
