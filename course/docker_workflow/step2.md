@@ -10,6 +10,6 @@
 `docker run --rm dejanualex/dockersay:1.0`{{exec}} for arm64 and `docker run --rm dejanualex/dockersay:2.0`{{exec}} for amd64
 
 <details>
-<summary>Solution2</summary>
+<summary>Solution</summary>
  Retag image <code>docker tag cowsayimage localhost:5000/cowsayimage:1.0</code> push it to registry: <code>docker push localhost:5000/cowsayimage:1.0</code> and check the repos from registr: <code>curl localhost:5000/v2/_catalog</code>
 </details>
