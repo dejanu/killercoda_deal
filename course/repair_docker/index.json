@@ -1,6 +1,6 @@
 {
     "title": "Docker Engine",
-    "description": "This scenario shows debug Docker Engine on a ubuntu machine.",
+    "description": "Debugging Docker Engine on a ubuntu machine.",
     "details": {
       "intro": {
         "text": "intro.md",
