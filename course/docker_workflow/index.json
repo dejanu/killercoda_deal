@@ -1,6 +1,6 @@
 {
-  "title": "Docker workflow",
-  "description": "This scenario demonstrates the fundamentals of Docker workflow",
+  "title": "Docker workflow: build, share, run",
+  "description": "Fundamentals of Docker workflow",
   "details": {
     "intro": {
       "text": "intro.md",
@@ -8,8 +8,12 @@
     },
     "steps": [
       {
-        "title": "Start containers",
+        "title": "Docker workflow",
         "text": "step1.md"
+      },
+      {
+        "title": "Distribution",
+        "text": "step2.md"
       }
     ],
     "finish": {

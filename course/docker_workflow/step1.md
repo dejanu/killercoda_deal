@@ -13,9 +13,8 @@
 
 * Let's illustrate with a straightforward example and containerize a simple application from the host machine: `file /usr/games/cowsay`{{exec}}
 
-* **cowsay** is a Perl app capable of creating ASCII art representations featuring a cow along with a custom message, usage:`/usr/games/cowsay helloo`{{exec}}
+* Create a Docker file for **cowsay** app  (Perl app capable of creating ASCII art representations featuring a cow along with a custom message), check usage:`/usr/games/cowsay helloo`{{exec}}
 
-* Let's create a Dockerfile:
 
 ```bash
 cat<<EOF>>Dockerfile
@@ -36,12 +35,4 @@ EOF
 * Build image `cowsayimage`, using as a build context the current directory containing the **Dockerfile**:
 `docker build -t cowsayimage .`{{exec}}
 
-* Check if the image has been successfully built `docker images | grep cowsayimage`{{exec}} and start a container based on `cowsayimage`: `docker run cowsayimage`{{exec}}.
-
-<details>
-<summary>Solution</summary>
-Maybe the image can be used by another container management tool...i.e. [podman](https://podman.io/) <code>podman run docker-daemon:cowsay</code> 
-</details>
-
-* Try-it on your local machine [repo here](https://hub.docker.com/repository/docker/dejanualex/dockersay/general)
-`docker run --rm dejanualex/dockersay:1.0`{{exec}} for arm64 and `docker run --rm dejanualex/dockersay:2.0`{{exec}} for amd64
+* Check if the image has been successfully built `docker images | grep cowsayimage`{{exec}} and start a container based on `cowsayimage` image: `docker run cowsayimage`{{exec}}.
