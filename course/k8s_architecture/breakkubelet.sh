@@ -1,0 +1,1 @@
+ssh node01 'sed -i "s|/usr/bin/kubelet|/usr/local/bin/kubelet|g" /lib/systemd/system/kubelet.service.d/10-kubeadm.conf'
