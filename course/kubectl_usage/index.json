@@ -1,0 +1,22 @@
+{
+  "title": "kubectl",
+  "description": "Communicating with a Kubernetes cluster's control plane, using the Kubernetes API",
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "background": ""
+    },
+    "steps": [
+      {
+        "title": "Start pod",
+        "text": "step1.md"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-2nodes"
+  }
+}

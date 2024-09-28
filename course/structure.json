@@ -11,6 +11,7 @@
       { "path": "ARGS_and_COMMAND" },
       { "path": "init_container" },
       { "path": "POD_Labels" },
+      {"path": "kubectl_usage"},
       { "path": "quiz" }
     ]
 }
