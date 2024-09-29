@@ -2,7 +2,7 @@
 
 * `kubelet` is node agent that runs as a daemon, thus being maintaned by a init system like `systemd`, more precisely Kubelet's behavior is managed by a systemd unit file.
 
-Check cluster: `kubect get no -owide` what are you observing? Try to spin-up a pod: `kubectl run test --image=nginx`{{exec}}. What happens?
+Check cluster: `kubectl get no -owide` what are you observing? Try to spin-up a pod: `kubectl run test --image=nginx`{{exec}}. What happens?
 
 * ssh into `ssh node01`{{exec}} the worker node and try to find why the node is NodeReady.
 
