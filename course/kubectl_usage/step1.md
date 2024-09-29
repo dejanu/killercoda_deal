@@ -4,7 +4,7 @@ For configuration, `kubectl` looks for a file named `config` in `$HOME/.kube` di
 
 Explore the cluster configuration `kubectl get no`, what happens:
 ```bash
-couldn't get current server API group list
+couldn't get current server API group list...
 ```
 Increase the verbosity: `kubectl get no -v=6` and look for `Config loaded from file` 
 
