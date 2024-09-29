@@ -3,8 +3,7 @@
   "description": "This scenario provides a glimpse into the architecture of Kubernetes.",
   "details": {
     "intro": {
-      "text": "intro.md",
-      "background": "breakkubelet.sh"
+      "text": "intro.md"
     },
     "steps": [
       {

@@ -4,7 +4,7 @@
   "details": {
     "intro": {
       "text": "intro.md",
-      "background": "mess_kubectl.sh"
+      "background": "breakkubelet.sh"
     },
     "steps": [
       {
