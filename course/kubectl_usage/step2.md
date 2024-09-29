@@ -15,6 +15,6 @@ Get table with custom columns: <code>kubectl -n kube-system get po -o=custom-col
 <br>
 Get table with custom columns: <code>kubectl -n kube-system get pods -o custom-columns=:metadata.name</code>
 <br>
-Get using go template:<code>kubectl -n kube-system po -o go-template='{{range .items}} --> {{.metadata.name}} in namespace: {{.metadata.namespace}}{{"\n"}}{{end}}</code>
+Get using go template:<code>kubectl get po -A -o go-template='{{range .items}} --> {{.metadata.name}} in namespace: {{.metadata.namespace}}{{"\n"}}{{end}}'</code>
 </details>
 
