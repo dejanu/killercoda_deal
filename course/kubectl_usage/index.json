@@ -3,7 +3,8 @@
   "description": "Communicating with a Kubernetes cluster's control plane, using the Kubernetes API",
   "details": {
     "intro": {
-      "text": "intro.md"
+      "text": "intro.md",
+      "background": "mess_kubectl.sh"
     },
     "steps": [
       {

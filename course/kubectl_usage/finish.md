@@ -3,7 +3,7 @@
 
 ### WELL DONE !
 
-* `kubelet` reference [here](https://kubernetes.io/docs/reference/command-line-tools-reference/kubelet/)
+* `kubectl` reference [here](https://kubernetes.io/docs/reference/kubectl/)
 
 * The `config` file that is used to configure access to a cluster is usually, called kubeconfig ( `~/.kube/config`), but you can easily override the location by using `--kubeconfig=<path_to_config>` flag.
 
