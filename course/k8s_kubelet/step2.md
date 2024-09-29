@@ -2,7 +2,6 @@
 
 Create a naked pod named `test`, based on a `ngnix` image, and check on which node is has been scheduled.
 
-
 * Mandatory fields for Pod object:
 ```bash
 apiVersion - Which version of the Kubernetes API you're using to create this object
@@ -11,10 +10,7 @@ metadata - Data that helps uniquely identify the object, including a name string
 spec - What state you desire for the object
 ```
 
-Delete the pod, and recreate it as a static pod on the control-plane node.
-
-
-Static pods always have a `-${NODENAME}` appended to their name, indicating which node controls the static pod.
+Delete the pod, and recreate it as a static pod on the control-plane node. Static pods always have a `-${NODENAME}` appended to their name, indicating which node controls the static pod.
 
 <details>
 <summary>Hint</summary>
