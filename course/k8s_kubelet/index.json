@@ -8,11 +8,11 @@
     },
     "steps": [
       {
-        "title": "kubelet concepts",
+        "title": "Fix kubelet",
         "text": "step1.md"
       },
       {
-        "title": "Fix kubelet",
+        "title": "WIP",
         "text": "step2.md"
       }
     ],
