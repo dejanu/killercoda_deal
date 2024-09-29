@@ -7,14 +7,14 @@ Explore the cluster configuration `kubect get no`, what happens:
 couldn't get current server API group list
 ```
 
-kubectl `config` file stores all the information necessary to interact with a Kubernetes cluster:
+kubectl config file stores all the information necessary to interact with a Kubernetes cluster:
 - The name of the Kubernetes cluster
 - The location of the Kubernetes API server
 - The credentials (username and password) for authenticating with the Kubernetes API server
 - The names of all contexts defined in the cluster
 
 
-A **context** is a combination of a cluster and user credentials, we can switch between contexts using.
+* A **context** is a combination of a cluster and user credentials.
 
 Hints: 
 
