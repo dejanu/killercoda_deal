@@ -1,6 +1,6 @@
 {
   "title": "kubectl",
-  "description": "Communicating with a Kubernetes cluster's control plane, using the Kubernetes API",
+  "description": "Communicating with Kubernetes cluster's control plane, using Kubernetes API, and kubeconfig",
   "details": {
     "intro": {
       "text": "intro.md",
@@ -8,7 +8,7 @@
     },
     "steps": [
       {
-        "title": "Interact with K8S API",
+        "title": "Interact with K8S API...kubeconfig",
         "text": "step1.md"
       },
       {

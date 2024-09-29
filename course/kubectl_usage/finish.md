@@ -11,3 +11,5 @@
 
 * If you need to get the current context without using `kubect config current-context`{{copy}}, you can also use:
 `cat ~/.kube/config | grep -i "current-context" | awk '{print $2}'`{{copy}}
+
+* `config` file fields and structure [here](https://kubernetes.io/docs/reference/config-api/kubeconfig.v1/)
