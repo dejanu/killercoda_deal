@@ -17,7 +17,7 @@ kubectl `config` file stores all the information necessary to interact with a Ku
 
 * A **context** is a combination of a cluster and user credentials.
 
-Hints: 
+⚠️ Hints: 
 
 * Check current configuration `kubectl config view`{{copy}} 
 * Check current context `kubectl config current-context`{{copy}}
