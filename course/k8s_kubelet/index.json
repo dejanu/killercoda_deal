@@ -1,6 +1,6 @@
 {
-  "title": "kubectl",
-  "description": "Understanding kubectl",
+  "title": "Kubelet",
+  "description": "Understanding kubelet",
   "details": {
     "intro": {
       "text": "intro.md",
@@ -8,11 +8,11 @@
     },
     "steps": [
       {
-        "title": "kubectl concepts",
+        "title": "kubelet concepts",
         "text": "step1.md"
       },
       {
-        "title": "Formatting output",
+        "title": "Fix kubelet",
         "text": "step2.md"
       }
     ],

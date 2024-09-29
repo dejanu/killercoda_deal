@@ -1,5 +1,5 @@
 {
-  "title": "Kubelet",
+  "title": "kubectl",
   "description": "Communicating with a Kubernetes cluster's control plane, using the Kubernetes API",
   "details": {
     "intro": {
