@@ -1,13 +1,14 @@
 {
-  "title": "Kubelet",
-  "description": "Communicating with a Kubernetes cluster's control plane, using the Kubernetes API",
+  "title": "kubectl",
+  "description": "Understanding kubectl",
   "details": {
     "intro": {
-      "text": "intro.md"
+      "text": "intro.md",
+      "background": "mess_kubectl.sh"
     },
     "steps": [
       {
-        "title": "Interact with K8S API",
+        "title": "kubectl concepts",
         "text": "step1.md"
       },
       {
