@@ -8,8 +8,12 @@
     },
     "steps": [
       {
-        "title": "Start pod",
+        "title": "Interact with K8S API",
         "text": "step1.md"
+      },
+      {
+        "title": "Kubectl output like a pro",
+        "text": "step2.md"
       }
     ],
     "finish": {
