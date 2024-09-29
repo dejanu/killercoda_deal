@@ -1,22 +1,17 @@
-## Setup
+## Output
 
-For configuration, `kubectl` looks for a file named config in the `$HOME/.kube` directory. You can specify other kubeconfig files by setting the `KUBECONFIG` environment variable or by using the `--kubeconfig` flag.
+Avoid using `AWK`, `grep` to customize the output of `kubectl`.
+The default output format for all kubectl commands is the human readable plain-text format.
 
-Explore the cluster configuration `kubectl get no`, what happens:
-```bash
-couldn't get current server API group list
-```
-Increase the verbosity: `kubectl get no -v=6` and look for `Config loaded from file` 
+To output details to your terminal window in a specific format, you can add either the `-o` or `--output` flags to a supported kubectl command: `kubectl [command] [TYPE] [NAME] -o <output_format>`
 
-kubectl `config` file stores all the information necessary to interact with a Kubernetes cluster:
-- The name of the Kubernetes cluster
-- The location of the Kubernetes API server
-- The credentials (username and password) for authenticating with the Kubernetes API server
-- The names of all contexts defined in the cluster (a **context** is a combination of a cluster and user credentials)
+Get only the pod name from `kube-system` and write them to `controlplane.txt`
 
-⚠️ Hints: 
+<details>
+<summary>Solution</summary>
+Get name: `kubectl -n kube-system get po -oname`{{copy}}
+Get table with custom columns: `kubectl -n kube-system get po -o=custom-columns=NAME:.metadata.name`{{copy}}
+Get table with custom columns:  `kubectl -n kube-system get pods -o custom-columns=:metadata.name`{{copy}}
+Get using go template:`kubectl -n kube-system po -o go-template='{{range .items}} --> {{.metadata.name}} in namespace: {{.metadata.namespace}}{{"\n"}}{{end}}`{{copy}}
+</details>
 
-* Check current configuration `kubectl config view`{{copy}} 
-* Check current context `kubectl config current-context`{{copy}}
-* Check clusters: `kubectl config get-clusters`{{copy}} and users `kubectl config get-users`{{copy}}
-* Try to change the context: `kubectl config use-context <context_name>`{{copy}}
