@@ -6,8 +6,9 @@ Explore the cluster configuration `kubect get no`, what happens:
 ```bash
 couldn't get current server API group list
 ```
+Increase the verbosity: `kubectl get no -v=6` and look for `Config loaded from file` 
 
-kubectl config file stores all the information necessary to interact with a Kubernetes cluster:
+kubectl `config` file stores all the information necessary to interact with a Kubernetes cluster:
 - The name of the Kubernetes cluster
 - The location of the Kubernetes API server
 - The credentials (username and password) for authenticating with the Kubernetes API server
