@@ -6,7 +6,7 @@ Check cluster: `kubectl get no -owide` what are you observing? Try to spin-up a 
 
 * ssh into `ssh node01`{{exec}} the worker node and try to find why the node is NodeReady.
 
-* the kubelet has a main service definition `/etc/systemd/system/kubelet.service`{{copy}} and to further customize `kubelet.service.`
+* the kubelet has a main service definition `/lib/systemd/system/kubelet.service`{{copy}} and to further customize `kubelet.service.`
 the `kubeadm` writes a drop-in configuration file at `/usr/lib/systemd/system/kubelet.service.d/10-kubeadm.conf` which is used by systemd. 
 
 <details>
