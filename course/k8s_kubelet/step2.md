@@ -2,6 +2,7 @@
 
 Create a naked pod named `test`, based on a `ngnix` image, and check on which node is has been scheduled.
 
+
 * Mandatory fields for Pod object:
 ```bash
 apiVersion - Which version of the Kubernetes API you're using to create this object
@@ -10,12 +11,16 @@ metadata - Data that helps uniquely identify the object, including a name string
 spec - What state you desire for the object
 ```
 
+Delete the pod, and recreate it as a static pod on the control-plane node.
+
+
+Static pods always have a `-${NODENAME}` appended to their name, indicating which node controls the static pod.
 
 <details>
 <summary>Hint</summary>
 Create naked pod: <code>kubectl run test  --image=nginx</code> and <code>kubectl get no -owide</code>
 <br>
-Check kubelet status: <code>systemctl status kubelet.service</code> and logs <code>journalctl -xeu kubelet.service</code>
+Get po as yaml: <code>kubectl get po test -oyaml > pod.yaml</code> and remove non-mandatory fields.
 <br>
-Check location of kubectl bin <code>which kubectl</code> and fix <code>10-kubeadm.conf</code>
+Place the file at <code>/etc/kubernetes/manifests/kube-pod.yaml</code>
 </details>
