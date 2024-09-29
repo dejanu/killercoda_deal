@@ -4,7 +4,7 @@
   "details": {
     "intro": {
       "text": "intro.md",
-      "background": ""
+      "background": "mess_kubectl.sh"
     },
     "steps": [
       {
