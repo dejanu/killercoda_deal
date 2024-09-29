@@ -15,5 +15,5 @@ Get name: <code>kubectl describe no node01</code>
 <br>
 Check kubelet status: <code>systemctl status kubelet.service</code> and logs <code>journalctl -xeu kubelet.service</code>
 <br>
-Fix <code>10-kubeadm.conf</code>
+Check location of kubectl bin <code>which kubectl</code> and fix <code>10-kubeadm.conf</code>
 </details>
