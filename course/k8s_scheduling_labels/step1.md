@@ -15,7 +15,7 @@ List of all pod's names running in the **default** namespace which have their `e
 <summary>Hint</summary>
 Select all pods with <code>prod</code> label value: <code>kubectl get pods -l env=prod</code> (equality based)
 <br>
-Select pods with label values <code>prod,nonprod</code>: <code>kubectl get po -l "env in (prod,preprod)" -oname</code> (set based)
+Select pods with label values <code>prod,preprod</code>: <code>kubectl get po -l "env in (prod,preprod)" -oname</code> (set based)
 <br>
 Add new label <code>kubectl label po app4 env=dev</code> and overwrite label <code>kubectl label po app4=foo-bar --overwrite</code> 
 <br>

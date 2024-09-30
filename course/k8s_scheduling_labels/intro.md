@@ -3,7 +3,7 @@
 
 ### Setup 
 
-Labels are **key-value** pairs that are attached to objects such.
+Labels are **key-value** pairs that are attached to objects such as pods, nodes.
 Labels allow for efficient queries and watches and are ideal for use in UIs and CLIs.
 <hr>
 
