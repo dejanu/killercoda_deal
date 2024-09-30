@@ -11,6 +11,8 @@ Add new labels `env=dev`{{copy}} and `foo=bar` to pod `app4` running in the **de
 
 List of all pod's names running in the **default** namespace which have their `env` label **different** from `dev` value. The returned list should contain only the pod names and nothing else.
 
+Label all pods which have `env=preprod` label with a new label `tag=staging`
+
 <details>
 <summary>Hint</summary>
 Select all pods with <code>prod</code> label value: <code>kubectl get pods -l env=prod</code> (equality based)
@@ -20,6 +22,8 @@ Select pods with label values <code>prod,preprod</code>: <code>kubectl get po -l
 Add new label <code>kubectl label po app4 env=dev</code> and overwrite label <code>kubectl label po app4=foo-bar --overwrite</code> 
 <br>
 Select pods with label values diffrent from <code>prod,preprod</code>: and fix <code>kubectl get pods -l 'env notin (prod,preprod)'</code>
+<br>
+Label all pods which have <code>env=preprod</code> with <code>tag=staging</code>: <code>kubectl  label pod --selector env=preprod tag=staging</code>
 </details>
 
 <hr>
