@@ -8,8 +8,12 @@
     },
     "steps": [
       {
-        "title": "Start pod",
+        "title": "Pod labels",
         "text": "step1.md"
+      },
+      {
+        "title": "Some scheduling",
+        "text": "step2.md"
       }
     ],
     "finish": {
