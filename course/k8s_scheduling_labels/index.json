@@ -13,8 +13,7 @@
       }
     ],
     "finish": {
-      "text": "finish.md",
-      "background": "delete_po.sh"
+      "text": "finish.md"
     }
   },
   "backend": {
