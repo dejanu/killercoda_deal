@@ -55,4 +55,4 @@ EOF
 
 * Check the status of pods and deployments: `kubectl -n playground get po,deploy`{{exec}}, furthermore if any of the pods are deleted (`kubectl -n playground delete po nginx-reverse-proxy-...`) observe that they will be automatically **recreated**
 
-* Delete deployments: `kubectl delete deploy nginx-reverse-proxy`{{exec}} and `kubectl delete -f web_app.yaml`{{exec}} to delete `declarative-nginx-reverse-proxy`.
+* Delete deployments: `kubectl -n playground delete deploy nginx-reverse-proxy`{{exec}} and `kubectl delete -f web_app.yaml`{{exec}} to delete `declarative-nginx-reverse-proxy`.
