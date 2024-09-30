@@ -1,6 +1,6 @@
 {
   "title": "Labels",
-  "description": "This scenario shows how to select resources using labels.",
+  "description": "This scenario shows how to select resources using labels...and some scheduling",
   "details": {
     "intro": {
       "text": "intro.md",
