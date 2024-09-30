@@ -12,7 +12,7 @@
       { "path": "app_deployment"},
       { "path": "ARGS_and_COMMAND" },
       { "path": "init_container" },
-      { "path": "POD_Labels" },
+      { "path": "k8s_scheduling_labels" },
       { "path": "quiz" }
     ]
 }
