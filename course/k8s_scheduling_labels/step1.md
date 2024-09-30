@@ -22,5 +22,6 @@ Add new label <code>kubectl label po app4 env=dev</code> and overwrite label <co
 Select pods with label values diffrent from <code>prod,preprod</code>: and fix <code>kubectl get pods -l 'env notin (prod,preprod)'</code>
 </details>
 
-<br>
+<hr>
+
 * Cleanup: `kubectl delete po app0 app1 app2 app3 app4`{{exec}}
