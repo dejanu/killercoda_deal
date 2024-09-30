@@ -1,22 +1,25 @@
 
-### Explore labels
+### Explore pod labels
 
-* Check all pods running in the `default` namespace:
-`kubectl get po --show-labels`{{exec}}
+In order to view labels for pods in **default** namespace: `kubectl get po --show-labels`{{copy}}
 
-* List all pods with label `env`:
-`kubectl get po -L env`{{exec}}
+List all pods with label `env` and extract to a file all pods which have `env` label **prod**.
 
-### Select pods based on label
+List of all pod's names running in the **default** namespace which have their `env` label either **prod**, or **preprod**. The returned list should contain only the pod names and nothing else.
 
-* List all pod which have `env` label **prod**.
-`kubectl get pods -l env=prod`{{exec}}
-
-* Get a list of all pod names running in the **default** namespace which have their **env** label either **prod**, or **preprod**.
-The returned list should contain only the pod names and nothing else.
-`kubectl get po -l "env in (prod,preprod)" -oname`{{exec}}
-
-* Get a list of all pod names running in the **default** namespace which have their **env** label different from `dev` value.
+List of all pod's names running in the **default** namespace which have their `env` label **different** from `dev` value.
 The returned list should contain only the pod names and nothing else.
 `kubectl get pods -l 'env notin (dev)'`{{exec}}
 
+<details>
+<summary>Hint</summary>
+List all pods with <code>env</code> label: <code>kubectl get po -L env</code>
+<br>
+Select all pods with <code>prod</code> label value: <code>kubectl get pods -l env=prod</code> (equality based)
+<br>
+Select pods with label values <code>prod,nonprod</code>: <code>kubectl get po -l "env in (prod,preprod)" -oname</code> (set based)
+<br>
+Select pods with label values diffrent from <code>prod,nonprod</code>: and fix <code>kubectl get pods -l 'env notin (dev)'</code>
+</details>
+
+* Cleanup: `kubectl delete po app0 app1 app2 app3`{{exec}}
