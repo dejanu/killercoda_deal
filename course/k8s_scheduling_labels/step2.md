@@ -1,15 +1,26 @@
 
 ### Explore node labels
 
+Check node labels: `kubectl  get no --show-labels`{{copy}}
 
+Same as previous, we can label nodes as well, label the **first** worker nodes with `target:yes`.
+
+Create a simple pod `kubectl run nginx --image=nginx:latest -oyaml --dry-run=client > ngnix.pod`{{copy}} and using [node selector](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#nodeselector) schedule the pod on the previously labeled node.
+
+```yaml
+spec:
+  nodeSelector:
+    target: "yes"
+  containers:
+    ...
+```
+
+Finally remove label `target:yes` from node.
 
 <details>
 <summary>Hint</summary>
-List all pods with <code>env</code> label: <code>kubectl get po -L env</code>
+Label node: <code>kubectl label node node01 target=yes</code>
 <br>
-Select all pods with <code>prod</code> label value: <code>kubectl get pods -l env=prod</code> (equality based)
+Remove label from node: <code>kubectl label node node01 -target</code>
 <br>
-Select pods with label values <code>prod,nonprod</code>: <code>kubectl get po -l "env in (prod,preprod)" -oname</code> (set based)
-<br>
-Select pods with label values diffrent from <code>prod,nonprod</code>: and fix <code>kubectl get pods -l 'env notin (dev)'</code>
 </details>
