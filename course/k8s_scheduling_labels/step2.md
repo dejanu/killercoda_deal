@@ -15,7 +15,25 @@ spec:
     ...
 ```
 
-Finally remove label `target:yes` from node.
+Delete the pod, and remove label `target:yes` from node and add the label to the **control plane** node 🫨...`kubectl label node controlplane target=yes` and recreate the pod. What happens? 
+```bash
+1 node(s) didn't match Pod's node affinity/selector, 1 node(s) had untolerated taint {node-role.kubernetes.io/control-plane:}
+```
+
+Try to look at **Taints**: `kubectl describe no controlplane`...we need some tolerations for our pod.
+
+```yaml
+  nodeSelector:
+    target: "yes"
+  containers:
+  - image: nginx:latest
+  ....
+  # add section
+  tolerations:
+  - key: "node-role.kubernetes.io/control-plane"
+    operator: "Exists"
+    effect: "NoSchedule"
+```
 
 <details>
 <summary>Hint</summary>
