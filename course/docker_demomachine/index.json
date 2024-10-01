@@ -1,0 +1,26 @@
+{
+  "title": "Docker workflow: build, share, run",
+  "description": "Fundamentals of Docker workflow",
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "background": "cowsay.sh"
+    },
+    "steps": [
+      {
+        "title": "Docker workflow",
+        "text": "step1.md"
+      },
+      {
+        "title": "Distribution",
+        "text": "step2.md"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "ubuntu"
+  }
+}

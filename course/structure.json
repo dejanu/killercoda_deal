@@ -2,6 +2,7 @@
     "title": "Kubernetes and Docker Labs",
     "description": "Hands-on scenarios: containerization and Kubernetes",
     "items": [
+      { "path": "docker_demomachine" },
       { "path": "repair_docker" },
       { "path": "docker_workflow"},
       { "path": "container_runtimes"},
