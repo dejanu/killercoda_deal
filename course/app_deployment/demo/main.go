@@ -11,6 +11,7 @@ func getRoot(w http.ResponseWriter, r *http.Request) {
 	io.WriteString(w, "Hello world!\n")
 }
 
+//curl http://127.0.0.1:3333/hello
 func main() {
 	http.HandleFunc("/hello", getRoot)
 	http.ListenAndServe(":3333", nil)

@@ -3,7 +3,7 @@ mkdir demo && cd demo
 
 cat > Dockerfile <<- "EOF"
 # Use an official Golang runtime as a base image
-FROM golang:latest AS builder
+FROM golang:1.22.5 AS builder
 
 # Set the Current Working Directory inside the container
 WORKDIR /app
@@ -12,10 +12,10 @@ WORKDIR /app
 COPY . .
 
 # Build the Go app
-RUN go build -o main .
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64  go build -o main .
 
-# Start a new stage from scratch
-FROM debian:buster-slim
+# Start a new stage from scratch buster:slim (OLD)
+FROM debian:bullseye-slim
 
 # Set the Current Working Directory inside the container
 WORKDIR /root/
