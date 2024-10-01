@@ -31,7 +31,7 @@ ps -fC dockerd
 
 # get dockerd process PID
 ps auxfww | grep docker 
-ps -C dockerd # pidoff dockerd
+ps -fC dockerd # pidoff dockerd
 
 # dockerd listens on /run/docker.sock: socket and uses another socket /run/containerd/containerd.sock to talk with containerd
 docker system info --format "Ruleaza: {{.Runtimes}} cu default {{.DefaultRuntime}}
