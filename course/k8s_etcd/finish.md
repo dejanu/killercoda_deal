@@ -3,13 +3,6 @@
 
 ### WELL DONE !
 
-* `kubectl` reference [here](https://kubernetes.io/docs/reference/kubectl/)
+* [etcd documentation](https://kubernetes.io/docs/tasks/administer-cluster/configure-upgrade-etcd/#backing-up-an-etcd-cluster)
 
-* The `config` file that is used to configure access to a cluster is usually, called kubeconfig ( `~/.kube/config`), but you can easily override the location by using `--kubeconfig=<path_to_config>` flag.
-
-* A Kubernetes config file describes clusters, users, and contexts. You can have **multiple** contexts in order to target different Kubernetes **clusters**.
-
-* If you need to get the current context without using `kubect config current-context`{{copy}}, you can also use:
-`cat ~/.kube/config | grep -i "current-context" | awk '{print $2}'`{{copy}}
-
-* `config` file fields and structure [here](https://kubernetes.io/docs/reference/config-api/kubeconfig.v1/)
+* A snapshot may either be created from a live member with the etcdctl snapshot save command or by copying the member/snap/db file from an etcd data directory that is not currently used by an etcd process
