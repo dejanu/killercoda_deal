@@ -1,19 +1,14 @@
 {
-  "title": "Docker workflow: build, share, run",
-  "description": "Fundamentals of Docker workflow",
+  "title": "Docker demo machine",
+  "description": "Ubuntu 20.04 with Docker and Podman",
   "details": {
     "intro": {
-      "text": "intro.md",
-      "background": "cowsay.sh"
+      "text": "intro.md"
     },
     "steps": [
       {
-        "title": "Docker workflow",
+        "title": "Docker enigne",
         "text": "step1.md"
-      },
-      {
-        "title": "Distribution",
-        "text": "step2.md"
       }
     ],
     "finish": {
