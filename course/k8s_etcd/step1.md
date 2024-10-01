@@ -29,3 +29,9 @@ Thus the final command will look:
 ```bash
 kubectl -n kube-system exec etcd-controlplane -- sh -c "ETCDCTL_API=3 etcdctl --endpoints=https://127.0.0.1:2379 --cacert=/etc/kubernetes/pki/etcd/ca.crt --cert=/etc/kubernetes/pki/etcd/peer.crt --key=/etc/kubernetes/pki/etcd/peer.key snapshot save /var/lib/etcd/snap.db"
 ```{{copy}}
+
+Verify the snapshot:
+
+```bash
+kubectl exec -it etcd-controlplane -n kube-system -- etcdctl --write-out=table snapshot status /var/lib/etcd/snap.db
+```{{copy}}
