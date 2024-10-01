@@ -17,6 +17,8 @@ Hello world!
 
 * Build the image `docker build -t dejanualex/demo:v1.0 .`{{exec}} using `demo` directory as build context.
 
+* Spin-up container: `docker run --rm -d -p 3333:3333  dejanualex/demo:v1.0`{{exec}}
+
 
 ### Deploy the app
 
