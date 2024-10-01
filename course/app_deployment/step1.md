@@ -21,7 +21,7 @@ Hello world!
 ### Deploy the app
 
 * Create **deployment** for our app `kubectl create deployment demo-app --image=dejanualex/demo:v1.0 --dry-run=client -oyaml > deploy.yaml`{{exec}}.
-Inspect the deployment manifest file `cat deploy.yaml`{{exec}} and deploy the app `kubectl apply -f deploy.yaml`{{exec}}
+Inspect the deployment manifest file `cat deploy.yaml`{{exec}} and deploy the app `kubectl apply -f deploy.yaml`{{exec}} and wait for the pod to start `kubectl get po`{{exec}}
 
 * Create **service** to expose `demo-app` deployment `kubectl expose deploy demo-app --name=demo-svc --port=3333 --target-port=3333`{{exec}}, verify that the services was created `kubectl get svc`{{exec}}
 
