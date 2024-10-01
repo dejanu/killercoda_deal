@@ -1,6 +1,5 @@
 ## Backup etcd
 
-
 Create and store the a `etcd` backup. To back up `etcd` in a Kubernetes cluster, you can use the built-in `etcdctl` command-line tool.
 
 **etcd** runs as a pod in the control plane `kubectl -n kube-system get po`{{copy}}, more exactly as a static-pod `/etc/kubernetes/manifests/etcd.yaml`
@@ -16,10 +15,17 @@ ETCDCTL_API=3 etcdctl --endpoints $ENDPOINT snapshot save snapshot.db
 * `--endpoints=https://127.0.0.1:2379`: etcd is not hosted outside of the cluster and is running on the default port
 * `--cacert=/etc/kubernetes/pki/etcd/ca.crt`: path to Certificate Authority (CA) to validate etcd server's cert
 * `--cert=/etc/kubernetes/pki/etcd/server.crt`: path to client certificate for autht of etcd server
-* `--key=/etc/kubernetes/pki/etcd/server.key`: path to clinet private key
+* `--key=/etc/kubernetes/pki/etcd/server.key`: path to client private key
 
-Inspect the manifest `grep "command" -A20  /etc/kubernetes/manifests/etcd.yaml `, thus the final command will look like:
-
-```bash
-kubectl -n kube-system exec etcd-controlplane -- sh -c "ETCDCTL_API=3 etcdctl --endpoints=https://127.0.0.1:2379 --cacert=/etc/kubernetes/pki/etcd/ca.crt --cert=/etc/kubernetes/pki/etcd/peer.crt --key=/etc/kubernetes/pki/etcd/peer.key snapshot save /var/lib/etcd/snap.db"{{copy}}
+Inspect the manifest `grep "command" -A20  /etc/kubernetes/manifests/etcd.yaml `:
+```yaml
+--peer-cert-file=/etc/kubernetes/pki/etcd/peer.crt
+--peer-key-file=/etc/kubernetes/pki/etcd/peer.key
+--peer-trusted-ca-file=/etc/kubernetes/pki/etcd/ca.crt # secure communicatio between nodes (peers)
+--trusted-ca-file=/etc/kubernetes/pki/etcd/ca.crt # secure communication between clients and etcd server
 ```
+
+Thus the final command will look:
+```bash
+kubectl -n kube-system exec etcd-controlplane -- sh -c "ETCDCTL_API=3 etcdctl --endpoints=https://127.0.0.1:2379 --cacert=/etc/kubernetes/pki/etcd/ca.crt --cert=/etc/kubernetes/pki/etcd/peer.crt --key=/etc/kubernetes/pki/etcd/peer.key snapshot save /var/lib/etcd/snap.db"
+```{{copy}}
