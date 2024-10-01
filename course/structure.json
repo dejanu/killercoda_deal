@@ -8,6 +8,7 @@
       { "path": "k8s_architecture"},
       { "path": "kubectl_usage"},
       { "path": "k8s_kubelet"},
+      { "path": "k8s_etcd"},
       { "path": "imperative_vs_declarative"},
       { "path": "app_deployment"},
       { "path": "ARGS_and_COMMAND" },

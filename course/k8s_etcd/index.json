@@ -1,0 +1,25 @@
+{
+  "title": "etcd in Kubernetes",
+  "description": "key-value store in Kubernetes",
+  "details": {
+    "intro": {
+      "text": "intro.md"
+    },
+    "steps": [
+      {
+        "title": "etcd",
+        "text": "step1.md"
+      },
+      {
+        "title": "Formatting output",
+        "text": "step2.md"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-2nodes"
+  }
+}
