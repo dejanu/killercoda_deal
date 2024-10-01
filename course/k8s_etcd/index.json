@@ -9,10 +9,6 @@
       {
         "title": "etcd",
         "text": "step1.md"
-      },
-      {
-        "title": "Formatting output",
-        "text": "step2.md"
       }
     ],
     "finish": {
