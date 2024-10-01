@@ -17,3 +17,9 @@ ETCDCTL_API=3 etcdctl --endpoints $ENDPOINT snapshot save snapshot.db
 * `--cacert=/etc/kubernetes/pki/etcd/ca.crt`: path to Certificate Authority (CA) to validate etcd server's cert
 * `--cert=/etc/kubernetes/pki/etcd/server.crt`: path to client certificate for autht of etcd server
 * `--key=/etc/kubernetes/pki/etcd/server.key`: path to clinet private key
+
+Inspect the manifest `grep "command" -A20  /etc/kubernetes/manifests/etcd.yaml `, thus the final command will look like:
+
+```bash
+kubectl -n kube-system exec etcd-controlplane -- sh -c "ETCDCTL_API=3 etcdctl --endpoints=https://127.0.0.1:2379 --cacert=/etc/kubernetes/pki/etcd/ca.crt --cert=/etc/kubernetes/pki/etcd/peer.crt --key=/etc/kubernetes/pki/etcd/peer.key snapshot save /var/lib/etcd/snap.db"{{copy}}
+```
