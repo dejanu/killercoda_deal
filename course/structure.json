@@ -15,6 +15,7 @@
       { "path": "ARGS_and_COMMAND" },
       { "path": "init_container" },
       { "path": "k8s_scheduling_labels" },
+      { "path": "k8s_networkpolicies" },
       { "path": "quiz" }
     ]
 }
