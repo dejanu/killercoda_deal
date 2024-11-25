@@ -1,6 +1,6 @@
 {
-  "title": "Labels",
-  "description": "This scenario shows how to select resources using labels...and some scheduling",
+  "title": "Kubernetes Network Policies",
+  "description": "This scenario shows how to use Network Policies in Kubernetes",
   "details": {
     "intro": {
       "text": "intro.md",
