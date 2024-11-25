@@ -1,5 +1,5 @@
 
-### Create network policie
+### Create network policy
 
 Create a networkpolici (e.g. `test-network.yaml`) that uses pod selectors to ALLOW INCOMING connections TO a `web-server` application tier FROM a cache tier.
 
