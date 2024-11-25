@@ -5,8 +5,13 @@ Check labels for pods in all namespaces `kubectl get po --show-labels -A`{{copy}
 
 Get the IP for `web-server` pod running in `test` namespace: `kubectl get pod -n test -o jsonpath='{.items[0].status.podIP}'`{{copy}}
 
-Spin-up a pod named `test` (with value `cache` for label `app-tier`) in the `default` namespace and try to reach the `web-server` pod using `wget` from `test` within a interactive session, i.e `wget WEB_SERVER_IP`. What can you see ?
+Spin-up a pod named `busybox` (with value `cache` for label `app-tier`) in the `default` namespace and try to reach the `web-server` pod using `wget` from `busybox` within a interactive session, i.e `wget WEB_SERVER_IP`. What can you see?
 
+```bash
+...
+saving to 'index.html'
+...
+```
 
 <details>
 <summary>Hint</summary>
