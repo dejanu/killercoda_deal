@@ -25,6 +25,6 @@ spec:
       port: 80
 ```
 
-`kubectl apply -f test-network.yaml`, spin up once more the pod `test` in the `default` namespace and retry the `wget ...` cmd. What can you observer?
+`kubectl apply -f test-network.yaml`, spin up once more the pod `test` in the `default` namespace and retry the `wget ...` cmd.What can you observe?
 
 Now in order to reach `web-server` from `test` pod, we can only spin-up in the `test` namespace: `kubectl run busybox -n test -l app-tier=cache --image=busybox --env="web_ip=$web_ip" --rm -it /bin/sh`{{copy}}
