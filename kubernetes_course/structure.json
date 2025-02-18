@@ -1,5 +1,5 @@
 {
-    "title": "Kubernetes and Docker Labs",
+    "title": "Kubernetes Labs",
     "description": "Hands-on scenarios: containerization and Kubernetes",
     "items": [
       { "path": "k8s_architecture"},

@@ -1,5 +1,5 @@
 {
-    "title": "Kubernetes and Docker Labs",
+    "title": "Docker Labs",
     "description": "Hands-on scenarios: containerization and Kubernetes",
     "items": [
       { "path": "docker_demomachine" },
