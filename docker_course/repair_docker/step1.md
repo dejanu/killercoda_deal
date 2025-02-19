@@ -8,15 +8,14 @@ Docker engine ubuntu setup:
 
 * Try to use docker CLI `docker ps`{{exec}}, check the `dockerd` service is working alternatively check the state of docker service using `systemctl` (if needed query systemd journal: `journalctl  -xeu docker.service`{{exec}}). 
 
-
-<details>
-<summary>Hint</summary>
-Check the status of <code>docker.socket</code> and use systemctl to start the unit <code>systemctl start docker.socket </code> 
-</details>
+* Check images on the machine `docker image ls` start a container based on `dejanualex/dockersay:2.0` image, next user `curl` and leverage unix domain socket to **list images**.
 
 <hr>
 
-* Check images on the machine `docker image ls` start a container based on `dejanualex/dockersay:2.0` image, next user `curl` and leverage unix domain socket to list images.
+<details>
+<summary>Solution1</summary>
+Check the status of <code>docker.socket</code> and use systemctl to start the unit <code>systemctl start docker.socket </code> 
+</details>
 
 <details>
 <summary>Solution2</summary>
