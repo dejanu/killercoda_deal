@@ -1,18 +1,17 @@
 {
-  "title": "kubectl",
-  "description": "Communicating with Kubernetes cluster's control plane, using Kubernetes API, and kubeconfig",
+  "title": "Probes in Kubernetes Pods",
+  "description": "Liveness, Readiness and Startup probes",
   "details": {
     "intro": {
-      "text": "intro.md",
-      "background": "mess_kubectl.sh"
+      "text": "intro.md"
     },
     "steps": [
       {
-        "title": "Interact with K8S API...kubeconfig",
+        "title": "Restart Policy",
         "text": "step1.md"
       },
       {
-        "title": "Formatting output",
+        "title": "Probes 101",
         "text": "step2.md"
       }
     ],

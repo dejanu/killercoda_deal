@@ -5,11 +5,12 @@
       { "path": "k8s_architecture"},
       { "path": "kubectl_usage"},
       { "path": "k8s_kubelet"},
-      { "path": "k8s_etcd"},
       { "path": "imperative_vs_declarative"},
       { "path": "ARGS_and_COMMAND" },
       { "path": "init_container" },
       { "path": "k8s_scheduling_labels" },
-      { "path": "k8s_networkpolicies" }
+      { "path": "k8s_networkpolicies" },
+      { "path": "probes_pod" },
+      { "path": "k8s_etcd"}
     ]
 }

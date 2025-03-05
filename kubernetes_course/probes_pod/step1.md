@@ -1,23 +1,35 @@
-## Setup
+## Probes
 
-For configuration, `kubectl` looks for a file named `config` in `$HOME/.kube` directory. You can specify other kubeconfig files by setting the `KUBECONFIG` environment variable or by using the `--kubeconfig <kubeconfig_path>` flag.
+* A Pod's status field is a `PodStatus` object, which has a [phase](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#pod-phase) field: `kubectl explain po.status.phase`{{exec}}:
 
-Explore the cluster configuration `kubectl get no`, what happens:
 ```bash
-couldn't get current server API group list...
+Pending: Pod waiting to be scheduled as well as the time spent downloading container images
+Running: Pod bound to a node 
+Failed: All containers in the Pod have terminated and at lest one container has terminated in failure.
+Unknown: The state of the Pod could not be obtained
 ```
-Increase the verbosity: `kubectl get no -v=6` and look for `Config loaded from file` 
 
-kubectl `config` file stores all the information necessary to interact with a Kubernetes cluster:
-- The name of the Kubernetes cluster: `kubectl config current-context`{{copy}}
-- The location of the Kubernetes API server: `kubectl config get-clusters`{{copy}} 
-- The credentials (username and password) for authenticating with the Kubernetes API server: `kubectl config get-users`{{copy}} 
-- The names of all contexts defined in the cluster (a **context** is a combination of a cluster and user credentials): `kubectl config get-contexts`{{copy}} 
- 
+* How to handle container failures? The restart policy for a Pod, legal values **[Always, OnFailure, Never]**.There's also a spec for `restartPolicy` `kubectl explain po.spec.restartPolicy`{{exec}}
+
+Create a deployment `kubectl create deploy alpine-test --image=alpine`{{exec}}, check the pods? What is happening and why?
+
+```bash
+# Never: does not restart the container: Completed
+kubectl run never --image=alpine --restart=Never  -- echo "Hello"
+
+# OnFailure: only restart the container if it exits with an non-zero exit otherwise: Completed
+kubectl run onfail --image=alpine --restart=OnFailure  -- echo "Hello"
+
+# OnFailOnFailure:  "exit": executable file not found in $PATH: unknown: CrashLoopBackOff 
+kubectl run onfail1 --image=alpine --restart=OnFailure -- /bin/sh -c "exit 1"
+
+# Always (DEFAULT): k8s will try to restart the pod if it fails or even if is: Completed.
+kubectl run always --image=alpine --restart=Always  -- echo "Hello"
+```
+
 <details>
-<summary>⚠️ Solution</summary>
-Move back the original config: <code>mv ~/.kube/bkp.config ~/.kube/config</code>
+<summary>Hints</summary>
+Always is the default policy <code>kubectl get po ... -oyaml | grep restartPolicy</code>
 <br>
-Change the context: <code>kubectl config use-context kubernetes-admin@kubernetes<context_name></code>
-<br>
+
 </details>
