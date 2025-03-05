@@ -1,0 +1,26 @@
+{
+  "title": "kubectl",
+  "description": "Communicating with Kubernetes cluster's control plane, using Kubernetes API, and kubeconfig",
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "background": "mess_kubectl.sh"
+    },
+    "steps": [
+      {
+        "title": "Interact with K8S API...kubeconfig",
+        "text": "step1.md"
+      },
+      {
+        "title": "Formatting output",
+        "text": "step2.md"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-2nodes"
+  }
+}
