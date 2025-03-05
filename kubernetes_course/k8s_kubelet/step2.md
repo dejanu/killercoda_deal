@@ -1,7 +1,9 @@
 ## Static Pod
 
 Create a naked pod named `test`, based on a `ngnix` image, and check on which node is has been scheduled.
+
 StaticPods are managed directly by the kubelet daemon on a specific node (are always bound to one to one Kubelet on a specific node).
+The API server cannot delete or modify static pods directly.
 
 * Mandatory fields for Pod object:
 ```

@@ -1,6 +1,6 @@
 ## Setup
 
-For configuration, `kubectl` looks for a file named `config` in `$HOME/.kube` directory. You can specify other kubeconfig files by setting the `KUBECONFIG` environment variable or by using the `--kubeconfig` flag.
+For configuration, `kubectl` looks for a file named `config` in `$HOME/.kube` directory. You can specify other kubeconfig files by setting the `KUBECONFIG` environment variable or by using the `--kubeconfig <kubeconfig_path>` flag.
 
 Explore the cluster configuration `kubectl get no`, what happens:
 ```bash
