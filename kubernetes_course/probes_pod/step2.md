@@ -1,4 +1,4 @@
-## Output
+## Probes and RestartPolicy
 
 Avoid using `AWK`, `grep` to customize the output of `kubectl`.
 The default output format for all kubectl commands is the human readable plain-text format.

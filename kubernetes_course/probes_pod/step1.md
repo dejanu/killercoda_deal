@@ -1,4 +1,4 @@
-## Probes
+## Probes and RestartPolicy
 
 * A Pod's status field is a `PodStatus` object, which has a [phase](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#pod-phase) field: `kubectl explain po.status.phase`{{exec}}:
 
