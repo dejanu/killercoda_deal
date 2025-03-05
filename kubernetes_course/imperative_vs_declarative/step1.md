@@ -16,7 +16,7 @@
 * Create a deployment named `nginx-reverse-proxy` with 2 replicas, based on an `nginx` image:
 
 * **Imperative** way, directly against the API:
-`kubectl -n playground create deployment nginx-reverse-proxy --image=nginx:stable-alpine-perl --replicas=2`{{exec}}, check the pod in the `playground` namespace: `kubectl -n playground get po`{{exec}}, you should see something like this:
+`kubectl -n playground create deployment nginx-reverse-proxy --image=nginx:stable-alpine-perl --replicas=2`{{exec}}, check the pod in the `playground` namespace: `kubectl -n playground get po`{{exec}}, you should see the running pods:
 
 ```bash
 NAME                                   READY   STATUS    RESTARTS   AGE
@@ -54,5 +54,7 @@ EOF
 * Now simply: `kubectl apply -f web_app.yaml`{{exec}} to create `declarative-nginx-reverse-proxy` deployment.
 
 * Check the status of pods and deployments: `kubectl -n playground get po,deploy`{{exec}}, furthermore if any of the pods are deleted (`kubectl -n playground delete po nginx-reverse-proxy-...`) observe that they will be automatically **recreated**
+
+* Scale down one of the deployments: `kubectl -n playground scale deployment nginx-reverse-proxy --replicas 1`{{exec}}
 
 * Delete deployments: `kubectl -n playground delete deploy nginx-reverse-proxy`{{exec}} and `kubectl delete -f web_app.yaml`{{exec}} to delete `declarative-nginx-reverse-proxy`.
