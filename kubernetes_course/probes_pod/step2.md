@@ -1,20 +1,45 @@
 ## Probes and RestartPolicy
 
-Avoid using `AWK`, `grep` to customize the output of `kubectl`.
-The default output format for all kubectl commands is the human readable plain-text format.
+* Liveness probes determine when to restart a container.
 
-To output details to your terminal window in a specific format, you can add either the `-o` or `--output` flags to a supported kubectl command: `kubectl [command] [TYPE] [NAME] -o <output_format>`
+* Readiness probes determine when a container is ready to start accepting traffic.
 
-Get only the pods name from `kube-system` and write them to `controlplane.txt`
+* Startup Probe (if configured), it disables liveness and readiness checks until it succeeds, is only executed at startup, unlike liveness and readiness probes, which are run periodically.
 
+Create a pod without any probes and add liveness probe: `kubectl run nginxpod --image=nginx --port 80 --dry-run=client -oyaml | tee  po.yaml` do a `kubectl apply -f po.yaml`, create the following pod with a **liveness probe**. What happens ?
+
+Add livenessProbe section:
+```yml
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: nginx
+  name: nginx
+  namespace: ca1
+spec:
+  containers:
+  - image: nginx
+    name: nginx
+    ports:
+    - containerPort: 80
+    livenessProbe:
+      httpGet:
+        path: /
+        port: 8080
+      initialDelaySeconds: 10
+      periodSeconds: 5
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
+```
 <details>
-<summary>⚠️ Solution</summary>
-Get name: <code>kubectl -n kube-system get po -oname</code>
+<summary>Hint</summary>
+The container gets restarted 
 <br>
-Get table with custom columns: <code>kubectl -n kube-system get po -o=custom-columns=NAME:.metadata.name</code>
+Fix the port <code>kubect edit deployment ...</code>
 <br>
-Get table with custom columns: <code>kubectl -n kube-system get pods -o custom-columns=:metadata.name</code>
-<br>
-Get using go template:<code>kubectl get po -A -o go-template='{{range .items}} --> {{.metadata.name}} in namespace: {{.metadata.namespace}}{{"\n"}}{{end}}'</code>
 </details>
 
