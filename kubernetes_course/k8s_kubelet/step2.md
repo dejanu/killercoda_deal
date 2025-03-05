@@ -19,4 +19,6 @@ Create naked pod: <code>kubectl run test  --image=nginx</code> and <code>kubectl
 Get po as yaml: <code>kubectl get po test -oyaml > pod.yaml</code> and remove non-mandatory fields.
 <br>
 Place the file at <code>/etc/kubernetes/manifests/kube-pod.yaml</code>
+<br>
+Dont forget `systemctl restart kubelet.servic` & `systemctl daemon-reload`
 </details>
