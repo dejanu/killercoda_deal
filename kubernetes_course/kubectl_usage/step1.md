@@ -18,6 +18,6 @@ kubectl `config` file stores all the information necessary to interact with a Ku
 <summary>⚠️ Solution</summary>
 Move back the original config: <code>mv ~/.kube/bkp.config ~/.kube/config</code>
 <br>
-Change the context: <code>kubectl config use-context <context_name></code>
+Change the context: <code>kubectl config use-context kubernetes-admin@kubernetes<context_name></code>
 <br>
 </details>
