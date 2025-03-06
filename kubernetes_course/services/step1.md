@@ -1,4 +1,4 @@
-## Probes and RestartPolicy
+## Services 101
 
 * Spin-up pod: `docker run -p 8888:8888 dejanualex/pythonhello:1.0 `{{exec}}, and check endpoint: `curl localhost:8888`{{exec}}
 
