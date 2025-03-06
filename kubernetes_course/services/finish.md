@@ -3,6 +3,6 @@
 
 ### WELL DONE !
 
-* Probes reference [here](https://kubernetes.io/docs/concepts/configuration/liveness-readiness-startup-probes/)
+* Service documentation [here](https://kubernetes.io/docs/concepts/services-networking/service/)
 
-* Pod lifecycle [here](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/)
+
