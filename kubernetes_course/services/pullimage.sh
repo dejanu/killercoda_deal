@@ -1,0 +1,1 @@
+docker pull dejanualex/pythonhello:1.0 
