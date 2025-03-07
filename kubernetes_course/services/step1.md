@@ -1,8 +1,8 @@
 ## Services 101
 
-* Spin-up pod: `docker run -p 8888:8888 dejanualex/pythonhello:1.0 `{{exec}}, and check endpoint: `curl localhost:8888`{{exec}}
+* Spin-up pod: `docker run -p 8888:8888 dejanualex/pythonhello:1.1 `{{exec}}, and check endpoint: `curl localhost:8888`{{exec}}
 
-* Deploy app: `kubectl create deployment pythonapp --image=dejanualex/pythonhello:1.0`{{exec}}
+* Deploy app: `kubectl create deployment pythonapp --image=dejanualex/pythonhello:1.1`{{exec}}
 
 * Create curl "naked" pod: `kubectl  run curlopenssl -i --tty --image=dejanualex/curlopenssl:1.0  -- sh`{{exec}} 
 
