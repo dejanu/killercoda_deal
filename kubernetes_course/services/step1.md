@@ -6,8 +6,6 @@
 
 * Create curl "naked" pod: `kubectl  run curlopenssl -i --tty --image=dejanualex/curlopenssl:1.0  -- sh`{{exec}} 
 
-* Create a deployment `kubectl create deploy alpine-test --image=alpine`{{exec}}, check the pods? What is happening and why?
-
 * Create a service called `pythonapp-svc`{{copy}} (and expose different port than the one that app is using) and test if you can reach the endpoint using the service.
 
 <details>
