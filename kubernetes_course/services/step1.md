@@ -12,5 +12,5 @@
 <summary>Hints</summary>
 Create service <code>kubectl expose deployment pythonapp --name=pythonapp-svc --port=8081 --target-port=8888</code>
 <br>
-Check the endpoint using the service <code>kubectl exec po/curlopenssl -- curl -s pythonapp-svc.default.svc.cluster.local:8081></code>
+Check the endpoint using the service <code>kubectl exec po/curlopenssl -- curl -s pythonapp-svc.default.svc.cluster.local:8081</code>
 </details>
