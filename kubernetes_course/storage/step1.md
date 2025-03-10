@@ -10,7 +10,7 @@
      `PVC` - uses `PV` for durable storage
 
 
-* How to achieve persistency in Pods? Create the follwing ngnix based deployments, create a file under `ls /usr/share/nginx/html` and check if it's persisted in both cases. What is the difference ?
+* How to achieve persistency in Pods? Create the follwing ngnix based deployments, create a file under `/usr/share/nginx/html` and check if it's persisted in both cases `ls /usr/share/nginx/html`. Delete the pods   What is the difference ?
 
 ```bash
 # create a vanilla nginx deployment
@@ -21,6 +21,9 @@ kubectl apply -f deployment_volume.yaml
 
 # you have bash in the pod
 kubectl exec local-web-1283712-fsdf -- ls /usr/share/nginx/html
+
+# delete po
+kubectl delete po nginx-deployment-... local-web-...
 ```
 
 * Create a new depoyment `kubectl apply -f deployment_emptydir.yaml`{{copy}} and inspect the container. Which pod logs what?
