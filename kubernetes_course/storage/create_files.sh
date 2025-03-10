@@ -128,18 +128,19 @@ metadata:
   name: secret-pod
 spec:
   volumes:
-    - name: secret-volume
+    - name: password-secret-volume
       secret:
         secretName: password-secret
   containers:
     - name: test-container
       image: busybox
       command:
-        - cat
-        - "/etc/secret-volume/pass.txt" # read the file (mounted as volume)
+        - sh
+        - -c
+        - "cat /etc/password-secret-volume/pass.txt"
       volumeMounts:
-        - name: secret-volume
+        - name: password-secret-volume
           readOnly: true
-          mountPath: "/etc/secret-volume"
+          mountPath: "/etc/password-secret-volume"
   restartPolicy: Never
 EOF
