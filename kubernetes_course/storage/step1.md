@@ -10,7 +10,7 @@
      `PVC` - uses `PV` for durable storage
 
 
-* How to achieve persistency in Pods? Create ngnix deployments, create a file under `ls /usr/share/nginx/html` and check if it's persisted in both cases:
+* How to achieve persistency in Pods? Create ngnix deployments, create a file under `ls /usr/share/nginx/html` and check if it's persisted in both cases. What is the difference ?
 
 ```bash
 # create a vanilla nginx deployment
@@ -31,11 +31,16 @@ kubectl apply -f secrets_ephemeral.yaml
 kubectl logs secret-pod 
 ```
 
+* Create the following deployment `kubectl apply -f deployment_emptydir.yaml`{{copy}}
+
+
+* When to use `emptyDir` and when to use `hostPath`?
+
 <details>
 <summary>Hint</summary>
 Create secrets: <code>kubectl create secret generic user-secret --from-literal=user=root</code> and <code>kubectl create secret generic password-secret --from-file=./pass.txt</code>
 <br>
-Get po as yaml: <code>kubectl get po test -oyaml > pod.yaml</code> and remove **non-mandatory** fields.
+emptyDir used for Temporary storage (e.g., caching/buffers, shared files between containers of the same Pod) at the pod level. 
 <br>
-Place the file at <code>/etc/kubernetes/manifests/kube-pod.yaml</code>
+hostPath when you need direct access toa  host machine's filesystem (custom monitoring agents, storing accessign logs on node /var/log)
 </details>

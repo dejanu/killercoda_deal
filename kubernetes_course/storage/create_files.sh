@@ -58,3 +58,40 @@ spec:
         hostPath: # mounts a dir from the host NODE filesystem
           path: /var/nginxserver
 EOF
+
+
+# create deployment that uses emptyDir
+cat > deployment_emptydir.yaml <<- "EOF"
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: emptydir-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: emptydir-app
+  template:
+    metadata:
+      labels:
+        app: emptydir-app
+    spec:
+      volumes:
+      - name: cache-volume
+        emptyDir: {}  # Temporary shared storage
+
+      containers:
+      - name: app-container
+        image: busybox
+        command: ["sh", "-c", "echo 'Log data' >> /cache/logs.txt && sleep 3600"]
+        volumeMounts:
+        - mountPath: /cache
+          name: cache-volume
+
+      - name: sidecar-container
+        image: busybox
+        command: ["sh", "-c", "cat /cache/logs.txt && sleep 3600"]
+        volumeMounts:
+        - mountPath: /cache
+          name: cache-volume
+EOF
