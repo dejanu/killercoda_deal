@@ -95,3 +95,26 @@ spec:
         - mountPath: /cache
           name: cache-volume
 EOF
+
+cat > secrets_ephemeral.yaml <<- "EOF"
+apiVersion: v1
+kind: Pod
+metadata:
+  name: secret-pod
+spec:
+  volumes:
+    - name: secret-volume
+      secret:
+        secretName: user-secret
+  containers:
+    - name: test-container
+      image: registry.k8s.io/busybox
+      command:
+        - cat
+        - "/etc/secret-volume/user" # read the file (mounted as volume)
+      volumeMounts:
+        - name: secret-volume
+          readOnly: true
+          mountPath: "/etc/secret-volume"
+  restartPolicy: Never
+EOF
