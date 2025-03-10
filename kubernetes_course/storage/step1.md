@@ -27,21 +27,16 @@ kubectl exec local-web-1283712-fsdf -- ls /usr/share/nginx/html
 
 ```bash
 kubectl get deployment ....
-kubectl logs emptydir-deployment-7dcbd4cdfc-q952s --all-containers
+kubectl logs --all-containers emptydir-deployment-7dcbd4cdfc-q952s
 ```
-
-* Create the following deployment `kubectl apply -f deployment_emptydir.yaml`{{copy}}
-
 
 * When to use `emptyDir` and when to use `hostPath`?
 
 <details>
 <summary>Hint</summary>
-Create secrets: <code>kubectl create secret generic user-secret --from-literal=user=root</code> and <code>kubectl create secret generic password-secret --from-file=./pass.txt</code>
-<br>
 <code>kubectl logs emptydir-deployment-7dcbd4cdfc-q952s -c app-container>/code> and also <code>kubectl logs emptydir-deployment-7dcbd4cdfc-q952s -c sidecar-container</code>
 <br>
-emptyDir used for Temporary storage (e.g., caching/buffers, shared files between containers of the same Pod) at the pod level. 
+emptyDir used for Temporary storage (e.g. caching/buffers, shared files between containers of the same Pod) at the pod level. 
 <br>
 hostPath when you need direct access toa  host machine's filesystem (custom monitoring agents, storing accessign logs on node /var/log)
 </details>
