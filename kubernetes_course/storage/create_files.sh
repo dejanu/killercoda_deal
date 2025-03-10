@@ -5,8 +5,31 @@ cat > pass.txt <<- "EOF"
 dummy
 EOF
 
+# create deployment
+cat > deployment_without_volume.yaml <<- "EOF"
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+spec:
+  selector:
+    matchLabels:
+      app: nginx
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.14.2
+        ports:
+        - containerPort: 80
+EOF
+
 # create deployment that mounts volume
-cat > deployment.yaml <<- "EOF"
+cat > deployment_volume.yaml <<- "EOF"
 apiVersion: apps/v1
 kind: Deployment
 metadata:

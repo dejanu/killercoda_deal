@@ -10,38 +10,20 @@
      `PVC` - uses `PV` for durable storage
 
 
-* Create a pod that mounts a volume:
+* How to achieve persistency in Pods? Create ngnix deployments, create a file under `ls /usr/share/nginx/html` and check if it's persisted in both cases:
 
-```yaml
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: local-web
-spec:
-  replicas: 1
-  selector:
-    matchLabels: 
-      app: local-web
-  template:
-    metadata:
-      labels:
-        app: local-web
-    spec:
-      containers:
-      - name: local-web
-        image: nginx
-        ports:
-          - name: web
-            containerPort: 80
-        volumeMounts: 
-          - name: webvolume
-            mountPath: /usr/share/nginx/html # location in the container
-      volumes: # specify the volume that the pod will use
-      - name: webvolume
-        hostPath: # mounts a dir from the host NODE filesystem
-          path: /var/nginxserver
+```bash
+# create a vanilla nginx deployment
+kubectl apply -f deployment_without_volume.yaml
+
+# create a ngnix deployment that mounts a volume 
+kubectl apply -f deployment_volume.yaml
 ```
 
+```bash
+# ....
+kubectl exec local-web-1283712-fsdf -- ls /usr/share/nginx/html
+```
 
 # create po that read the file (mounted as volume)
 kubectl apply -f secrets_ephemeral.yaml
