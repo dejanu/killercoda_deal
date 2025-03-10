@@ -1,13 +1,21 @@
 
-### Init Container
+### Secrets and Config Maps
 
-* We're going to see a simple use cause of a **init-container** that writes the desired  HTML `index.html` to the mounted volume.
+* Secrets: K8S object that stores sensitive data such as credentials used by Pods, secrets are not **encrypted**, they are base64 encoded. A secret is an object that contains a small amount of sensitive data such as a password, a token, or a key
 
-* Spin-up nginx pod, by running `kubectl  apply -f deploy.yaml`{{exec}} (give it a few seconds for `deploy.yaml` file to be serialized)
+* Creating secrets:
 
-* Wait for the pod to have STATUS Running `kubectl get po`{{exec}} and then forward connection to a local port i.e. 8080 to pod's port 80
-`kubectl port-forward $(kubectl  get po -oname) 8080:80 &`{{exec}} (hit ENTER and send it in the background).
+```bash
+# create secrets
+kubectl create secret generic user-secret --from-literal=user=root
+kubectl create secret generic password-secret --from-file=./pass.txt
 
-* Check the service: `curl localhost:8080`{{exec}}
+# show the secret {"user":"cm9vdA=="} and decode
+kubectl get secrets user-secret -ojsonpath={.data} 
+kubectl get secrets user-secret -ojsonpath={.data.user} | base64 -d
 
-* Our init container `nginx-init` will write the ascii art to `index.html` that will be served by the main `nginx` container : `kubectl  get deploy/nginx-deployment -oyaml | grep -A20 containers:`{{exec}} 
+# create po that read the file (mounted as volume)
+kubectl apply -f secrets_ephemeral.yaml
+# should the pod logs (which is a job due to restartpolicy): what does it output? see that logs output the secret
+kubectl logs secret-pod 
+```
