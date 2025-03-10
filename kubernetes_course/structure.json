@@ -8,8 +8,8 @@
       { "path": "imperative_vs_declarative"},
       { "path": "probes_pod" },
       { "path": "services" },
-      { "path": "ARGS_and_COMMAND" },
       { "path": "init_container" },
+      { "path": "ARGS_and_COMMAND" },
       { "path": "k8s_scheduling_labels" },
       { "path": "k8s_networkpolicies" },
       { "path": "k8s_etcd"}
