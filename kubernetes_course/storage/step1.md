@@ -1,14 +1,47 @@
 
-### Secrets and Config Maps
+### Volumes
 
-* Secrets: K8S object that stores sensitive data such as credentials used by Pods, secrets are not **encrypted**, they are base64 encoded. A secret is an object that contains a small amount of sensitive data such as a password, a token, or a key
+* A volume in Kubernetes is a storage abstraction that allows Pods to persist data across container restarts
 
-* Creating a secret called `user-secret` (from key-value pair) and another one called `password-secret` (from file `pass.txt`)
+* Types:
 
-```bash
-# show the secrets: {"user":"cm9vdA=="} and decode
-kubectl get secrets user-secret -ojsonpath={.data} 
-kubectl get secrets user-secret -ojsonpath={.data.user} | base64 -d
+     `emptyDir` - temporary storage that lasts as long as the pod runs
+     `hostPath` - uses a directory on the host node
+     `PVC` - uses `PV` for durable storage
+
+
+* Create a pod that mounts a volume:
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: local-web
+spec:
+  replicas: 1
+  selector:
+    matchLabels: 
+      app: local-web
+  template:
+    metadata:
+      labels:
+        app: local-web
+    spec:
+      containers:
+      - name: local-web
+        image: nginx
+        ports:
+          - name: web
+            containerPort: 80
+        volumeMounts: 
+          - name: webvolume
+            mountPath: /usr/share/nginx/html # location in the container
+      volumes: # specify the volume that the pod will use
+      - name: webvolume
+        hostPath: # mounts a dir from the host NODE filesystem
+          path: /var/nginxserver
+```
+
 
 # create po that read the file (mounted as volume)
 kubectl apply -f secrets_ephemeral.yaml
@@ -18,7 +51,7 @@ kubectl logs secret-pod
 
 <details>
 <summary>Hint</summary>
-Create naked pod: <code>kubectl create secret generic user-secret --from-literal=user=root</code> and <code>kubectl create secret generic password-secret --from-file=./pass.txt</code>
+Create secrets: <code>kubectl create secret generic user-secret --from-literal=user=root</code> and <code>kubectl create secret generic password-secret --from-file=./pass.txt</code>
 <br>
 Get po as yaml: <code>kubectl get po test -oyaml > pod.yaml</code> and remove **non-mandatory** fields.
 <br>

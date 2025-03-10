@@ -8,6 +8,10 @@
     },
     "steps": [
       {
+        "title": "Volumes",
+        "text": "step1.md"
+      },
+      {
         "title": "Secrets and ConfigMaps",
         "text": "step1.md"
       }
