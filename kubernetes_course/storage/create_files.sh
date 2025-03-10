@@ -123,7 +123,6 @@ EOF
 
 cat > secrets_volume.yaml <<- "EOF"
 apiVersion: v1
-apiVersion: v1
 kind: Pod
 metadata:
   name: secret-pod
@@ -143,4 +142,4 @@ spec:
           readOnly: true
           mountPath: "/etc/secret-volume"
   restartPolicy: Never
-  EOF
+EOF
