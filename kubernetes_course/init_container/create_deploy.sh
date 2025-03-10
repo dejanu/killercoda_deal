@@ -1,13 +1,13 @@
 #!/bin/bash
 
-# pull image
-docker pull dejanualex/dockersay:2.1
+# # pull image
+# docker pull dejanualex/dockersay:2.1
 
 # pull deployment
 # curl https://raw.githubusercontent.com/dejanu/killercoda_deal/main/course/init_container/deployment.yaml -o deployment.yaml
 
 # create deployment
-cat > deployment.yaml <<- "EOF"
+cat > deploy.yaml <<- "EOF"
 apiVersion: apps/v1
 kind: Deployment
 metadata:
