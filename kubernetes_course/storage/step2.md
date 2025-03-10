@@ -3,7 +3,7 @@
 
 * **Secrets**: K8S object that stores sensitive data such as credentials used by Pods, secrets are not **encrypted**, they are base64 encoded. A secret is an object that contains a small amount of sensitive data such as a password, a token, or a key
 
-* Creating a secret called `user-secret` with value `root` (from key-value pair) and another one called `password-secret` (from file `pass.txt`). What secret does `secret-pod` uses?
+* Create a secret called `user-secret` with key `user` and value `root` (from key-value pair) and another one called `password-secret` (from file `pass.txt`). What secret does `secret-pod` uses?
 
 ```bash
 
@@ -15,9 +15,8 @@ kubectl logs secret-pod
 
 # show the secrets: {"user":"cm9vdA=="} and decode
 kubectl get secrets user-secret -ojsonpath={.data} 
-kubectl get secrets user-secret -ojsonpath={.data.user} | base64 -d
+kubectl get secrets password-secret -ojsonpath={.data.user} | base64 -d
 ```
-
 
 
 * **ConfigMap** K8S object used to store non-confidential data in key-value pairs. Pods can consume ConfigMaps as environment variables, command-line arguments, or as configuration files in a volume.
