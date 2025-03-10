@@ -6,7 +6,6 @@
 * Create a secret called `user-secret` with key `user` and value `root` (from key-value pair) and another one called `password-secret` (from file `pass.txt`). What secret does `secret-pod` uses?
 
 ```bash
-
 # create po that read the file (mounted as volume)
 kubectl apply -f secrets_ephemeral.yaml
 

@@ -3,4 +3,4 @@
 
 ### WELL DONE !
 
-* Kubernetes documentation for Init Containers [here](https://kubernetes.io/docs/concepts/workloads/pods/init-containers/)
+* Opaque are the default (general key-value) secrets but Kubernetes has other secret [types](https://kubernetes.io/docs/concepts/configuration/secret/#secret-types). For HTTP certs we have TLS `kubernetes.io/tls`, or to store registry credentials for pulling private image we have `kubernetes.io/dockerconfigjson `
