@@ -123,24 +123,24 @@ EOF
 
 cat > secrets_volume.yaml <<- "EOF"
 apiVersion: v1
+apiVersion: v1
 kind: Pod
 metadata:
   name: secret-pod
 spec:
+  volumes:
+    - name: secret-volume
+      secret:
+        secretName: password-secret
   containers:
     - name: test-container
       image: busybox
-      command: ["sh", "-c", "echo user $DB_USER and passowrd echo $DB_PASS && sleep 3600"]
-      env:
-        - name: DB_USER
-          valueFrom:
-            secretKeyRef:
-              name: user-secret # name of the secret
-              key: user # key in the secret
-        - name: DB_PASS
-          valueFrom:
-            secretKeyRef:
-              name: password-secret # name of the secret
-              key: pass.txt # key in the secret
+      command:
+        - cat
+        - "/etc/secret-volume/pass.txt" # read the file (mounted as volume)
+      volumeMounts:
+        - name: secret-volume
+          readOnly: true
+          mountPath: "/etc/secret-volume"
   restartPolicy: Never
   EOF
