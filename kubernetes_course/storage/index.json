@@ -3,11 +3,12 @@
   "description": "Storage 101",
   "details": {
     "intro": {
-      "text": "intro.md"
+      "text": "intro.md",
+      "background": "create_files.sh"
     },
     "steps": [
       {
-        "title": "Start pod",
+        "title": "Secrets and ConfigMaps",
         "text": "step1.md"
       }
     ],
