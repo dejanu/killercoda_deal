@@ -1,7 +1,7 @@
 
-### Secrets
+### Init Container
 
-* Secrets: API object that stores sensitive data such as credentials used by Pods, secrets are not encrypted are base64 encoded
+* We're going to see a simple use cause of a **init-container** that writes the desired  HTML `index.html` to the mounted volume.
 
 * Spin-up nginx pod, by running `kubectl  apply -f deploy.yaml`{{exec}} (give it a few seconds for `deploy.yaml` file to be serialized)
 

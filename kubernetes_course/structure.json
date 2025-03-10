@@ -9,6 +9,7 @@
       { "path": "probes_pod" },
       { "path": "services" },
       { "path": "init_container" },
+      { "path": "storage" },
       { "path": "ARGS_and_COMMAND" },
       { "path": "k8s_scheduling_labels" },
       { "path": "k8s_networkpolicies" },
