@@ -6,7 +6,7 @@
 
 * Startup Probe (if configured), it disables liveness and readiness checks until it succeeds, is only executed at startup, unlike liveness and readiness probes, which are run periodically.
 
-Create a pod without any probes and add liveness probe: `kubectl run nginxpod --image=nginx --port 80 --dry-run=client -oyaml | tee  po.yaml` do a `kubectl apply -f po.yaml`, create the following pod with a **liveness probe**. What happens ?
+Create a pod without any probes and add liveness probe: `kubectl run nginxpod --image=nginx --port 80 --dry-run=client -oyaml | tee  po.yaml`{{copy}} do a `kubectl apply -f po.yaml`{{copy}} , create the following pod with a **liveness probe**. What happens ?
 
 Add livenessProbe section:
 ```yml
