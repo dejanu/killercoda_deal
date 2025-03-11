@@ -13,11 +13,8 @@ Docker engine ubuntu setup:
 <hr>
 
 <details>
-<summary>Solution1</summary>
+<summary>Hint</summary>
 Check the status of <code>docker.socket</code> and use systemctl to start the unit <code>systemctl start docker.socket </code> 
-</details>
-
-<details>
-<summary>Solution2</summary>
- <code>curl</code> can talk to a Unix Socket via the <code>--unix-socket</code> flag <code>curl --unix-socket /var/run/docker.sock http://localhost/images/json</code> 
+<br>
+<code>curl</code> can talk to a Unix Socket via the <code>--unix-socket</code> flag <code>curl --unix-socket /var/run/docker.sock http://localhost/images/json</code> 
 </details>
