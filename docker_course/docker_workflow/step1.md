@@ -1,5 +1,5 @@
 
-### Docker workflow
+### From image to container
 
 * Docker provides the ability to package and run an application in a loosely isolated environment called a **container**, and streamlines the development lifecycle.
 
@@ -11,7 +11,7 @@
 
 * Let's illustrate with a straightforward example and containerize a simple application from the host machine: `file /usr/games/cowsay`{{exec}}
 
-* Create a Docker file for **cowsay** app (Perl app capable of creating ASCII art representations featuring a cow along with a custom message), check usage:`/usr/games/cowsay helloo`{{exec}}
+* Create a Docker file for **cowsay** app (Perl app capable of creating ASCII art representations featuring a cow along with a custom message), check usage:`/usr/games/cowsay helloo`{{exec}} (add it to path `export PATH=$PATH:/usr/games`{{exec}})
 
 ```bash
 cat<<EOF>>Dockerfile
@@ -29,7 +29,7 @@ CMD ["Hello World!"]
 EOF
 ```{{exec}}
 
-* Containerize the app `cowsayimage`, using as a build context the current directory containing the **Dockerfile**.Check if the image has been successfully built `docker images | grep cowsayimage`{{exec}} and start a container based on `cowsayimage` image: `docker run cowsayimage`{{exec}}. What happens?
+* Containerize the app, `cowsay` image, using as a build context the current directory containing the **Dockerfile**.Check if the image has been successfully built `docker images | grep cowsay`{{exec}} and start a container based on `cowsay` image: `docker run cowsay`{{exec}}.What happens?
 
 <details>
 <summary>Hint</summary>
