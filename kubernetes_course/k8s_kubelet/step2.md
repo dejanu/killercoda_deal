@@ -23,7 +23,8 @@ Delete the pod, and recreate it as a static pod on the control-plane node. Stati
 <summary>Hint</summary>
 Create naked pod: <code>kubectl run test --image=nginx</code> and <code>kubectl get no -owide</code>
 <br>
-Get po as yaml: <code>kubectl get po test -oyaml > pod.yaml</code> and remove **non-mandatory** fields.
+Get po as yaml: <code>kubectl get po test -oyaml > pod.yaml</code> and remove <b>non-mandatory</b> fields.
+Or better <code>kubectl run test --image=nginx --dry-run=client -oyaml > kube-pod.yaml</code>
 <br>
 Place the file at <code>/etc/kubernetes/manifests/kube-pod.yaml</code>
 </details>
