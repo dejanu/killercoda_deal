@@ -19,7 +19,6 @@ metadata:
   labels:
     run: nginx
   name: nginx
-  namespace: ca1
 spec:
   containers:
   - image: nginx
