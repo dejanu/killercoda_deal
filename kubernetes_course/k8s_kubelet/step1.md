@@ -17,5 +17,5 @@ Check kubelet status: <code>systemctl status kubelet.service</code> and logs <co
 <br>
 Check location of kubectl bin <code>which kubectl</code> and fix <code>10-kubeadm.conf</code>
 <br>
-Dont forget <code>systemctl restart kubelet.servic</code> & <code>systemctl daemon-reload</code>
+Dont forget <code>systemctl restart kubelet.service</code> & <code>systemctl daemon-reload</code>
 </details>
