@@ -44,7 +44,7 @@ The container gets restarted
 <br>
  By default k8s allows 3 consecutive failureThreshold, so after 10sec we have 3 probes amounting to 15sec so after ~30sec the pod will be restarted,
  <br>
- Fix port update `port: 80` (from 8080 to 80) and `kubectl delete -f po.yaml` and `kubectl apply -f po.yaml`
+Fix port update port: 80 (from 8080 to 80) and `kubectl delete -f po.yaml` and `kubectl apply -f po.yaml`
 <br>
 </details>
 
