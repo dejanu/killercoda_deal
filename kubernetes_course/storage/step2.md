@@ -24,8 +24,6 @@ kubectl get secrets user-secret -ojsonpath={.data.user} | base64 -d
 kubectl get secrets password-secret -ojsonpath="{.data.pass\.txt}" | base64 -d
 ```
 
-
-
 * **ConfigMap** K8S object used to store non-confidential data in key-value pairs. Pods can consume ConfigMaps as environment variables, command-line arguments, or as configuration files in a volume.
 
 ```bash
@@ -38,8 +36,4 @@ kubectl get configmaps special-cm -ojsonpath="{.data}"
 <details>
 <summary>Hint</summary>
 Create secrets: <code>kubectl create secret generic user-secret --from-literal=user=root</code> and <code>kubectl create secret generic password-secret --from-file=./pass.txt</code>
-<br>
-Get po as yaml: <code>kubectl get po test -oyaml > pod.yaml</code> and remove **non-mandatory** fields.
-<br>
-Place the file at <code>/etc/kubernetes/manifests/kube-pod.yaml</code>
 </details>
