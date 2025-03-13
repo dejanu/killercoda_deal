@@ -41,5 +41,5 @@ kubectl logs --all-containers emptydir-deployment-7dcbd4cdfc-q952s
 <br>
 <b>emptyDir</b> used for Temporary storage (e.g. caching/buffers, shared files between containers of the same Pod) at the pod level. 
 <br>
-<b>hostPath</b> when you need direct access toa  host machine's filesystem (custom monitoring agents, storing accessign logs on node /var/log)
+<b>hostPath</b> when you need direct access to a host machine's filesystem (custom monitoring agents, storing accessign logs on node /var/log)
 </details>
