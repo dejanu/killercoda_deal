@@ -16,11 +16,12 @@ kubectl  get po secret-pod -oyaml
 kubectl logs secret-pod 
 
 # recreate the po 
-kubectl delete po secret-pod && kubectl apply -f secrets_volume.yaml
+kubectl delete po secret-pod 
+kubectl apply -f secrets_volume.yaml
 
 # show the secrets: {"user":"cm9vdA=="} and decode
-kubectl get secrets user-secret -ojsonpath={.data} 
-kubectl get secrets password-secret -ojsonpath={.data.user} | base64 -d
+kubectl get secrets user-secret -ojsonpath={.data.user} | base64 -d
+kubectl get secrets password-secret -ojsonpath="{.data.pass\.txt}" | base64 -d
 ```
 
 
