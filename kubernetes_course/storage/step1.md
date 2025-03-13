@@ -37,7 +37,7 @@ kubectl logs --all-containers emptydir-deployment-7dcbd4cdfc-q952s
 
 <details>
 <summary>Hint</summary>
-<code>kubectl logs emptydir-deployment-7dcbd4cdfc-q952s -c app-container>/code> and also <code>kubectl logs emptydir-deployment-7dcbd4cdfc-q952s -c sidecar-container</code>
+<code>kubectl logs emptydir-deployment-7dcbd4cdfc-q952s -c app-container</code> and also <code>kubectl logs emptydir-deployment-7dcbd4cdfc-q952s -c sidecar-container</code>
 <br>
 <b>emptyDir</b> used for Temporary storage (e.g. caching/buffers, shared files between containers of the same Pod) at the pod level. 
 <br>
