@@ -1,4 +1,4 @@
-docker pull nginx:latest
+docker pull nginx:1.14.2
 
 cat > deployment.yaml <<- "EOF"
 apiVersion: apps/v1
