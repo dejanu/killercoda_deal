@@ -15,7 +15,4 @@
 
 <hr>
 
-
 ![Scan results](./assets/deployment.png)
-
-* the `kubelet` comunicates with the underlying container runtime (e.g. containerd, CRI-O) using the Container Runtime Interface (CRI) to start, stop, and manage containers.
