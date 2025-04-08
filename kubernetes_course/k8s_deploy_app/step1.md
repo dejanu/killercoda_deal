@@ -1,7 +1,7 @@
 
 ### Deploy nginx
 
-* Create a simple deployment based on `nginx:1.14.2` image
+* Create a `nginx-deployment` deployment based on `nginx:1.14.2` image
 
 * Inspect the Pod and get the IP
 
