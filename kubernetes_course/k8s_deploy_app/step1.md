@@ -14,4 +14,5 @@
  Create deployment <code>kubectl  create deployment nginx --image=nginx:1.14.2</code> 
  Get Pods IP <code>kubectl  get po nginx-...  -ojsonpath="{.status.podIP}"</code> 
  Scale deployment <code>kubectl  scale deployment  nginx --replicas 3</code>
+ Update deployment image <code>kubectl set image deployments nginx-deploy nginx=nginx:1.27.4-alpine-slim
 </details>
