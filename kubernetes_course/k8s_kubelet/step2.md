@@ -19,6 +19,22 @@ spec
 
 Delete the pod, and recreate it as a static pod on the control-plane node. Static pods always have a `-${NODENAME}` appended to their name, indicating which node controls the static pod.
 
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: test
+  name: test
+  namespace: default
+spec:
+  containers:
+  - image: nginx
+    imagePullPolicy: Always
+    name: test
+    resources: {}
+```
+
 <details>
 <summary>Hint</summary>
 Create naked pod: <code>kubectl run test --image=nginx</code> and <code>kubectl get no -owide</code>
