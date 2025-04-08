@@ -10,10 +10,6 @@
       {
         "title": "Deploy nginx",
         "text": "step1.md"
-      },
-      {
-        "title": "Static pods",
-        "text": "step2.md"
       }
     ],
     "finish": {
