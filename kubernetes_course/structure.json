@@ -2,7 +2,7 @@
     "title": "Kubernetes Labs",
     "description": "Hands-on scenarios: containerization and Kubernetes",
     "items": [
-      { "path": "app_deployment"},
+      { "path": "k8s_deploy_app"},
       { "path": "k8s_architecture"},
       { "path": "kubectl_usage"},
       { "path": "k8s_kubelet"},
