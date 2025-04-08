@@ -11,5 +11,7 @@
 
 <details>
 <summary>Hint</summary>
- Build image <code>docker build -t cowsayimage -f Dockerfile .</code> 
+ Create deployment <code>kubectl  create deployment nginx --image=nginx:1.14.2</code> 
+ Get Pods IP <code>kubectl  get po nginx-...  -ojsonpath="{.status.podIP}"</code> 
+ Scale deployment <code>kubectl  scale deployment  nginx --replicas 3</code>
 </details>
