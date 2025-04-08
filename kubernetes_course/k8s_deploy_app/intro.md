@@ -1,17 +1,11 @@
 
 <br>
 
-### Deployment 101 
+### Deployment object 
 
-* A Deployment manages a set of Pods to run an application workload
+* A Deployment manages a set of Pods to run an application workload and is responsible for creating and updating instances of your application
 
-* Create a simple deployment based on `nginx:1.14.2` image
-
-* Inspect the Pod and get the IP
-
-* Scale the deployment to 3 pods
- 
-* Update the deployment to use `nginx:1.27.4-alpine-slim` image
+* A Deployment provides declarative updates for Pods and ReplicaSets.
 
 <hr>
 
