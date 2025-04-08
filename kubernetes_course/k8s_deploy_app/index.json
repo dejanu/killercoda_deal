@@ -1,0 +1,26 @@
+{
+  "title": "Deploying an application",
+  "description": "Deployment in K8S",
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "background": "pullimage.sh"
+    },
+    "steps": [
+      {
+        "title": "Deploy nginx",
+        "text": "step1.md"
+      },
+      {
+        "title": "Static pods",
+        "text": "step2.md"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-2nodes"
+  }
+}
