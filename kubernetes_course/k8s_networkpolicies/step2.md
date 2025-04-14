@@ -1,7 +1,7 @@
 
 ### Create network policy
 
-Create a networkpolici (e.g. `test-network.yaml`) that uses pod selectors to ALLOW INCOMING connections TO a `web-server` application tier FROM a cache tier.
+Create a networkpolicy(e.g. `test-network.yaml`) that uses pod selectors to ALLOW INCOMING connections TO a `web-server` application tier FROM a cache tier.
 
 ```yaml
 apiVersion: networking.k8s.io/v1
@@ -23,7 +23,7 @@ spec:
     ports:
     - protocol: TCP # supported values: "TCP", "UDP", "SCTP"
       port: 80
-```
+```{{copy}}
 
 `kubectl apply -f test-network.yaml`, spin up once more the pod `test` in the `default` namespace and retry the `wget ...` cmd.What can you observe?
 
