@@ -1,6 +1,6 @@
 ## Fix NotReady node
 
-* `kubelet` is node agent that runs as a daemon, thus being maintaned by a init system like `systemd`, more precisely Kubelet's behavior is managed by a systemd unit file.
+* `kubelet` is the node agent that runs as a daemon, maintained by a init system like `systemd`, more precisely Kubelet's behaviour is managed by a systemd unit file.
 
 Check cluster: `kubectl get no -owide` what are you observing? Try to spin-up a pod: `kubectl run test --image=nginx`{{exec}}. What happens? `kubect get po`{{exec}}
 
