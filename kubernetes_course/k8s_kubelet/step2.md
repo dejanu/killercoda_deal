@@ -37,7 +37,7 @@ spec:
 
 <details>
 <summary>Hint</summary>
-Create naked pod: <code>kubectl run test --image=nginx</code> and <code>kubectl get no -owide</code>
+Create naked pod: <code>kubectl run test --image=nginx</code> and <code>kubectl get po -owide</code>
 <br>
 Get po as yaml: <code>kubectl get po test -oyaml > pod.yaml</code> and remove <b>non-mandatory</b> fields.
 Or better <code>kubectl run test --image=nginx --dry-run=client -oyaml > kube-pod.yaml</code>
