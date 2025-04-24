@@ -5,7 +5,8 @@
 
 * Types: `emptyDir` - temporary storage that lasts as long as the pod runs.`hostPath` - uses a directory on the host node. `PVC` - uses `PV` for durable storage
 
-* How to achieve persistency in Pods? Create the follwing ngnix based deployments, create a file under `/usr/share/nginx/html` and check if it's persisted in both cases `ls /usr/share/nginx/html`. Delete the pods   What is the difference ?
+* How to achieve persistency in Pods? 
+* Create the follwing ngnix based deployments, create a file under `/usr/share/nginx/html` and check if it's persisted in both cases `ls /usr/share/nginx/html`. Delete the pods and check once more if the file is persisted.
 
 ```bash
 # create a vanilla nginx deployment
