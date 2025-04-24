@@ -24,14 +24,17 @@ kubectl get secrets user-secret -ojsonpath={.data.user} | base64 -d
 kubectl get secrets password-secret -ojsonpath="{.data.pass\.txt}" | base64 -d
 ```
 
-* **ConfigMap** K8S object used to store non-confidential data in key-value pairs. Pods can consume ConfigMaps as environment variables, command-line arguments, or as configuration files in a volume.
 
+* **ConfigMap** K8S object used to store non-confidential data in key-value pairs.
 ```bash
 # create config maps
 kubectl create configmap special-cm --from-literal=special=very --from-literal=type=charm
 kubectl get configmaps special-cm -oyaml
 kubectl get configmaps special-cm -ojsonpath="{.data}"
 ```
+
+* Pods can consume Secrets/ConfigMaps as environment variables (simple key-value), or as file based configuration (in a volume).
+
 
 <details>
 <summary>Hint</summary>
