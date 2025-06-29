@@ -70,4 +70,10 @@ Build from remote `docker build -t demo https://github.com/dejanu/sretoolkit.git
 
 * Docker create images from containers
 
-Docker [commit container](https://docs.docker.com/reference/cli/docker/container/commit/)
+Docker [commit container](https://docs.docker.com/reference/cli/docker/container/commit/): `docker run --name=baseimage -ti --entrypoint=/bin/sh python:3.9.22-alpine`{{copy}}
+
+Create new image layers manually using the docker container commit
+
+`docker container commit -m "Add script" baseimage newimage`{{copy}}
+`docker run --entrypoint=/tmp/test newimage`{{copy}}
+
