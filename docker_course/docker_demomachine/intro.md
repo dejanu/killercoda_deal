@@ -63,3 +63,7 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 * Build build build
 
 Build from remote `docker build -t demo https://github.com/dejanu/sretoolkit.git#remotebuild:docker_stuff --no-cache`{{copy}}
+
+* Docker create images from containers
+
+Docker [commit container](https://docs.docker.com/reference/cli/docker/container/commit/)
