@@ -8,3 +8,7 @@
     - Docker engine [API Reference](https://docs.docker.com/reference/api/engine/version/v1.41/#tag/Container)
 
 ![Scan results](./assets/docker_ubuntu.png)
+
+* Socket 101 play
+
+Over loopback network interface, create server  `nc -l 12345`{{exec}}, create client in another terminal session `nc localhost 12345`{{exec}}
