@@ -60,6 +60,10 @@ sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
 
+* Show containers are not real
+
+* Show CMD vs ENTRYPOINT
+
 * Build build build
 
 Build from remote `docker build -t demo https://github.com/dejanu/sretoolkit.git#remotebuild:docker_stuff --no-cache`{{copy}}
