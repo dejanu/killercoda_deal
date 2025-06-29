@@ -3,7 +3,8 @@
   "description": "Ubuntu 20.04 with Docker and Podman",
   "details": {
     "intro": {
-      "text": "intro.md"
+      "text": "intro.md",
+      "background": "createdockerfile.sh"
     },
     "steps": [
       {
