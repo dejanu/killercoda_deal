@@ -9,7 +9,9 @@ Failed: All containers in the Pod have terminated and at lest one container has 
 Unknown: The state of the Pod could not be obtained
 ```
 
-* How to handle container failures? The restart policy for a Pod, legal values **[Always, OnFailure, Never]**.There's also a spec for `restartPolicy` `kubectl explain po.spec.restartPolicy`{{exec}}
+* How to handle container failures? 
+The restart policy for a Pod, legal values **[Always, OnFailure, Never]**.
+There's also a spec for `restartPolicy` `kubectl explain po.spec.restartPolicy`{{exec}}
 
 Create a deployment `kubectl create deploy alpine-test --image=alpine`{{exec}}, check the pods? What is happening and why?
 
