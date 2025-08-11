@@ -9,6 +9,7 @@
 
 ![Scan results](./assets/docker_ubuntu.png)
 
-* Socket 101 play
+* Socket 101 play over loopback network interface
 
-Over loopback network interface, create server  `nc -l 12345`{{exec}}, create client in another terminal session `nc localhost 12345`{{exec}}
+Create server  `nc -l 12345`{{exec}} 
+Create client in another terminal session `echo "Hello World" | nc -q 2 localhost 12345`{{exec}}
