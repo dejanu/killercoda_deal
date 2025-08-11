@@ -8,7 +8,7 @@
 
 Create a pod without any probes and add liveness probe: `kubectl run nginxpod --image=nginx --port 80 --dry-run=client -oyaml | tee  po.yaml`{{copy}} do a `kubectl apply -f po.yaml`{{copy}}, inspect the pod, check if it has any probes? Delete the po
 
-create the following pod with `kubectl apply -f pod.yaml`{{copy}}. What happends?
+create the following pod with `kubectl apply -f pod.yaml`{{copy}}. What happens?
 
 ```bash
 cat<<EOF>>pod.yaml
