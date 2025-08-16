@@ -3,7 +3,7 @@
 
 * Create a `nginx-deployment` deployment based on `nginx:1.14.2` image
 
-* Inspect the Pod's IP and container's image: `-ojsonpath="{.spec.containers[*].image}"`{{copy}}
+* Inspect the container's name and image: `-ojsonpath="{.spec.containers[*].name}{'\n'}"`{{copy}}
 
 * Scale the deployment to 3 pods
  
@@ -19,15 +19,15 @@
  Get Pods IP: <code>kubectl get $(kubectl  get po -l app=nginx-deployment -oname)  -ojsonpath="{.status.podIP}"</code>
  <br><br>
 
- Get container image: <code>kubectl get po nginx-... -ojsonpath="{.spec.containers[*].image}"</code>
+ Get container image: <code>kubectl get $(kubectl  get po -l app=nginx-deployment -oname) -ojsonpath="{.spec.containers[*].image}"</code>
  <br><br>
 
  Scale deployment <code>kubectl scale deployment nginx-deployment --replicas 3</code>
  <br><br>
 
- Update deployment image <code>kubectl set image deployments nginx-deployment nginx=nginx:1.27.4-alpine-slim</code>
+Trigger a rolling update of the deployemnt<code>kubectl set image deployments nginx-deployment nginx=nginx:1.27.4-alpine-slim</code> by updating the container image.
  <br><br>
- 
+
  Check revisions <code>kubectl rollout history deployment nginx-deployment</code>
  Rollback to the previous revision <code>kubectl rollout undo deployment nginx-deployment --to-revision=1</code>
 </details>
