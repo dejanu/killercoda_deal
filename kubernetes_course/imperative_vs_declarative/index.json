@@ -1,6 +1,6 @@
 {
   "title": "Imperative vs. Declarative",
-  "description": "This scenario demonstrates the methods for creating objects using both declarative and imperative approaches.",
+  "description": "This scenario demonstrates the declarative/imperative methods for creating objects,and explores the K8S API space",
   "details": {
     "intro": {
       "text": "intro.md",
