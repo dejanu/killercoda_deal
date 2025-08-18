@@ -25,3 +25,6 @@ spec: # desired state for the object
 * Moreover if this pod is deleted `kubectl -n playground delete po basic`{{exec}}, it won't be automatically recreated since it's a "naked pod". Naked pods will not be rescheduled in the event of node failure: `kubectl -n playground get po,deploy`{{exec}}
 
 * You can use apply to reference remote manifests: `kubectl apply -f https://raw.githubusercontent.com/dejanu/k8s_logging/refs/heads/main/nginx_pod.yaml`{{copy}}
+
+* 💡 To explore Kubernetes API space you can run kubectl as a reverse proxy to serve the API: `kubectl proxy -p 8080&` and the use `curl` to explore the API: 
+`curl http://localhost:8080/api/`
