@@ -8,8 +8,12 @@
     },
     "steps": [
       {
-        "title": "Start pod",
+        "title": "Kubernetes Objects",
         "text": "step1.md"
+      },
+      {
+        "title": "Working with pods",
+        "text": "step2.md"
       }
     ],
     "finish": {
