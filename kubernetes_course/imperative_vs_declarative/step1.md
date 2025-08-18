@@ -3,7 +3,7 @@
 
 * A K8S objects is a "record if intent", almost every object has two nested fields: **object**`.spec` (desired state) and **object**`.status` (most recently observed status of the object), don't forget to `kubectl explain ...`😉
 
-* Most often object are represented as `.yaml` file aka manifest. Ther are 4 essential field that must be present in a manifest:
+* Most often an object is represented as `.yaml` file aka manifest. Ther are 4 essential field that must be present in a manifest:
 
 ```yaml
 apiVersion: # which version of K8S API you're using to create the object, i.e. core API v1 / apps/v1 or v1
