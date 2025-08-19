@@ -8,7 +8,7 @@ In Kubernetes, scheduling refers to making sure that Pods are matched to Nodes s
 
 Scheduler runs as a static pod (`/etc/kubernetes/manifests/kube-scheduler.yaml`) on the control plane: `kubectl -n kube-system get po`. Stop the scheduler and create a naked nginx pod: `kubectl run po nginx --image=nginx`.What happens?
 
-Assign pod to nodes aka. bypass the scheduler, by using [nodeName](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#nodename)
+**The scheduler just sets the `spec.nodeName`**: Create another pod, but this time bypass the scheduler (assigning pod to nodes), by using [nodeName](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#nodename)
 
 ```bash
 cat<<EOF>>nginx.yaml
