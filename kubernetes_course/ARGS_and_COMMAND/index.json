@@ -8,13 +8,13 @@
     },
     "steps": [
       {
-        "title": "Start pod",
+        "title": "Starting pods",
         "text": "step1.md"
       },
       {
-        "title": "Check pod status",
+        "title": "Executing commnands in containers",
         "text": "step2.md"
-      },
+      }
     ],
     "finish": {
       "text": "finish.md"
