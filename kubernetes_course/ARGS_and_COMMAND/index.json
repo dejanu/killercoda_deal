@@ -10,7 +10,11 @@
       {
         "title": "Start pod",
         "text": "step1.md"
-      }
+      },
+      {
+        "title": "Check pod status",
+        "text": "step2.md"
+      },
     ],
     "finish": {
       "text": "finish.md"
