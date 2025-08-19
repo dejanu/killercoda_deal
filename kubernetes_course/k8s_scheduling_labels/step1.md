@@ -19,7 +19,7 @@ Select all pods with <code>prod</code> label value: <code>kubectl get pods -l en
 <br>
 Select pods with label values <code>prod,preprod</code>: <code>kubectl get po -l "env in (prod,preprod)" -oname</code> (set based)
 <br>
-Add new label <code>kubectl label po app4 env=dev</code> and overwrite label <code>kubectl label po app4=foo-bar --overwrite</code> 
+Add new label <code>kubectl label po app4 env=dev</code> and overwrite label <code>kubectl label po app4 foo=bar --overwrite</code> 
 <br>
 Select pods with label values diffrent from <code>prod,preprod</code>: <code>kubectl get pods -l 'env notin (prod,preprod)'</code>
 <br>
