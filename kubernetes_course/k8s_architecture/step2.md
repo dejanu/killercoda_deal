@@ -19,7 +19,8 @@
 
 <details>
 <summary>Hint</summary>
- Check on which node each component is running: <code>kubectl get po -n kube-system -owide </code> 
+Check on which node each component is running: <code>kubectl get po -n kube-system -owide </code>
+Canal: is actually flannel CNI
 </details>
 
 
