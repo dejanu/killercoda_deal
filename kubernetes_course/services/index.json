@@ -1,6 +1,6 @@
 {
   "title": "Networking in Kubernetes",
-  "description": "Hands-on scenarios: Kubernetes Services",
+  "description": "Kubernetes Services",
   "details": {
     "intro": {
       "text": "intro.md",
