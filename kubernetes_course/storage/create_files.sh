@@ -10,19 +10,19 @@ cat > deployment_without_volume.yaml <<- "EOF"
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment
+  name: nginx-without-volume
 spec:
   selector:
     matchLabels:
-      app: nginx
+      app: nginx-without-volume
   replicas: 1
   template:
     metadata:
       labels:
-        app: nginx
+        app: nginx-without-volume
     spec:
       containers:
-      - name: nginx
+      - name: nginx-without-volume
         image: nginx:1.14.2
         ports:
         - containerPort: 80
@@ -33,19 +33,19 @@ cat > deployment_volume.yaml <<- "EOF"
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: local-web
+  name: nginx-with-volume
 spec:
   replicas: 1
   selector:
     matchLabels: 
-      app: local-web
+      app: nginx-with-volume
   template:
     metadata:
       labels:
-        app: local-web
+        app: nginx-with-volume
     spec:
       containers:
-      - name: local-web
+      - name: nginx-with-volume
         image: nginx
         ports:
           - name: web
