@@ -29,11 +29,10 @@ kubectl exec nginx-with-volume-d556bf558-mwtwg -- ls /usr/share/nginx/html
 ```
 
 * Create a new depoyment `kubectl apply -f deployment_emptydir.yaml`{{copy}} and inspect the containers
-`kubectl get po emptydir-deployment-f8756b8c7-4dhkt -ojsonpath="{.spec.containers[*].name}"`{{copy}}
+`kubectl get po -ojsonpath="{.spec.containers[*].name}{'\n'}" emptydir-deployment-f8756b8c7-g24f9 `{{copy}}
 How many containers are in the pod, what does each one log?
 
 ```bash
-kubectl get deployment ....
 kubectl logs --all-containers emptydir-deployment-7dcbd4cdfc-q952s
 ```
 
