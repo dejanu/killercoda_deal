@@ -3,9 +3,11 @@
 
 * A **volume** in Kubernetes is a storage abstraction that allows Pods to access and share data via the filesystem. Volume Types: 
 
+    `configMap` and `secret` - contain small amount of data such as: configs, passwords, tokens
     `emptyDir` - temporary storage that lasts as long as the pod runs.
     `hostPath` - uses a directory on the host node.
     `PVC` - uses `PV` for durable storage.
+
 
 * Create the follwing ngnix based deployments, create a file under `/usr/share/nginx/html` and check if it's persisted in both cases `ls /usr/share/nginx/html`. Delete the pods and check once more if the file is persisted.
 
