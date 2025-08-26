@@ -7,7 +7,7 @@
 * Docker: `Docker -> dockerd -> containerd -> runc`
 
 
-![Scan results](./assets/docker_shim.png
+![Scan results](./assets/docker_shim.png)
 
 ```bash
 # locate docker CLI
