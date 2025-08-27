@@ -30,3 +30,7 @@ EOF
 * `docker save` your image aka produce a tarred repository to the standard output stream ( that contains all parent layers, and all tags + versions, or specified repo:tag) i.e. `test.tar`
 
 * extract tarball: `mkdir oci && tar -xvf test.tar -C oci`{{copy}}
+
+* Modify desired fields
+
+* Recrete tarball: `cd oci && tar -cvf newtest.tar .`{{copy}} and load back the image `docker load -i newtest.tar`
