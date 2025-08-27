@@ -11,7 +11,7 @@ Images layers...creating images from containers
 * Within the interactive session create a file
 
 ```bash
- cat<<EOF>>
+ cat<<EOF>test.py
  #!$(which python)
  print("Sallot")
  EOF
