@@ -5,9 +5,7 @@ Building images flavours ... `docker build .`
 
 * Docker builds images by reading the instructions from a Dockerfile. A Dockerfile is a text file containing instructions for building your source code.
 
-* List the current directory files, it is possible to build a image with the current setup?
-
-* Yes if we do: `docker build -t demo https://github.com/dejanu/sretoolkit.git#remotebuild:docker_stuff --no-cache`{{copy}} ... uploads the entire build context to the docker daemon.
+* List the current directory files, it is possible to build a image with the current setup? Check **Hint**.
 
 * Inspect/run the image.
 
@@ -34,3 +32,10 @@ EOF
 ```{{exec}}
 
 * Now we can do: `docker build someimage -f dev.Dockerfile .`...don't forget about `test.py`
+
+
+<details>
+<summary>Hint</summary>
+ Yes if we use as build context for docker, a github remote repo: <code>docker build -t demo https://github.com/dejanu/sretoolkit.git#remotebuild:docker_stuff --no-cache</code>
+</details>
+
