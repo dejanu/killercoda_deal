@@ -40,7 +40,7 @@ EOF
 
 * Recreate tarball: `cd oci && tar -cvf test.tar .`
 
-* Spin up container with new image: `docker rmi demo  && docker load -i newtest.tar` and then `docker run`
+* Spin up container with new image: `docker rmi demo  && docker load -i test.tar` and then `docker run`
 
 * Use `--format` Go template to show the manipulated docker image, where  `.CreatedSince` is the elapsed time since the image was created and `.CreatedAt` is the time when the image was created:  `docker images --format "{{.Repository}}:{{.Tag}} {{.CreatedSince}} --> {{.CreatedAt}}"`
 
