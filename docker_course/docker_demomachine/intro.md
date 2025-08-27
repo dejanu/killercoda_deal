@@ -25,18 +25,27 @@ systemctl status docker.service
 
 # query the systemd journal
 journalctl -xeu docker.service
+```
 
-# Check the file for dockerd service unit, what's the main command/process that systemd will manage as a service
-grep -i exec /lib/systemd/system/docker.service 
+* Setup Docker's apt repo:
 
-# check the full path of the command/process dockerd
-ps -fC dockerd
+```bash
+# Add Docker's official GPG key:
+sudo apt-get update
+sudo apt-get install ca-certificates curl
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
 
-# get dockerd process PID: pidof dockerd
-ps auxfww | grep docker | grep -v grep # not efficent
-ps -C dockerd -o pid,ppid,cmd --forest
-ps -fC dockerd 
+# Add the repository to Apt sources:
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+```
 
-# dockerd listens on /run/docker.sock: socket and uses another socket /run/containerd/containerd.sock to talk with containerd
-docker system info --format "Ruleaza: {{.Runtimes}} cu default {{.DefaultRuntime}}
+* Install Docker packages:
+```bash
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
