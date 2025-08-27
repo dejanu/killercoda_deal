@@ -5,7 +5,7 @@
 * Create app, using here-doc (feed the inline text block as STDIN to cat and redirect the output to test):
 
 ```bash
-cat<<EOF>test
+cat<<EOF>test.py
 #!$(which python)
 print("Hello")
 EOF
