@@ -1,6 +1,6 @@
 {
     "title": "Docker: What is a container image?",
-    "description": "Docker container instrospection",
+    "description": "Docker container introspection",
     "details": {
       "intro": {
         "text": "intro.md"
@@ -8,8 +8,7 @@
       "steps": [
         {
           "title": "From image to container",
-          "text": "step1.md",
-          "verify": "verify1.sh"
+          "text": "step1.md"
         }
       ],
       "finish": {

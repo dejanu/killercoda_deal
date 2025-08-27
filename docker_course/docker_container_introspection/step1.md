@@ -1,14 +1,11 @@
 ### Setup
 
-Docker engine ubuntu setup:
-
-![Scan results](./assets/UFS.png)
-
+Docker container image:
 
 
 * A container image contains a packaged application, along with its dependencies, and information on what processes it runs when launched.
 
-* Create a the following Dockerfile
+* Create the following Dockerfile
 
 ```bash
 CAT<EOF>Dockerfile
@@ -24,4 +21,6 @@ COPY test.py /app
 # Run app.py when the container launches
 CMD ["python","test.py"]
 EOF
-```{exec}
+```{{exec}}
+
+* Build a docker image called `test` and start a container based on it.

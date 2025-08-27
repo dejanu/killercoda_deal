@@ -2,10 +2,10 @@
 
 ### What is a container image?
 
-Docker made accessible and consistent container deployment and execution across diverse machines…one might say that it “gave the fire to the ordinary people”.
+Images are immutable. Once an image is created, it can't be modified. You can only make a new image or add changes on top of it.
 
-In this scenario we have a ubuntu machine, where docker has been [installed using](https://docs.docker.com/engine/install/ubuntu/) the `apt` package manager.
+Container images are composed of layers. Each layer represents a set of file system changes that add, remove, or modify files.
 
-Docker engine ubuntu setup:
+The magic behind the scenes **UnionFS**:  Linux kernel feature, that allows contents from one file system to be merged with the contents of another, while keeping the "physical" content separate. The result is a unified file system, even though the data is actually structured in branches.
 
-![Scan results](./assets/docker_ubuntu.png)
+![Scan results](./assets/UFS.png)
