@@ -6,6 +6,7 @@
       { "path": "repair_docker" },
       { "path": "docker_workflow"},
       { "path": "container_runtimes"},
+      { "path": "docker_container_introspection" },
       { "path": "quiz" }
     ]
 }
