@@ -34,3 +34,5 @@ EOF
 * Modify desired fields
 
 * Recrete tarball: `cd oci && tar -cvf newtest.tar .`{{copy}} and load back the image `docker load -i newtest.tar`
+
+* `docker run test` what are the differences? 🔍
