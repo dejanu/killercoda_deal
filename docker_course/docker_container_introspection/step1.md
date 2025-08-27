@@ -31,7 +31,7 @@ EOF
 
 * extract tarball: `mkdir oci && tar -xvf test.tar -C oci`{{copy}}
 
-* Modify desired fields
+* Modify desired fields like **CMD**
 
 * Recrete tarball: `cd oci && tar -cvf newtest.tar .`{{copy}} and load back the image `docker load -i newtest.tar`
 
