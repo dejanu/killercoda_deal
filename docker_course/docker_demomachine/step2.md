@@ -1,5 +1,5 @@
 
-### Docker Image play
+### Docker Date Image play
 
 
 * Create app, using here-doc (feed the inline text block as STDIN to cat and redirect the output to test):
@@ -11,7 +11,7 @@ print("Hello")
 EOF
 ```{{exec}}
 
-* Dockerfile just a convention 
+* Dockerfile just a convention  (naming wise)
 ```bash
 cat<<EOF>newDockerfile
 # Python runtime as a parent image
@@ -34,9 +34,9 @@ EOF
 
 * Save image: `docker image save demo -o test.tar` (Produces a tarred repository to the standard output stream. Contains all parent layers, and all tags + versions, or specified repo:tag)
 
-* Extract tarball: `mkdir oci && tar -xvf newtest.tar -C oci`
+* Extract tarball: `mkdir oci && tar -xvf test.tar -C oci`
 
-* Modify config file i.e.`0f92e657c4b00a3725248ae4d0f86598365eef679594c792a6093f5c4f06310a.json` (DO MAGIC HERE: CMD and Created)
+* Modify config file i.e.`0f92e657c4b00a3725248ae4d0f86598365eef679594c792a6093f5c4f06310a.json` (DO **DATE** MAGIC HERE: Created)
 
 * Recreate tarball: `cd oci && tar -cvf test.tar .`
 
@@ -52,8 +52,12 @@ docker inspect -f '{{.Config.Entrypoint}}' demo
 docker run -it --entrypoint ls  demo
 ```
 
-* That's important to not use tags and use digest SHA hash:
+* Important to not use tags and use digest SHA hash:
 
 ```bash
-docker images --digest
+# check digest of all 
+docker images --digests
+
+# for specific image
+docker inspect --format='{{index .RepoDigests 0}}' <image_name>
 ```
