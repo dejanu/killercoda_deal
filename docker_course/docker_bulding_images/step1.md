@@ -7,7 +7,9 @@ Building images flavours ... `docker build .`
 
 * List the current directory files, it is possible to build a image with the current setup?
 
-* Yes if we do: `docker build -t demo https://github.com/dejanu/sretoolkit.git#remotebuild:docker_stuff --no-cache`{{copy}} ... uploads the entire build context to the docker daemon 
+* Yes if we do: `docker build -t demo https://github.com/dejanu/sretoolkit.git#remotebuild:docker_stuff --no-cache`{{copy}} ... uploads the entire build context to the docker daemon.
+
+* Inspect/run the image.
 
 * What is a **build-context**? The build context is the set of files that your build can access.
 We're passing a URL as a build context more exactly `docker_stuff` directory from `sretoolkit` repo and `remotebuid` branch.
@@ -31,4 +33,4 @@ CMD ["python","test.py"]
 EOF
 ```{{exec}}
 
-* Now we can do: `docker build -f dev.Dockerfile .`...don't forget about `test.py`
+* Now we can do: `docker build someimage -f dev.Dockerfile .`...don't forget about `test.py`

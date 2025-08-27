@@ -9,6 +9,10 @@
         {
           "title": "Building images flavours",
           "text": "step1.md"
+        },
+        {
+          "title": "Image layers",
+          "text": "step2.md"
         }
       ],
       "finish": {
