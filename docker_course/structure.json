@@ -4,9 +4,10 @@
     "items": [
       { "path": "docker_demomachine" },
       { "path": "repair_docker" },
+      { "path": "docker_container_introspection" },
+      { "path": "docker_bulding_images" },
       { "path": "docker_workflow"},
       { "path": "container_runtimes"},
-      { "path": "docker_container_introspection" },
       { "path": "quiz" }
     ]
 }

@@ -1,0 +1,22 @@
+{
+    "title": "Docker Building container images",
+    "description": "Docker container introspection",
+    "details": {
+      "intro": {
+        "text": "intro.md"
+      },
+      "steps": [
+        {
+          "title": "Building images flavours",
+          "text": "step1.md"
+        }
+      ],
+      "finish": {
+        "text": "finish.md"
+      }
+    },
+    "backend": {
+      "imageid": "ubuntu"
+    }
+  }
+  
