@@ -11,8 +11,7 @@ print("Hello")
 EOF
 ```{{exec}}
 
-* Dockerfile just a convention (try maybe `docker init`)
-
+* Dockerfile just a convention 
 ```bash
 cat<<EOF>newDockerfile
 # Python runtime as a parent image
