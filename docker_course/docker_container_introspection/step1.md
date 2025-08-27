@@ -8,7 +8,7 @@ Docker container image:
 * Create the following Dockerfile
 
 ```bash
-cat<EOF>Dockerfile
+cat<<EOF>Dockerfile
 # Python runtime as a parent image
 FROM python:slim-bullseye
 
