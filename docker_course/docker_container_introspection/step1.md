@@ -23,4 +23,10 @@ CMD ["python","test.py"]
 EOF
 ```{{exec}}
 
-* Build a docker image called `test` and start a container based on it.
+* Build a docker image called `test`: `docker build -t test .`{{copy}} . What it is missing?
+
+* Start container based on the image that you've build: `docker run --rm test`
+
+* `docker save` your image aka produce a tarred repository to the standard output stream ( that contains all parent layers, and all tags + versions, or specified repo:tag)
+
+* extract tarball: mkdir oci && tar -xvf newtest.tar -C oci
