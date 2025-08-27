@@ -5,7 +5,7 @@
 
 * Pulling an image using docker CLI `docker image pull docker.io/dejanualex/dockersay:2.0`{{copy}}
 
-* Maybe install crictl
+* `crictl` is crictl is a command-line interface for CRI-compatible container runtimes. If needed install crictl
 
 ```bash
 VERSION="v1.33.0"
