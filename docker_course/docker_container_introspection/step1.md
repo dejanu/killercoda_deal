@@ -29,4 +29,4 @@ EOF
 
 * `docker save` your image aka produce a tarred repository to the standard output stream ( that contains all parent layers, and all tags + versions, or specified repo:tag)
 
-* extract tarball: mkdir oci && tar -xvf newtest.tar -C oci
+* extract tarball: `mkdir oci && tar -xvf newtest.tar -C oci`{{copy}}
