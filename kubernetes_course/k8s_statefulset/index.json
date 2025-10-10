@@ -10,10 +10,6 @@
       {
         "title": "PostgreSQL database with a StatefulSet",
         "text": "step1.md"
-      },
-      {
-        "title": "Working with pods",
-        "text": "step2.md"
       }
     ],
     "finish": {

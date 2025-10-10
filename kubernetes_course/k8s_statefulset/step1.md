@@ -45,7 +45,7 @@ EOF
 * Apply the StatefulSet configuration `kubectl apply -f postgres-statefulset.yaml`{{exec}} , what is the status of the StatefulSet? `kubectl get statefulsets`{{exec}} , ` kubectl  describe sts postgres`{{exec}}
 
 * Scale the sts and connect to the PostgreSQL database running in the pod:
-`kubectl run -it --rm psql-client --image=postgres:15 --restart=Never --env="PGPASSWORD=mysecretpassword" -- psql -h postgres-0.postgres.default.svc.cluster.local -U admin -d mydb`{{exec}} What happens? List databases: \l+ 
+`kubectl run -it --rm psql-client --image=postgres:15 --restart=Never --env="PGPASSWORD=mysecretpassword" -- psql -h postgres-0.postgres.default.svc.cluster.local -U admin -d mydb`{{exec}} What happens? List databases: `\l+`{{copy}} 
 
 
 <details>
