@@ -1,6 +1,6 @@
 {
-  "title": "StatefulSets in Kubernetes",
-  "description": "This scenario demonstrates the use of StatefulSets for managing stateful applications.",
+  "title": "Cronjobs in Kubernetes",
+  "description": "This scenario demonstrates the use of Cronjobs for managing periodic tasks.",
   "details": {
     "intro": {
       "text": "intro.md",
