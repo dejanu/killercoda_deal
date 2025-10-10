@@ -42,4 +42,17 @@ spec:
 EOF
 ```{{exec}}
 
-* Apply the StatefulSet configuration `kubectl apply -f postgres-statefulset.yaml`{{exec}}
+* Apply the StatefulSet configuration `kubectl apply -f postgres-statefulset.yaml`{{exec}} , what is the status of the StatefulSet? `kubectl get statefulsets`{{exec}} , ` kubectl  describe sts postgres`{{exec}}
+
+* Scale the sts and connect to the PostgreSQL database running in the pod:
+`kubectl run -it --rm psql-client --image=postgres:15 --restart=Never -- psql -h postgres-0.postgres.default.svc.cluster.local -U admin -d mydb`{{exec}} What happens?
+
+
+<details>
+<summary>Hint</summary>
+Without volumeClaimTemplates the pods will be failed to start: <code>spec.containers[0].volumeMounts[0].name: Not found: "postgres-storage"</code>. Create the sts with <code>kubectl apply -f postgres-statefulset.yaml</code> 
+<br>
+
+Create a headless service for the sts: <code>kubectl apply -f postgres-service.yaml</code>
+<br>
+</details>

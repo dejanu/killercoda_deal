@@ -43,3 +43,21 @@ spec:
         requests:
           storage: 1Gi
 EOF
+
+# create service for statefulset
+cat > postgres-service.yaml <<- "EOF"
+# Headless Service for StatefulSet
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgres
+  labels:
+    app: postgres
+spec:
+  clusterIP: None
+  selector:
+    app: postgres
+  ports:
+  - port: 5432
+    name: postgres
+EOF
