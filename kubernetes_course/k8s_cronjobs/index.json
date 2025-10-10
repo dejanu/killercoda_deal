@@ -8,7 +8,7 @@
     },
     "steps": [
       {
-        "title": "PostgreSQL database with a StatefulSet",
+        "title": "Cronjobs in Kubernetes",
         "text": "step1.md"
       }
     ],

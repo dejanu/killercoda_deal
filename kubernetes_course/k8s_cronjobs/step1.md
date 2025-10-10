@@ -10,7 +10,7 @@
 
 <details>
 <summary>Hint</summary>
-Create cronjob imperatively: <code>kubectl -n jobs create cronjob cronjob-example --schedule='*/1 * * * *' --image=alpine -- date</code> or declaratively: <code>kubectl apply -f cronjob.yaml</code>
+Create cronjob imperatively: <code>kubectl create cronjob cronjob-example --schedule='*/1 * * * *' --image=alpine -- date</code> or declaratively: <code>kubectl apply -f cronjob.yaml</code>
 <br>
 
 Create a headless service for the sts: <code>kubectl apply -f postgres-service.yaml</code>
