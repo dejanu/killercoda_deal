@@ -5,7 +5,7 @@
 
 * Create a cronjob that prints the date every minute, You can do it imperatively or declaratively.
 
-* Rerun a job:
+* Rerun one of the cronjob's jobs. 
 
 
 <details>
@@ -13,6 +13,6 @@
 Create cronjob imperatively: <code>kubectl create cronjob cronjob-example --schedule='*/1 * * * *' --image=alpine -- date</code> or declaratively: <code>kubectl apply -f cronjob.yaml</code>
 <br>
 
-Create a headless service for the sts: <code>kubectl apply -f postgres-service.yaml</code>
+Rerun one of the cronjob's jobs: <code>kubectl create job test --from=cronjob/cronjob-example</code>
 <br>
 </details>
