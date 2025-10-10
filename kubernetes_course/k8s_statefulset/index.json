@@ -3,7 +3,8 @@
   "description": "This scenario demonstrates the use of StatefulSets for managing stateful applications.",
   "details": {
     "intro": {
-      "text": "intro.md"
+      "text": "intro.md",
+      "background": "create_sts.sh"
     },
     "steps": [
       {

@@ -1,10 +1,5 @@
-
-### PostgreSQL database with a StatefulSet
-
-* Create a StatefulSet that manages a PostgreSQL database with persistent storage. Run the following command to create the StatefulSet:
-
-```bash
-cat <<EOF>postgres-statefulset.yaml
+# create deployment
+cat > postgres-good-statefulset.yaml <<- "EOF"
 # StatefulSet for PostgreSQL
 apiVersion: apps/v1
 kind: StatefulSet
@@ -39,7 +34,12 @@ spec:
         volumeMounts:
         - name: postgres-storage
           mountPath: /var/lib/postgresql/data
+  volumeClaimTemplates:
+  - metadata:
+      name: postgres-storage
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      resources:
+        requests:
+          storage: 1Gi
 EOF
-```{{exec}}
-
-* Apply the StatefulSet configuration `kubectl apply -f postgres-statefulset.yaml`{{exec}}
