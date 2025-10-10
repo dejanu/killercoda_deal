@@ -1,0 +1,25 @@
+{
+  "title": "StatefulSets in Kubernetes",
+  "description": "This scenario demonstrates the use of StatefulSets for managing stateful applications.",
+  "details": {
+    "intro": {
+      "text": "intro.md"
+    },
+    "steps": [
+      {
+        "title": "PostgreSQL database with a StatefulSet",
+        "text": "step1.md"
+      },
+      {
+        "title": "Working with pods",
+        "text": "step2.md"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-2nodes"
+  }
+}
