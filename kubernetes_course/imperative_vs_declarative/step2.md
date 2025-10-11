@@ -43,6 +43,6 @@ EOF
 
 * Check the status of pods and deployments: `kubectl -n playground get po,deploy`{{exec}}, furthermore if any of the pods are deleted, they will be automatically **recreated**. ⚠️ Delete ALL resources of a certain type, i.e. all pods: `kubectl  -n playground delete --all pod`{{copy}}
 
-* Scale down one of the deployments: `kubectl -n playground scale deployment nginx-reverse-proxy --replicas 1`{{exec}}
+* Scale up one of the deployments: `kubectl -n playground scale deployment nginx-reverse-proxy --replicas 4`{{exec}}. Update the strategy type to `Recreate`, then update deployment image `kubectl -n playground set image deploy nginx-reverse-proxy nginx=nginx:1.27.1-alpine`. What are the differences?
 
 * Delete deployments: `kubectl -n playground delete deploy nginx-reverse-proxy`{{exec}} and `kubectl delete -f web_app.yaml`{{exec}} to delete `declarative-nginx-reverse-proxy`.
