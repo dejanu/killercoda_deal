@@ -8,7 +8,7 @@
       { "path": "k8s_architecture"},
       { "path": "kubectl_usage"},
       { "path": "k8s_kubelet"},
-      { "path": "imperative_vs_declarative"},
+      { "path": "k8s_imperative_declarative_deployments"},
       { "path": "probes_pod" },
       { "path": "services" },
       { "path": "init_container" },
