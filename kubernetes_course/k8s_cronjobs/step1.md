@@ -7,7 +7,7 @@
 
 * Rerun one of the cronjob's jobs. 
 
-* Create a cronjob called `hello` that prints `Hello World` to STDOUT that runs in the next minute. Use `--schedule='min hour day month weekday'` flag and https://crontab.guru/#*/1_*_*_*
+* Create a cronjob called `hello` that prints `Hello World` to STDOUT that runs in the next minute. Use `--schedule='min hour day month weekday'` flag and [crontab_guru](https://crontab.guru/#*/1_*_*_*)
 
 <details>
 <summary>Hint</summary>
