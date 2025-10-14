@@ -3,12 +3,12 @@
     "description": "Hands-on scenarios: containerization and Kubernetes",
     "items": [
       { "path": "k8s_deploy_app"},
+      { "path": "k8s_imperative_declarative_deployments"},
       { "path": "k8s_statefulset"},
       { "path": "k8s_cronjobs"},
       { "path": "k8s_architecture"},
       { "path": "kubectl_usage"},
       { "path": "k8s_kubelet"},
-      { "path": "k8s_imperative_declarative_deployments"},
       { "path": "probes_pod" },
       { "path": "services" },
       { "path": "init_container" },
