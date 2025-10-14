@@ -8,6 +8,7 @@
       { "path": "probes_pod" },
       { "path": "k8s_cronjobs"},
       { "path": "storage" },
+      { "path": "k8s_rbac" },
       { "path": "k8s_architecture"},
       { "path": "kubectl_usage"},
       { "path": "k8s_kubelet"},

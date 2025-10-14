@@ -1,0 +1,22 @@
+{
+  "title": "RBAC in Kubernetes",
+  "description": "This scenario introduces you to Role-Based Access Control in Kubernetes.",
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "background": "create_deployment.sh"
+    },
+    "steps": [
+      {
+        "title": "RBAC for Jobs",
+        "text": "step1.md"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-2nodes"
+  }
+}
