@@ -10,7 +10,6 @@
       { "path": "k8s_architecture"},
       { "path": "kubectl_usage"},
       { "path": "k8s_kubelet"},
-
       { "path": "services" },
       { "path": "init_container" },
       { "path": "storage" },
