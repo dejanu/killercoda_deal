@@ -1,7 +1,7 @@
 
 ### Objects
 
-* Small setup with k8s cronjobs to scale down deployments out of business hours.
+* Create a Small setup with k8s cronjobs to scale down deployments out of business hours.
 
 * In `playground` namespace there is a deployment named `nginx` with 2 replicas. We need to scale down the deployment to 0 replicas out of business hours (you can decide when that is😉). `kubectl -n playground get po`{{copy}}
 
@@ -39,6 +39,6 @@ EOF
 
 <details>
 <summary>Hint</summary>
-<code>We need tp create a ServiceAccount a Role and a Rolebinding, inspect and apply: <code>kubectl apply -f rbac.yaml</code>
+We need to create a ServiceAccount a Role and a Rolebinding, inspect and apply: <code>kubectl apply -f rbac.yaml</code>
 <br>
 </details>
