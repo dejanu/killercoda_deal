@@ -1,7 +1,7 @@
 
 ### Create network policy
 
-Create a networkpolicy(e.g. `test-network-policy`) that uses pod selectors to ALLOW INCOMING connections TO a `web-server` application tier FROM a cache tier.
+Create a networkpolicy(e.g. `test-network-policy`) that isolates `web` Pods so only `cache` Pods can talk to them on TCP port 80.
 
 ```yaml
 apiVersion: networking.k8s.io/v1
@@ -25,6 +25,12 @@ spec:
       port: 80
 ```{{copy}}
 
-`kubectl apply -f test-network.yaml`, spin up once more the pod `test` in the `default` namespace and retry the `wget ...` cmd. What can you observe?
+Check it the networkpolicy has been created `kubectl  get networkpolicies.networking.k8s.io -n test`{{copy}} (Native Kubernetes API networkpolicy object)
 
-Now in order to reach `web-server` from `test` pod, we can only spin-up in the `test` namespace: `kubectl run busybox -n test -l app-tier=cache --image=busybox --env="web_ip=$web_ip" --rm -it /bin/sh`{{copy}}
+Which Pods or sources are allowed to access the web app?
+
+*  `kubectl run busybox -n test --image=busybox --env="web_ip=$web_ip" --rm -it /bin/sh`{{copy}}
+
+*  `kubectl run busybox -n test -l app-tier=cache --image=busybox --env="web_ip=$web_ip" --rm -it /bin/sh`{{copy}}
+
+*  `kubectl run busybox -l app-tier=cache --image=busybox --env="web_ip=$web_ip" --rm -it /bin/sh`{{copy}}
