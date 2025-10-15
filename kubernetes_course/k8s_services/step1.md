@@ -24,6 +24,6 @@ Update service to NodePort <code>kubectl patch svc pythonapp-svc -p '{"spec": {"
 <br>
 <br>
 To access it <code>kubectl get no -owide</code>, <code>kubectl get svc pythonapp-svc -o wide</code> and then <code>curl &lt;nodeIP&gt;:&lt;NodePort&gt;</code>.
-NodePort adds external accessibility but doesn’t break internal DNS/ClusterIP access.
+NodePort adds external accessibility but doesn’t break internal DNS/ClusterIP access it opens a specific port on all nodes (30000-32767) and forwards traffic to the service.
 <br>
 </details>
