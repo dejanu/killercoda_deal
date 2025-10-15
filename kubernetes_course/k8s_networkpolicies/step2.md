@@ -27,7 +27,7 @@ spec:
 
 Check it the networkpolicy has been created `kubectl  get networkpolicies.networking.k8s.io -n test`{{copy}} (Native Kubernetes API networkpolicy object)
 
-Which Pods or sources are allowed to access the web app?
+Which Pods or sources are allowed to access the web app? i.e. `wget $web_ip --timeout=5`{{copy}}
 
 *  `kubectl run busybox -n test --image=busybox --env="web_ip=$web_ip" --rm -it /bin/sh`{{copy}}
 
