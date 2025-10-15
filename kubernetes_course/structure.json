@@ -12,11 +12,11 @@
       { "path": "k8s_architecture"},
       { "path": "kubectl_usage"},
       { "path": "k8s_kubelet"},
-      { "path": "services" },
+      { "path": "k8s_services" },
+      { "path": "k8s_networkpolicies" },
       { "path": "init_container" },
       { "path": "ARGS_and_COMMAND" },
       { "path": "k8s_scheduling_labels" },
-      { "path": "k8s_networkpolicies" },
       { "path": "k8s_etcd"}
     ]
 }
