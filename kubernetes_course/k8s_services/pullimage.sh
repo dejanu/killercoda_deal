@@ -8,7 +8,7 @@ metadata:
 spec:
   type: NodePort
   selector:
-    app.kubernetes.io/name: pythonapp
+    app: pythonapp
   ports:
     - port: 8888
       # By default and for convenience, the `targetPort` is set to
