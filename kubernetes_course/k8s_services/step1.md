@@ -4,7 +4,7 @@
 
 * Deploy app: `kubectl create deployment pythonapp --image=dejanualex/pythonhello:1.1`{{exec}}
 
-* Create curl "naked" pod: `kubectl run curlopenssl --rm -i --tty --image=dejanualex/curlopenssl:1.0  -- sh`{{exec}} and reach the endpoint whithout any service.
+* Spin-up a "naked" pod in `test` namespaces and try to reach app endpoint whithout any service: `kubectl -n test run curlopenssl --rm -i --tty --image=dejanualex/curlopenssl:1.0  -- sh`{{exec}}
 
 * Next create a service called `pythonapp-svc`{{copy}}. A Service can map any incoming port to a targetPort. By default and for convenience, the targetPort is set to the same value as the port field.
 
@@ -13,7 +13,7 @@ Now reach the endpoint in the new way.
 
 <details>
 <summary>Hints</summary>
-You can reach the app using the podIP<code>kubectl get po -o wide</code> and then <code>kubectl exec po/curlopenssl -- curl &lt;podIP&gt;:8888</code>
+Create namespace: <code>`kubectl create ns test`</code>. You can reach the app using the podIP<code>kubectl get po -o wide</code> and then <code>kubectl exec po/curlopenssl -- curl &lt;podIP&gt;:8888</code>
 <br>
 <br>
 The app is running on port 8888, therefore create the service accordingly: <code>kubectl expose deployment pythonapp --name=pythonapp-svc --port=8081 --target-port=8888</code>. Check the endpoint using the service <code>curl -s pythonapp-svc.default.svc.cluster.local:8081</code>
