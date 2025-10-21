@@ -4,16 +4,16 @@ cat<<EOF>nodeport_service.yaml
 apiVersion: v1
 kind: Service
 metadata:
-  name: my-service
+  name: pythonapp-service
 spec:
   type: NodePort
   selector:
     app.kubernetes.io/name: pythonapp
   ports:
-    - port: 8888
+    - port: 8081
       # By default and for convenience, the `targetPort` is set to
       # the same value as the `port` field.
-      targetPort: 8888
+      targetPort: 8081
       # Optional field
       # By default and for convenience, the Kubernetes control plane
       # will allocate a port from a range (default: 30000-32767)
