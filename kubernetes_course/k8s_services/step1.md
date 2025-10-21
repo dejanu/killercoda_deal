@@ -21,7 +21,7 @@ The app is running on port 8888, therefore create the service accordingly: <code
 <br>
 <br>
 Create the service of type NodePort: <code>kubectl expose deployment pythonapp --name=pythonapp-svc --port=8081 --target-port=8888 --type=NodePort</code>. Or you can also
-Update service to NodePort <code>kubectl patch svc pythonapp-svc -p '{"spec": {"type": "NodePort"}}'</code> 
+Update service to NodePort <code>kubectl patch svc pythonapp-svc -p '{"spec": {"type": "NodePort"}}'</code> or create it from yaml:<code>kubectl apply -f nodeport_service.yaml</code>
 <br>
 <br>
 To access it <code>kubectl get no -owide</code>, <code>kubectl get svc pythonapp-svc -o wide</code> and then <code>curl &lt;nodeIP&gt;:&lt;NodePort&gt;</code>.
