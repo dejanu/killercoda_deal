@@ -10,10 +10,10 @@ spec:
   selector:
     app.kubernetes.io/name: pythonapp
   ports:
-    - port: 8081
+    - port: 8888
       # By default and for convenience, the `targetPort` is set to
       # the same value as the `port` field.
-      targetPort: 8081
+      targetPort: 8888
       # Optional field
       # By default and for convenience, the Kubernetes control plane
       # will allocate a port from a range (default: 30000-32767)
