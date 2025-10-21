@@ -13,7 +13,7 @@ Now reach the endpoint in the new way.
 
 <details>
 <summary>Hints</summary>
-Create namespace: <code>`kubectl create ns test`</code>. You can reach the app using the podIP<code>kubectl get po -o wide</code> and then <code>kubectl exec po/curlopenssl -- curl &lt;podIP&gt;:8888</code>
+Create namespace: <code>kubectl create ns test</code>. You can reach the app using the podIP<code>kubectl get po -o wide</code> and then <code>kubectl exec po/curlopenssl -- curl &lt;podIP&gt;:8888</code>
 <br>
 <br>
 A Service can map any incoming port to a targetPort. By default and for convenience, the targetPort is set to the same value as the port field.
