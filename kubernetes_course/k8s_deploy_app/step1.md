@@ -23,7 +23,7 @@
 
  Get container image: <code>kubectl get po -ojsonpath="{.spec.containers[*].image}"</code>
  <br>
- Get containers images: <code>kubectl get po  -ojsonpath="{.items[*].spec.containers[*].name}"</code> 
+ Get containers images: <code>kubectl get po -ojsonpath="{.items[*].spec.containers[*].image}"</code> 
  <br><br>
  
  Get Pods IP: <code>kubectl get pods -l app=nginx-deployment -o jsonpath='{.items[*].status.podIP}'</code>
