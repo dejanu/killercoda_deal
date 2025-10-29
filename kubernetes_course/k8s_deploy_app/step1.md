@@ -5,9 +5,9 @@
 
 * Take a look at pods created by the deployment and their labels.
 
-* Inspect the container's name and image: `-ojsonpath="{.spec.containers[*].name}{'\n'}"`{{copy}}
+* Inspect the container's name, image: `-ojsonpath="{.spec.containers[*].name}{'\n'}"`{{copy}}
 
-* Scale the deployment to 3 pods
+* Scale the deployment to 3 pods, and check the Pod IPs.
  
 * Update the deployment to use `nginx:1.27.4-alpine-slim`{{copy}} image
 
@@ -21,10 +21,11 @@
  Show pods and their labels <code>kubectl get pods --show-labels</code>. The <code>app</code> label was atomatically generated and set to the deployment's name.
  <br><br>
 
- Get Pods IP: <code>kubectl get $(kubectl  get po -l app=nginx-deployment -oname)  -ojsonpath="{.status.podIP}"</code>
+ Get container image: <code>kubectl get po -ojsonpath="{.spec.containers[*].image}"</code>
+ Get containers images: <code>kubectl get po  -ojsonpath="{.items[*].spec.containers[*].name}{'\n'}"</code> 
  <br><br>
-
- Get container image: <code>kubectl get $(kubectl  get po -l app=nginx-deployment -oname) -ojsonpath="{.spec.containers[*].image}"</code>
+ 
+ Get Pods IP: <code>kubectl get pods -l app=nginx-deployment -o jsonpath='{.items[*].status.podIP}'</code>
  <br><br>
 
  Scale deployment <code>kubectl scale deployment nginx-deployment --replicas 3</code>
