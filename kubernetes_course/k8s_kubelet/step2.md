@@ -17,7 +17,8 @@ spec
     What state you desire for the object
 ```
 
-Delete the pod, and recreate it as a **static** pod on the control-plane node. Static pods always have a `-${NODENAME}` appended to their name, indicating which node controls the static pod.
+Delete the pod, and recreate it as a **static** pod on the control-plane node. Try deleting the pod again, what happens?
+
 
 ```yaml
 apiVersion: v1
@@ -34,6 +35,8 @@ spec:
     name: test
     resources: {}
 ```
+
+Static pods always have a `-${NODENAME}` appended to their name, indicating which node controls the static pod. Use case for static pods: ensuring critical system pods stay running even if the API server goes down.
 
 <details>
 <summary>Hint</summary>
