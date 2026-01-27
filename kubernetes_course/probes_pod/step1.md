@@ -13,25 +13,25 @@ Unknown: The state of the Pod could not be obtained
 The restart policy for a Pod, legal values **[Always, OnFailure, Never]**.
 There's also a spec for `restartPolicy` `kubectl explain po.spec.restartPolicy`{{exec}}
 
-Create a deployment `kubectl create deploy alpine-test --image=alpine`{{exec}}, check the pods? What is happening and why?
+* Create a deployment `kubectl create deploy alpine-test --image=alpine`{{exec}}, check the pods? What is happening and why?
 
 ```bash
-# Never: does not restart the container: Completed
 kubectl run never --image=alpine --restart=Never  -- echo "Hello"
 
-# OnFailure: only restart the container if it exits with an non-zero exit otherwise: Completed
 kubectl run onfail --image=alpine --restart=OnFailure  -- echo "Hello"
 
-# OnFailOnFailure:  "exit": executable file not found in $PATH: unknown: CrashLoopBackOff 
 kubectl run onfail1 --image=alpine --restart=OnFailure -- /bin/sh -c "exit 1"
 
-# Always (DEFAULT): k8s will try to restart the pod if it fails or even if is: Completed.
 kubectl run always --image=alpine --restart=Always  -- echo "Hello"
 ```
 
 <details>
 <summary>Hints</summary>
-Always is the default policy <code>kubectl get po ... -oyaml | grep restartPolicy</code>
+Always (DEFAULT): k8s will try to restart the pod if it fails or even if is: Completed <code>kubectl get po ... -oyaml | grep restartPolicy</code>
+<br>
+Never: does not restart the container: Completed
+<br>
+OnFailure: only restart the container if it exits with an non-zero exit otherwise: Completed
 <br>
 
 </details>
