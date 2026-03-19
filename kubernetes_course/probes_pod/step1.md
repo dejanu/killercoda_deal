@@ -13,7 +13,9 @@ Unknown: The state of the Pod could not be obtained
 The restart policy for a Pod, legal values **[Always, OnFailure, Never]**.
 There's also a spec for `restartPolicy` `kubectl explain po.spec.restartPolicy`{{exec}}
 
-* Create a deployment `kubectl create deploy alpine-test --image=alpine`{{exec}}, check the pods? What is happening and why?
+* Create a deployment `kubectl create deploy alpine-test --image=alpine`{{exec}}, check the pods, what is happening and why?
+
+* Create other alpine based deployments:
 
 ```bash
 kubectl run never --image=alpine --restart=Never  -- echo "Hello"
@@ -30,9 +32,10 @@ kubectl run always --image=alpine --restart=Always  -- echo "Hello"
 Always (DEFAULT): k8s will try to restart the pod if it fails or even if is: Completed <code>kubectl get po ... -oyaml | grep restartPolicy</code>
 <br>
 
-Never: does not restart the container: Completed
+Never: does not restart the container: Completed or Error
 <br>
 
-OnFailure: only restart the container if it exits with an non-zero exit otherwise: Completed
+OnFailure: restart the container ONLY if it exits with an non-zero exit otherwise: Completed
 <br>
+
 </details>
