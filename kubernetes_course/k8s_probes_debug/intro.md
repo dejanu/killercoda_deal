@@ -12,5 +12,3 @@
 * Types of probes: Startup, Liveness, Readiness 
 
 <hr>
-
-![Scan results](./assets/probes.png)
