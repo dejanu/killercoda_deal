@@ -29,9 +29,10 @@ kubectl run always --image=alpine --restart=Always  -- echo "Hello"
 <summary>Hints</summary>
 Always (DEFAULT): k8s will try to restart the pod if it fails or even if is: Completed <code>kubectl get po ... -oyaml | grep restartPolicy</code>
 <br>
+
 Never: does not restart the container: Completed
 <br>
+
 OnFailure: only restart the container if it exits with an non-zero exit otherwise: Completed
 <br>
-
 </details>
