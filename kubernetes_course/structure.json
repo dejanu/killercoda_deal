@@ -5,6 +5,7 @@
       { "path": "k8s_deploy_app"},
       { "path": "k8s_imperative_declarative_deployments"},
       { "path": "k8s_probes_pod" },
+      { "path": "k8s_probes_debug" },
       { "path": "k8s_statefulset"},
       { "path": "k8s_cronjobs"},
       { "path": "storage" },
