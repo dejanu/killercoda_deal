@@ -1,45 +1,16 @@
 
 ### Creating Objects
 
-* Create a deployment named `nginx-reverse-proxy` with 2 replicas, based on an `nginx` image:
+* Create a deployment named `api` with 5 pods, based on an `nginx` image:
 
 * **Imperative** way, directly against the API:
-`kubectl -n playground create deployment nginx-reverse-proxy --image=nginx:stable-alpine-perl --replicas=2`{{exec}}, check the pod in the `playground` namespace: `kubectl -n playground get po`{{exec}}, you should see the running pods:
+`kubectl -n playground create deployment api --image=nginx`{{copy}}, scale the deployment in the `playground` namespace: `kubectl -n playground scale deployment api --replicas=5`{{exec}}, 
 
-```bash
-NAME                                   READY   STATUS    RESTARTS   AGE
-nginx-reverse-proxy-55d9dfc748-99gq7   1/1     Running   0          6s
-nginx-reverse-proxy-55d9dfc748-h4694   1/1     Running   0          6s
-```
+* **Declarative** way, get the  `api` deployment object as a manifest `web_app.yaml`, `kubectl -n playground get deploy api -o yaml > api.yaml`{{exec}}. 
 
-* **Declarative** way, by defining the object as a manifest `web_app.yaml`, and applying the configuration to the cluster:
+* Check the drift: `kubectl diff -f api.yaml`{{copy}} 
 
-```bash
-cat<<EOF>>web_app.yaml
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: declarative-nginx-reverse-proxy
-  namespace: playground
-spec:
-  replicas: 2
-  selector:
-    matchLabels:
-      app: declarative-nginx-reverse-proxy
-  template:
-    metadata:
-      labels:
-        app: declarative-nginx-reverse-proxy
-    spec:
-      containers:
-      - name: nginx
-        image: nginx:stable-alpine-perl
-        ports:
-        - containerPort: 80
-EOF
-```{{exec}}
-
-* Now simply: `kubectl apply -f web_app.yaml`{{exec}} to create `declarative-nginx-reverse-proxy` deployment.
+* Scale up the deployment to 2 replicas: `kubectl -n playground scale deployment api --replicas=3`{{copy}}. Check the drift again.
 
 * Check the status of pods and deployments: `kubectl -n playground get po,deploy`{{exec}}, furthermore if any of the pods are deleted, they will be automatically **recreated**. ⚠️ Delete ALL resources of a certain type, i.e. all pods: `kubectl  -n playground delete --all pod`{{copy}}
 
