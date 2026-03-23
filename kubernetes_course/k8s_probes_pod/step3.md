@@ -13,7 +13,6 @@
 <code>state.waiting.reason</code> exists only when a container is in waiting state, <code>CrashLoopBackOff</code> is a waiting reason.
 <code>kubectl get po -A -ojsonpath="{.items[*].status.containerStatuses[*].state.waiting.reason}"</code>
 
-Pods don’t “restart” they only get deleted. Replacement is a controller decision.
-When the container in the pod fails, the pod is not restarted.
+Pods do not RESTART; containers inside the Pod are restarted by the kubelet. Pods themselves can be DELETED or RESCHEDULED (i.e. if a node fails), and their replacement is handled by a controller. When a container in a Pod fails, the Pod is not rescheduled—the container is simply restarted in place.
 
 <code>kubectl  exec test-6bb654b8f8-w4vn6 -- /bin/sh -c 'kill -TERM 1'</code>
