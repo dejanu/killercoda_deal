@@ -14,5 +14,6 @@
 <code>kubectl get po -A -ojsonpath="{.items[*].status.containerStatuses[*].state.waiting.reason}"</code>
 
 Pods don’t “restart” they only get deleted. Replacement is a controller decision.
-When the container in the pod fails, the pod is not restarted
+When the container in the pod fails, the pod is not restarted.
+
 <code>kubectl  exec test-6bb654b8f8-w4vn6 -- /bin/sh -c 'kill -TERM 1'</code>
