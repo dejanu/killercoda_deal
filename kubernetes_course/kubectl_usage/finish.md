@@ -13,3 +13,5 @@
 `cat ~/.kube/config | grep -i "current-context" | awk '{print $2}'`{{copy}}
 
 * `config` file fields and structure [here](https://kubernetes.io/docs/reference/config-api/kubeconfig.v1/)
+
+* [kubectl context like a pro](https://dev.to/aws-builders/kubectl-context-like-a-pro-1gch) article.

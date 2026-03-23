@@ -9,9 +9,10 @@ couldn't get current server API group list...
 Increase the verbosity: `kubectl get no -v=6` and look for `Config loaded from file` 
 
 kubectl `config` file stores all the information necessary to interact with a Kubernetes cluster:
-- The name of the Kubernetes cluster: `kubectl config current-context`{{copy}}
-- The location of the Kubernetes API server: `kubectl config get-clusters`{{copy}} 
-- The credentials (username and password) for authenticating with the Kubernetes API server: `kubectl config get-users`{{copy}} 
+
+- The context (cluster + user + namespace): `kubectl config current-context`{{copy}}
+- The Kubernetes API server: `kubectl config get-clusters`{{copy}} 
+- The user (authentication credentials) for interacting with the Kubernetes API server: `kubectl config get-users`{{copy}} 
 - The names of all contexts defined in the cluster (a **context** is a combination of a cluster and user credentials): `kubectl config get-contexts`{{copy}} 
  
 <details>
