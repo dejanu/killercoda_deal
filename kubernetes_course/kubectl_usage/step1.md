@@ -14,7 +14,8 @@ kubectl `config` file stores all the information necessary to interact with a Ku
 - The Kubernetes API server: `kubectl config get-clusters`{{copy}} 
 - The user (authentication credentials) for interacting with the Kubernetes API server: `kubectl config get-users`{{copy}} 
 - The names of all contexts defined in the cluster (a **context** is a combination of a cluster and user credentials): `kubectl config get-contexts`{{copy}} 
- 
+- Render the current context: `kubectl config view`{{copy}}
+
 <details>
 <summary>⚠️ Solution</summary>
 Move back the original config: <code>mv ~/.kube/bkp.config ~/.kube/config</code>
