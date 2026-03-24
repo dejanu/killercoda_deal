@@ -24,9 +24,9 @@ metadata:
   name: pod-reader
   namespace: default
 rules:
-- apiGroups: [""]
-  resources: ["pods"]
-  verbs: ["get", "list"]
+  - apiGroups: [""]
+    resources: ["pods"]
+    verbs: ["get", "list"]
 ```
 <br>
 
