@@ -21,6 +21,8 @@ kubectl create cronjob sleep-cron \
   -- sh -c "sleep 120; echo done"
 ```
 
+* Create the following cron `kubectl apply -f failcron.yaml`{{copy}} inspect its specs `kubectl describe cron failcron`{{copy}}
+
 <details>
 <summary>Hint</summary>
 
