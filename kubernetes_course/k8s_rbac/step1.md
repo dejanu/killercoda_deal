@@ -19,7 +19,7 @@
 Test the actions/verbs for  dev-sa service account: <code>kubectl auth can-i get pods --as=system:serviceaccount:default:dev-sa</code> 
 <br>
 
-Create role pod-reader for the dev-sa service account:
+- Create role pod-reader for the dev-sa service account (⚠️ Roles are namespace-scoped):
 ```
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
@@ -32,11 +32,9 @@ rules:
     verbs: ["get", "list"]
 ```
 
-⚠️ Roles are namespace-scoped 
-
 <br>
 
-Create a RoleBinding for Service Account and Role:
+- Create a RoleBinding for Service Account and Role:
 ```
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
@@ -50,6 +48,35 @@ subjects:
 roleRef:
   kind: Role
   name: pod-reader
+  apiGroup: rbac.authorization.k8s.io
+```
+
+- Create a ClusterRole 
+
+```
+kind: ClusterRole
+metadata:
+  name: pod-reader-global
+rules:
+- apiGroups: [""]
+  resources: ["pods"]
+  verbs: ["get", "list"]
+```
+
+<br>
+
+- Create a RoleBinding for Service Account and Role:
+```
+kind: ClusterRoleBinding
+metadata:
+  name: global-read
+subjects:
+- kind: ServiceAccount
+  name: dev-user
+  namespace: default
+roleRef:
+  kind: ClusterRole
+  name: pod-reader-global
   apiGroup: rbac.authorization.k8s.io
 ```
 
