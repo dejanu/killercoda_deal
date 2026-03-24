@@ -6,6 +6,7 @@
       { "path": "k8s_imperative_declarative_deployments"},
       { "path": "kubectl_usage"},
       { "path": "k8s_architecture"},
+      { "path": "k8s_etcd"},
       { "path": "k8s_kubelet"},
       { "path": "k8s_probes_pod" },
       { "path": "k8s_rbac" },
@@ -16,7 +17,6 @@
       { "path": "k8s_networkpolicies" },
       { "path": "init_container" },
       { "path": "ARGS_and_COMMAND" },
-      { "path": "k8s_scheduling_labels" },
-      { "path": "k8s_etcd"}
+      { "path": "k8s_scheduling_labels" }
     ]
 }
