@@ -12,7 +12,9 @@
 * Bind the role to the service account.
 
 * Create `dev` namespace: `kubectl create ns dev`{{copy}} test the service account for this ns: `kubectl auth can-i list pods
-  --as=system:serviceaccount:default:dev-user -n dev`{{copy}}
+  --as=system:serviceaccount:default:dev-sa -n dev`{{copy}}
+
+* Create `rbac-test` pod that uses `dev-sa` service account: `kubectl exec -it rbac-test -- sh`{{copy}} and  `kubectl get pods`{{copy}}
 
 <details>
 <summary>Hint</summary>
@@ -72,12 +74,28 @@ metadata:
   name: global-read
 subjects:
 - kind: ServiceAccount
-  name: dev-user
+  name: dev-sa
   namespace: default
 roleRef:
   kind: ClusterRole
   name: pod-reader-global
   apiGroup: rbac.authorization.k8s.io
 ```
+<br>
 
+- Create a pod that uses <code>dev-sa</code> service account:
+
+```
+apiVersion: v1
+kind: Pod
+metadata:
+  name: rbac-test
+spec:
+  serviceAccountName: dev-sa
+  containers:
+  - name: test
+    image: bitnami/kubectl
+    command: ["sleep", "3600"]
+```
+ 
 </details>
