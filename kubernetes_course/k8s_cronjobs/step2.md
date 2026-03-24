@@ -21,7 +21,9 @@ kubectl create cronjob sleep-cron \
   -- sh -c "sleep 120; echo done"
 ```
 
-* Create the following cron `kubectl apply -f failcron.yaml`{{copy}} inspect its specs `kubectl describe cron failcron`{{copy}}
+* Create the following cron `kubectl apply -f failcron.yaml`{{copy}} inspect its specs `kubectl describe cronjob failing-cron`{{copy}}.
+
+⚠️ Rule `backoffLimit: N  means up to N retries ⇒ N + 1 Pods total`
 
 <details>
 <summary>Hint</summary>
@@ -35,5 +37,7 @@ Update the concurency policy, not allow concurrent runs: <code>  concurrencyPoli
 
 Rerun one of the cronjob's jobs aka create another job: <code>kubectl create job report-rerun --from=cronjob/report</code>
 <br>
+
+Simply edit <code>failedJobsHistoryLimit: 1</code> to crontrol failed job accumulation.
 
 </details>
