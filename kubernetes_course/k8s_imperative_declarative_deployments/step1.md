@@ -28,7 +28,11 @@ spec: # desired state for the object
 
 * ⚠️ Delete ALL resources of a certain type, i.e. all pods: `kubectl  -n playground delete --all pod`{{copy}}
 
-* Scale up one of the deployments: `kubectl -n playground scale deployment nginx-reverse-proxy --replicas 6`{{copy}}. Check the pods `kubectl -n playground get po`{{exec}} . Update the strategy type to `Recreate`, then change the image `kubectl -n playground set image deploy nginx-reverse-proxy nginx=nginx:1.27.1-alpine`{{exec}}. What are the differences? `kubectl -n playground get po`{{exec}}
+* Scale up one of the deployments: `kubectl -n playground scale deployment notbasic --replicas 6`{{copy}}. Check the pods `kubectl -n playground get po`{{exec}} . 
+
+* Change the image `kubectl -n playground set image deploy notbasic nginx=nginx:1.27.1-alpine`{{exec}}. Check the pods `kubectl -n playground get po`{{exec}}
+
+* Update the strategy type to `Recreate`, and change the image `kubectl -n playground set image deploy notbasic nginx=nginx`{{exec}}.  `kubectl -n playground get po`{{exec}} What are the differences?
 
 * You can use apply to reference remote manifests: `kubectl apply -f https://raw.githubusercontent.com/dejanu/k8s_logging/refs/heads/main/nginx_pod.yaml`{{copy}}
 
