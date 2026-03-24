@@ -9,19 +9,16 @@ kubectl create cronjob sleep-cron \
   -- sh -c "sleep 90; echo done"
 ```{{copy}}
 
-* Inspect cron: `kubectl get cronjob sleep-cron -o yaml`{{copy}}
-
-* Create a cronjob called `report` that prints `Sending Report` to STDOUT that runs in the next minute. Next you need to send another report but 
-you cannot wait until next day, what are the options?
+* Inspect cron: `kubectl get cronjob sleep-cron -o yaml`{{copy}}. What can it be changed not allow overlapping execution? 
 
 <details>
 <summary>Hint</summary>
 
-Since <code>concurrencyPolicy: Allow</code> it allows overlapping execution.
+Since <code>concurrencyPolicy: Allow</code> it allows overlapping execution. Executions overlap when the job runs longer than the schedule interval.
 
 <br>
 
-Create hello cronjob <code>kubectl create cronjob report --schedule='01 21 * * *' --image=alpine -- /bin/sh -c "echo Sending Report" </code>
+Update the concurency policy, not allow concurrent runs: <code>concurrencyPolicy</code>
 <br>
 
 Rerun one of the cronjob's jobs aka create another job: <code>kubectl create job report-rerun --from=cronjob/report</code>
