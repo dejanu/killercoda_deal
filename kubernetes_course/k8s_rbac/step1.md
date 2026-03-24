@@ -1,7 +1,7 @@
 
 ### Objects: minimal access
 
-* Check available kinds for RBAC: `kubectl api-resources --api-group=rbac.authorization.k8s.io`{{copy}} 
+* Check available kinds for RBAC: `kubectl api-resources --api-group=rbac.authorization.k8s.io`{{copy}}. Check roles `kubectl get role`{{copy}} and rolebinding `kubectl get rolebindings`{{copy}}
 
 * Good baseline check for RBAC: `kubectl auth can-i <verb> <resource> --as=<identity>`{{copy}}
 
