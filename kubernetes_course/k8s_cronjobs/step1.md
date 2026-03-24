@@ -5,7 +5,8 @@
 
 * Create a **cronjob** that prints the date every minute, You can do it imperatively or declaratively. . Use `--schedule='min hour day month weekday'` flag and [crontab_guru](https://crontab.guru/#*/1_*_*_*)
 
-* Create a cronjob called `hello` that prints `Hello World` to STDOUT that runs in the next minute.
+* Create a cronjob called `report` that prints `Sending Report` to STDOUT that runs in the next minute. Next you need to send another report but 
+you cannot wait until next day, what are the options?
 
 <details>
 <summary>Hint</summary>
@@ -13,10 +14,10 @@ Create cronjob imperatively: <code>kubectl create cronjob cronjob-example --sche
 
 <br>
 
-Rerun one of the cronjob's jobs: <code>kubectl create job test --from=cronjob/cronjob-example</code>
+Create hello cronjob <code>kubectl create cronjob report --schedule='01 21 * * *' --image=alpine -- /bin/sh -c "echo Sending Report" </code>
 <br>
 
-Rerun one of the cronjob's jobs: <code>kubectl create cronjob hello --schedule='01 21 * * *' --image=alpine -- /bin/sh -c "echo Hello World" </code>
+Rerun one of the cronjob's jobs aka create another job: <code>kubectl create job test --from=cronjob/report</code>
 <br>
 
 </details>
