@@ -1,7 +1,9 @@
 
 ### Objects
 
-* Create a Small setup with k8s cronjobs to scale down deployments out of business hours.
+* Check available kinds for RBAC: `kubectl api-resources --api-group=rbac.authorization.k8s.io`{{copy}} 
+
+* Create a 💻 small setup with k8s cronjob that scales down deployments out of business hours.
 
 * In `playground` namespace there is a deployment named `nginx` with 2 replicas. We need to scale down the deployment to 0 replicas out of business hours (you can decide when that is😉). `kubectl -n playground get po`{{copy}}
 
