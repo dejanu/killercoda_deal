@@ -2,21 +2,19 @@
 
 * Spin up a pod and check its phase: `kubectl run onfail1 --image=alpine --restart=OnFailure -- /bin/sh -c "exit 1"`{{exec}}
 
-* What will be the output of: `kubectl get po -A --field-selector=status.phase!=Running`{{exec}}
+* What will be the output of: `kubectl get pods`{{copy}} vs `kubectl get po -A --field-selector=status.phase!=Running`{{exec}}
 
 * Create a simple nginx deployment: `kubectl  create deployment test --image=nginx`{{exec}} then kill the nginx process inside the container. What happens to the Pod?
 
+* Check `probe-lab` pod details: `kubectl describe pod probe-lab`{{exec}} . What does the events section tell us?
 
-* Check pod status, inspect events: `kubectl get pods`{{exec}} and `kubectl describe pod probe-lab`{{exec}}
-
-* startupProbe is holding liveness/readiness until startup succeeds
+* We need to wait for liveness/readiness until startup succeeds.
 
 ```bash
 kubectl get pods
 kubectl describe pod probe-lab
 kubectl logs probe-lab --previous
 ```
-
 
 
 <details>
@@ -27,7 +25,7 @@ kubectl logs probe-lab --previous
 
 Pods do not RESTART; containers inside the Pod are restarted by the kubelet. Pods themselves can be DELETED or RESCHEDULED (i.e. if a node fails), and their replacement is handled by a controller. When a container in a Pod fails, the Pod is not rescheduled—the container is simply restarted in place.
 
-
+Save the pod manifest and add startupProbe is holding the liveness and readiness probes until it succeeds.  
 ```
      startupProbe:
         httpGet:
