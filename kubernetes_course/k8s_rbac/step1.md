@@ -11,9 +11,12 @@
 
 * Bind the role to the service account.
 
+* Create `dev` namespace: `kubectl create ns dev`{{copy}} test the service account for this ns: `kubectl auth can-i list pods
+  --as=system:serviceaccount:default:dev-user -n dev`{{copy}}
+
 <details>
 <summary>Hint</summary>
-Check dev-sa service account: <code>kubectl auth can-i get pods --as=system:serviceaccount:default:dev-sa</code>
+Test the actions/verbs for  dev-sa service account: <code>kubectl auth can-i get pods --as=system:serviceaccount:default:dev-sa</code> 
 <br>
 
 Create role pod-reader for the dev-sa service account:
@@ -28,6 +31,9 @@ rules:
     resources: ["pods"]
     verbs: ["get", "list"]
 ```
+
+⚠️ Roles are namespace-scoped 
+
 <br>
 
 Create a RoleBinding for Service Account and Role:
