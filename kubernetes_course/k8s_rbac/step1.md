@@ -13,8 +13,9 @@
 
 <details>
 <summary>Hint</summary>
-Check dev-sa service account: <code>kubectl auth can-i get pods --as=system:serviceaccount:default:dev-user</code>
+Check dev-sa service account: <code>kubectl auth can-i get pods --as=system:serviceaccount:default:dev-sa</code>
 <br>
+
 Create role pod-reader for the dev-sa service account:
 ```
 apiVersion: rbac.authorization.k8s.io/v1
