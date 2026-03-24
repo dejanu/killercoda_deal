@@ -1,22 +1,23 @@
 
 ### CronJobs Params
 
-* When our cron job runs a long-running process, what happens? How many jobs or pods does this cron trigger?
+* When our cron job runs a long-running process, what happens? How many jobs or pods does this cron trigger? 
 ``` 
 kubectl create cronjob sleep-cron \
   --image=busybox \
-  --schedule="* * * * *" \
-  -- sh -c "sleep 5; echo done"
+  --schedule="*/1 * * * *" \
+  -- sh -c "sleep 90; echo done"
 ```{{copy}}
 
-* Create a **cronjob** that prints the date every minute, You can do it imperatively or declaratively. . Use `--schedule='min hour day month weekday'` flag and [crontab_guru](https://crontab.guru/#*/1_*_*_*)
+* Inspect cron: `kubectl get cronjob sleep-cron -o yaml`{{copy}}
 
 * Create a cronjob called `report` that prints `Sending Report` to STDOUT that runs in the next minute. Next you need to send another report but 
 you cannot wait until next day, what are the options?
 
 <details>
 <summary>Hint</summary>
-Create cronjob imperatively: <code>kubectl create cronjob cronjob-example --schedule='*/1 * * * *' --image=alpine -- date</code> or declaratively: <code>kubectl apply -f cronjob.yaml</code>
+
+Since <code>concurrencyPolicy: Allow</code> it allows overlapping execution.
 
 <br>
 
