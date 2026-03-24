@@ -16,7 +16,8 @@
       },
       {
         "title": "Phase vs. Status",
-        "text": "step3.md"
+        "text": "step3.md",
+        "background": "create_pod.sh"
       }
     ],
     "finish": {
