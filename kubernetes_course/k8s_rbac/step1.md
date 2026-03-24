@@ -56,6 +56,7 @@ roleRef:
 - Create a ClusterRole 
 
 ```
+apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
   name: pod-reader-global
@@ -67,7 +68,7 @@ rules:
 
 <br>
 
-- Create a RoleBinding for Service Account and Role:
+- Create a RoleBinding for Service Account and ClusterRole 😉:
 ```
 kind: ClusterRoleBinding
 metadata:
