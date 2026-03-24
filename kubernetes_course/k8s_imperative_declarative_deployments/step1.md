@@ -24,16 +24,15 @@ spec: # desired state for the object
 
 * Moreover if this pod is deleted `kubectl -n playground delete po basic`{{exec}}, it won't be automatically recreated since it's a "naked pod". Naked pods will not be rescheduled in the event of node failure: `kubectl -n playground get po,deploy`{{exec}}
 
+* Check the status of pods and deployments: `kubectl -n playground get po,deploy`{{exec}}, furthermore if any of the pods are deleted, they will be automatically **recreated**. 
 
-* Check the status of pods and deployments: `kubectl -n playground get po,deploy`{{exec}}, furthermore if any of the pods are deleted, they will be automatically **recreated**. ⚠️ Delete ALL resources of a certain type, i.e. all pods: `kubectl  -n playground delete --all pod`{{copy}}
+* ⚠️ Delete ALL resources of a certain type, i.e. all pods: `kubectl  -n playground delete --all pod`{{copy}}
 
 * Scale up one of the deployments: `kubectl -n playground scale deployment nginx-reverse-proxy --replicas 6`{{copy}}. Check the pods `kubectl -n playground get po`{{exec}} . Update the strategy type to `Recreate`, then change the image `kubectl -n playground set image deploy nginx-reverse-proxy nginx=nginx:1.27.1-alpine`{{exec}}. What are the differences? `kubectl -n playground get po`{{exec}}
 
-* Delete deployments: `kubectl -n playground delete deploy nginx-reverse-proxy`{{exec}} and `kubectl delete -f web_app.yaml`{{exec}} to delete `declarative-nginx-reverse-proxy`.
-
-
-
 * You can use apply to reference remote manifests: `kubectl apply -f https://raw.githubusercontent.com/dejanu/k8s_logging/refs/heads/main/nginx_pod.yaml`{{copy}}
+
+* ⚠️ Delete ALL resources of a certain type, i.e. all deployments: `kubectl  -n playground delete --all deploy`{{copy}}
 
 * 💡 To explore Kubernetes API space you can run kubectl as a reverse proxy to serve the API: `kubectl proxy -p 8080&` and the use `curl` to explore the API: 
 `curl http://localhost:8080/api/` i.e. `curl http://localhost:8080/api/v1/pods`
