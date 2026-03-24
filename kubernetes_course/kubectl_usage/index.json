@@ -1,6 +1,6 @@
 {
   "title": "kubectl",
-  "description": "Communicating with Kubernetes cluster's control plane, using Kubernetes API, and kubeconfig",
+  "description": "Kubernetes API, kubeconfig and Static Pods",
   "details": {
     "intro": {
       "text": "intro.md",
