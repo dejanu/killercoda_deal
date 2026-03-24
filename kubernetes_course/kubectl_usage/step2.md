@@ -8,6 +8,7 @@ The default output format for all kubectl commands is the human readable plain-t
 
 <details>
 <summary>⚠️ Solution</summary>
+Check pods in default namespace: <code>kubectl get po -n default</code>
 Set back the namespace to default: <code>kubectl config set-context --current --namespace=default</code>
 <br>
 Get name: <code>kubectl -n kube-system get po -oname</code>
