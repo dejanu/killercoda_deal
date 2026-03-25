@@ -17,6 +17,11 @@
 
 * Identify on which node each component is running?
 
+* K8S clusters can becreated and upgraded with tools like:
+    - [kubeadm](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/) : `kubeadm -h`{{copy}} 
+    - [kops](https://kops.sigs.k8s.io/) 
+    - [kubespray](https://kubespray.io/#/)
+
 <details>
 <summary>Hint</summary>
 Check on which node each component is running: <code>kubectl get po -n kube-system -owide </code>
