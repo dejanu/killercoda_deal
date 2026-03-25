@@ -15,15 +15,14 @@
 
 * If the `kubelet` is not working properly, has crashed, or it is down for any reason, the Kubernetes node will go into a **NotReady** state, and no new pods will be scheduled on that node.
 
-* On which node each component is running?
+* Identify on which node each component is running?
 
 <details>
 <summary>Hint</summary>
 Check on which node each component is running: <code>kubectl get po -n kube-system -owide </code>
-Canal: is actually flannel CNI
+<br>
+control plane (API, scheduler, controllers, etcd), the networking layer (CNI Cilium), and cluster DNS (CoreDNS)
 </details>
-
-
 
 
 
