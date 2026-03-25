@@ -47,6 +47,7 @@ EOF
 * Scale the sts to **2 replicas** and connect to the PostgreSQL database running in the pod:
 `kubectl run -it --rm psql-client --image=postgres:15 --restart=Never --env="PGPASSWORD=mysecretpassword" -- psql -h postgres-0.postgres.default.svc.cluster.local -U admin -d mydb`{{copy}} and try to list the databases: `\l+`{{copy}} 
 
+* StatefulSets currently require a Headless Service to be responsible for the network identity of the Pods. You are responsible for creating this Service.
 
 <details>
 <summary>Hint</summary>
@@ -54,7 +55,7 @@ Without volumeClaimTemplates the pods will be failed to start: <code>spec.contai
 Create a new sts with <code>kubectl apply -f postgres-good-statefulset.yaml</code> 
 <br>
 
-Scale the sts <code>kubectl scale sts postgres --replicas 3 </code>
+Scale the sts <code>kubectl scale sts postgres --replicas 3</code>
 Create a headless service for the sts: <code>kubectl apply -f postgres-service.yaml</code>
 <br>
 </details>
