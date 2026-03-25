@@ -20,10 +20,10 @@ Our init container `nginx-init` will write the ascii art to `index.html` that wi
 
 <br>
 
-0. Shared emptyDir volume named data (lives for the lifetime of the Pod)
+0. Shared emptyDir volume named <code>data</code> (lives for the lifetime of the Pod)
 1. Pod starts
-2. initContainer runs → generates HTML file
+2. initContainer runs → mounts <code>data</code> volume at <code>/usr/share/nginx/html</code> and generates HTML file
 3. initContainer exits
-4. nginx container starts: mounts same volume at /usr/share/nginx/html
+4. nginx container starts: mounts same volume <code>data</code> at <code>/usr/share/nginx/html</code> mount point
 5. nginx serves generated file.
 </details>
