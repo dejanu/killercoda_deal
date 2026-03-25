@@ -37,4 +37,4 @@ Verify the snapshot:
 etcdutl snapshot status /var/lib/etcd/snap.db --write-out=table
 ```{{copy}}
 
-Previously even: `kubectl -n kube-system exec etcd-controlplane -- sh -c "ETCDCTL_API=3 etcdctl`{{copy}} worked 
+Previously even: `kubectl -n kube-system exec etcd-controlplane -- sh -c "ETCDCTL_API=3 etcdctl"`{{copy}} worked 
