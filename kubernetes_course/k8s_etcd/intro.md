@@ -3,9 +3,11 @@
 
 ### etcd 
 
-* **etcd** is a distributed reliable key-value store for the most critical data of a distributed system, with a focus on being: Simple: well-defined, user-facing API (gRPC) Secure: automatic TLS with optional client cert authentication.
+* **etcd** is a consistent and highly-available key value store used as Kubernetes backing store for all cluster data;
 
-* **etcd** is a consistent and highly-available key value store used as Kubernetes backing store for all cluster data.
+* **etcd** a leader-based distributed system. Ensure that the leader periodically send heartbeats on time to all followers to keep the cluster stable;
+
+* with a focus on being: Simple: well-defined, user-facing API (gRPC) Secure: automatic TLS with optional client cert authentication;
 
 <hr>
 
