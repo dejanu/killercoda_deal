@@ -45,12 +45,13 @@ EOF
 * Apply the StatefulSet configuration `kubectl apply -f postgres-statefulset.yaml`{{exec}} , what is the status of the StatefulSet? `kubectl get statefulsets`{{exec}} , ` kubectl  describe sts postgres`{{exec}}
 
 * Scale the sts to **2 replicas** and connect to the PostgreSQL database running in the pod:
-`kubectl run -it --rm psql-client --image=postgres:15 --restart=Never --env="PGPASSWORD=mysecretpassword" -- psql -h postgres-0.postgres.default.svc.cluster.local -U admin -d mydb`{{exec}} What happens? List databases: `\l+`{{copy}} 
+`kubectl run -it --rm psql-client --image=postgres:15 --restart=Never --env="PGPASSWORD=mysecretpassword" -- psql -h postgres-0.postgres.default.svc.cluster.local -U admin -d mydb`{{copy}} and try to list the databases: `\l+`{{copy}} 
 
 
 <details>
 <summary>Hint</summary>
-Without volumeClaimTemplates the pods will be failed to start: <code>spec.containers[0].volumeMounts[0].name: Not found: "postgres-storage"</code>. Delete the old sts, and create a new sts with <code>kubectl apply -f postgres-good-statefulset.yaml</code> 
+Without volumeClaimTemplates the pods will be failed to start: <code>spec.containers[0].volumeMounts[0].name: Not found: "postgres-storage"</code>. Compare <code>postgres-statefulset.yaml</code> with <code>postgres-good-statefulset.yaml</code> and find the missing part.
+Create a new sts with <code>kubectl apply -f postgres-good-statefulset.yaml</code> 
 <br>
 
 Scale the sts <code>kubectl scale sts postgres --replicas 3 </code>
