@@ -12,11 +12,11 @@
         "text": "step1.md"
       },
       {
-        "title": "Executing commnands in containers",
+        "title": "Ephemeral container",
         "text": "step2.md"
       },
       {
-        "title": "Debugging with ephemeral containers",
+        "title": "Debugging session on a node",
         "text": "step3.md"
       }
     ],
