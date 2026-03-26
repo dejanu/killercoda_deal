@@ -1,6 +1,6 @@
 {
-  "title": "Command and Arguments for Containers",
-  "description": "This scenario shows how to define commands and arguments when running a container in a Pod.",
+  "title": "Debugging Sessions",
+  "description": "This scenario shows how to define commands, arguments and how to run debug sessions",
   "details": {
     "intro": {
       "text": "intro.md",
@@ -14,6 +14,10 @@
       {
         "title": "Executing commnands in containers",
         "text": "step2.md"
+      },
+      {
+        "title": "Debugging with ephemeral containers",
+        "text": "step3.md"
       }
     ],
     "finish": {
