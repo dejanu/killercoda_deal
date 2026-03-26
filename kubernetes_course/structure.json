@@ -9,6 +9,7 @@
       { "path": "k8s_etcd"},
       { "path": "k8s_kubelet"},
       { "path": "k8s_probes_pod" },
+      { "path": "k8s_debug" },
       { "path": "init_container" },
       { "path": "k8s_rbac" },
       { "path": "k8s_cronjobs"},
@@ -16,7 +17,6 @@
       { "path": "k8s_statefulset"},
       { "path": "storage" },
       { "path": "k8s_services" },
-      { "path": "k8s_networkpolicies" },
-      { "path": "ARGS_and_COMMAND" }
+      { "path": "k8s_networkpolicies" }
     ]
 }
