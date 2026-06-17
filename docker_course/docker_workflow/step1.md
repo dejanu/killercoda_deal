@@ -29,9 +29,9 @@ CMD ["Hello World!"]
 EOF
 ```{{exec}}
 
-* Containerize the app, `cowsay` image, using as a build context the current directory containing the **Dockerfile**.Check if the image has been successfully built `docker images | grep cowsay`{{exec}} and start a container based on `cowsay` image: `docker run cowsay`{{exec}}.What happens?
+* Containerize the app, create `cowsay` image, using as a build context the current directory containing the **Dockerfile**.Check if the image has been successfully built `docker images | grep cowsay`{{exec}} and start a container based on `cowsay` image: `docker run cowsay`{{exec}}.What happens?
 
 <details>
 <summary>Hint</summary>
- Build image <code>docker build -t cowsayimage -f Dockerfile .</code> 
+ Build image <code>docker build -t cowsay -f Dockerfile .</code> 
 </details>
