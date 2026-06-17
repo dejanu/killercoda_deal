@@ -1,7 +1,10 @@
 ### Deploy it to k8s
 
 * Try-it on your local machine [repo here](https://hub.docker.com/repository/docker/dejanualex/dockersay/general)
-`docker run --rm dejanualex/dockersay:1.0`{{copy}} for arm64 and `docker run --rm dejanualex/dockersay:2.0`{{copy}} for amd64.
+`docker run --rm dejanualex/dockersay:1.0`{{copy}} for arm64 and `docker run --rm dejanualex/dockersay:2.0`{{copy}} for amd64. 
+
+
+* Usefull command to check the architecture of the image: `docker inspect --format='{{.Os}}/{{.Architecture}}' <image>`{{copy}}, check other tag `dejanualex/dockersay:3.0`
 
 * You have a vanilla k8s cluster at hand: `kubectl get no`{{copy}} with no pod running in the default namespace `kubectl get po`{{copy}}, **deploy** the cowsay app, knowing that is available in Docker Hub container registry.
 

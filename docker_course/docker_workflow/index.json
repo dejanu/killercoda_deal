@@ -1,6 +1,6 @@
 {
-  "title": "Docker workflow: build, share, run",
-  "description": "Fundamentals of Docker workflow...with a touch of K8S",
+  "title": "Docker workflow: build, SHARE, run",
+  "description": "Fundamentals of Docker workflow and registry usage...with a touch of K8S",
   "details": {
     "intro": {
       "text": "intro.md",
