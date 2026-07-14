@@ -1,3 +1,3 @@
 
-# should be 4 containers (3 exited and 1 running)
-grep 1 /tmp/three
+# should be 2 containers (1 exited and 1 running)
+grep 2 /tmp/three
