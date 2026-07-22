@@ -11,10 +11,12 @@ metadata:
 spec:
   replicas: 1
   selector:
-    matchLabels: app: prometheus
+    matchLabels:
+      app: prometheus
   template:
     metadata:
-      labels: app: prometheus
+      labels:
+        app: prometheus
     spec:
       containers:
         - name: prometheus
@@ -27,7 +29,8 @@ kind: Service
 metadata:
   name: prometheus
 spec:
-  selector: {app: prometheus}
+  selector:
+    app: prometheus
   ports:
     - port: 9090
       targetPort: 9090
