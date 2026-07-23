@@ -4,5 +4,6 @@
 ### Deployment Prometheus and Node exporter
 
 
-In the current directory are the manifest for Prometheus and Node exporter: `kubectl apply -f prometheus.yaml` and `kubectl apply -f node-exporter.yaml`
-
+Prometheus collects and stores its metrics as time series data, i.e. metrics information is stored with the timestamp at which it was recorded, alongside optional key-value pairs called labels. https://hub.docker.com/r/prom/prometheus
+ 
+The Prometheus Node Exporter exposes a wide variety of hardware- and kernel-related metrics. https://hub.docker.com/r/prom/node-exporter
