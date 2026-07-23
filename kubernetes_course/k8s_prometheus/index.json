@@ -1,0 +1,26 @@
+{
+  "title": "Deploying an Prometheus",
+  "description": "Prometheus and Node Exporter",
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "background": "create_manifests.sh"
+    },
+    "steps": [
+      {
+        "title": "Deploy Prometheus",
+        "text": "step1.md"
+      },
+      {
+        "title": "Deploy Prometheus",
+        "text": "step2.md"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-2nodes"
+  }
+}
