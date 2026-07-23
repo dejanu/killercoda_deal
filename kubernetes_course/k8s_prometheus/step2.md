@@ -1,46 +1,22 @@
 
-### Deploy Prometheus
+### TSDB
 
-* Create deployment for Prometheus
+* Restart the Prometheus pod: `kubectl  delete po -l app=prometheus`
 
-```bash
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: prometheus
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: prometheus
-  template:
-    metadata:
-      labels:
-        app: prometheus
-    spec:
-      containers:
-        - name: prometheus
-          image: prom/prometheus
-          ports:
-            - containerPort: 9090
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: prometheus
-spec:
-  selector:
-    app: prometheus
-  ports:
-    - port: 9090
-      targetPort: 9090
-  type: ClusterIP
-```
-
-* Expose service (bind to all interfaces not just `localhost`)
+* Prometheus TSDB lives on the container's ephemeral filesystem in **data** dir: `kubectl exec -it prometheus-767cfdcb8b-rgjtg -- sh`
 
 ```
-kubectl port-forward --address 0.0.0.0 svc/prometheus 9090:9090
+ls -ltr /prometheus/data
+total 28
+drwxr-xr-x    2 nobody   nobody        4096 Jul 23 20:03 wal
+-rw-r--r--    1 nobody   nobody           0 Jul 23 20:03 lock
+drwxr-xr-x    2 nobody   nobody        4096 Jul 23 20:03 chunks_head
+-rw-r--r--    1 nobody   nobody       20001 Jul 23 20:12 queries.active
 ```
 
-* Access HTTP Prometheus service which run in your environment
+Ingested data is grouped into blocks, and each 2-hour block consists of a directory that contains a chunks subdirectory and an index file. The current block for incoming samples is kept in memory and not fully persisted and it's secured against crashes by WAL (write-ahead log)
+
+* wal/ — Write-Ahead Log. Recent samples not yet compacted into blocks; used for crash recovery.
+* chunks_head/ — In-memory head block's on-disk chunks (recent data, not yet flushed to a persisted block).
+* queries.active — Tracks currently-running queries (for crash debugging), not metric data.
+* lock — Lock file preventing multiple Prometheus processes from using the same data dir simultaneously

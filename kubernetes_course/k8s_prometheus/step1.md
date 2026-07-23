@@ -16,7 +16,7 @@ service/node-exporter created
 
 * Deploy `kubectl apply -f prometheus.yaml` and `kubectl apply -f node-exporter.yaml`
 
-* Verify deployments `kubectl get po -owide'
+* Verify deployments `kubectl get po -owide`
 
 * Expose prometheus service (bind to all interfaces not just `localhost`)
 
