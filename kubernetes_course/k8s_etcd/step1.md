@@ -31,8 +31,7 @@ Thus the final command will look:
 etcdctl --endpoints=https://127.0.0.1:2379 --cacert=/etc/kubernetes/pki/etcd/ca.crt --cert=/etc/kubernetes/pki/etcd/peer.crt --key=/etc/kubernetes/pki/etcd/peer.key snapshot save /var/lib/etcd/snap.db
 ```{{copy}}
 
-Verify the snapshot:
-
+Verify the snapshot on host node via hostPath volume (`kubectl -n kube-system get po etcd-controlplane  -oyaml|  grep -A6 "volumes:"`)
 ```bash
 etcdutl snapshot status /var/lib/etcd/snap.db --write-out=table
 ```{{copy}}
