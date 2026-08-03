@@ -12,7 +12,7 @@
 
 * Call the service: `curl localhost:8080`{{exec}}
 
-* Describe what happens in the pod: `kubectl describe deploy nginx-deployment`{{exec}} , `kubectl  describe po nginx-deployment-xxxx`{{copy}}, `kubectl get deploy/nginx-deployment -oyaml | grep -A10 containers:`{{copy}}
+* Describe what happens in the pod: `kubectl describe deploy nginx-deployment`{{exec}} , `kubectl  describe po nginx-deployment-xxxx`{{copy}}, `kubectl get deploy/nginx-deployment -oyaml | grep -A20 containers:`{{copy}}
 
 <details>
 
