@@ -11,7 +11,7 @@ Plain-simple one needs to run, but with proper [options](https://kubernetes.io/d
 ETCDCTL_API=3 etcdctl --endpoints $ENDPOINT snapshot save snapshot.db
 ```
 
-* `ETCDCTL_API=3`: Specifies the version of the etcd API to use (v3 in this case)
+* `ETCDCTL_API=2`: Specifies the version of the etcd API to use (v3 by default). You only need to explicitly change it if you intentionally want to force version 2
 * `--endpoints=https://127.0.0.1:2379`: etcd is not hosted outside of the cluster and is running on the default port
 * `--cacert=/etc/kubernetes/pki/etcd/ca.crt`: path to Certificate Authority (CA) to validate etcd server's cert
 * `--cert=/etc/kubernetes/pki/etcd/server.crt`: path to client certificate for auth of etcd server
@@ -28,7 +28,7 @@ Inspect the manifest `grep "command" -A20  /etc/kubernetes/manifests/etcd.yaml `
 Thus the final command will look:
 
 ```bash
-ETCDCTL_API=3 etcdctl --endpoints=https://127.0.0.1:2379 --cacert=/etc/kubernetes/pki/etcd/ca.crt --cert=/etc/kubernetes/pki/etcd/peer.crt --key=/etc/kubernetes/pki/etcd/peer.key snapshot save /var/lib/etcd/snap.db
+etcdctl --endpoints=https://127.0.0.1:2379 --cacert=/etc/kubernetes/pki/etcd/ca.crt --cert=/etc/kubernetes/pki/etcd/peer.crt --key=/etc/kubernetes/pki/etcd/peer.key snapshot save /var/lib/etcd/snap.db
 ```{{copy}}
 
 Verify the snapshot:
@@ -37,4 +37,5 @@ Verify the snapshot:
 etcdutl snapshot status /var/lib/etcd/snap.db --write-out=table
 ```{{copy}}
 
-Previously even: `kubectl -n kube-system exec etcd-controlplane -- sh -c "ETCDCTL_API=3 etcdctl"`{{copy}} worked 
+
+Leverage [etcd-utils](https://medium.com/@dejanualex/no-ssh-no-etcdctl-run-etcdctl-instantly-in-kubernetes-1503e7352bfa) to check etcd cluster state:  `kubectl debug nodes/controlplane -it   --profile=sysadmin   --image=dejanualex/etcd-utils:v1.0.6  --image-pull-policy=Always   -- etcdctl endpoint health --cluster -w table`{{copy}}
