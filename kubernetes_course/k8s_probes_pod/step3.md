@@ -23,9 +23,13 @@ kubectl logs probe-lab --previous
 <code>state.waiting.reason</code> exists only when a container is in waiting state, <code>CrashLoopBackOff</code> is a waiting reason.
 <code>kubectl get po -A -ojsonpath="{.items[*].status.containerStatuses[*].state.waiting.reason}"</code>
 
-Pods do not RESTART; containers inside the Pod are restarted by the kubelet. Pods themselves can be DELETED or RESCHEDULED (i.e. if a node fails), and their replacement is handled by a controller. When a container in a Pod fails, the Pod is not rescheduled—the container is simply restarted in place.
+kill nginx process inside the container: `kubectl exec test-56848fd9dc-76fkx -- sh -c "kill 1"` 
 
-Save the pod manifest and add startupProbe is holding the liveness and readiness probes until it succeeds.  
+Pods do not RESTART; containers inside the Pod are restarted by the kubelet. 
+
+Pods themselves can be DELETED or RESCHEDULED (i.e. if a node fails), and their replacement is handled by a controller. When a container in a Pod fails, the Pod is not rescheduled—the container is simply restarted in place.
+
+Save the pod manifest and add startupProbe is holding the liveness and readiness probes until it succeeds:  
 ```
      startupProbe:
         httpGet:
