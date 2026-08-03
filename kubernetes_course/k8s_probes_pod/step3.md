@@ -23,7 +23,7 @@ kubectl logs probe-lab --previous
 <code>state.waiting.reason</code> exists only when a container is in waiting state, <code>CrashLoopBackOff</code> is a waiting reason.
 <code>kubectl get po -A -ojsonpath="{.items[*].status.containerStatuses[*].state.waiting.reason}"</code>
 
-kill nginx process inside the container: `kubectl exec test-56848fd9dc-76fkx -- sh -c "kill 1"` 
+kill nginx process inside the container: `kubectl  exec test-6bb654b8f8-w4vn6 -- /bin/sh -c 'kill -TERM 1` 
 
 Pods do not RESTART; containers inside the Pod are restarted by the kubelet. 
 
@@ -39,5 +39,3 @@ Save the pod manifest and add startupProbe is holding the liveness and readiness
         periodSeconds: 3
         failureThreshold: 6
 ```
-
-<code>kubectl  exec test-6bb654b8f8-w4vn6 -- /bin/sh -c 'kill -TERM 1'</code>
