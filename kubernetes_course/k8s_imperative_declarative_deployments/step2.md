@@ -28,7 +28,9 @@ metadata:
 status:
 ```
 <br>
-last-applied-configuration annotation is used by <code>kubectl apply</code> by default (client side apply) to store the previous configuration of the object, to avoid conflicts and to calculate the diff between the last applied configuration and the current state of the object. If you want to use server side apply, you can use <code>kubectl apply --server-side</code> and then you don't need to worry about the last-applied-configuration annotation.
+**last-applied-configuration** annotation is used by <code>kubectl apply</code> (client side by default) to store the previous configuration of the object, to avoid conflicts and to calculate the diff between the last applied configuration and the current state of the object. 
+
+If you want to use server side apply, you can use <code>kubectl apply ... --server-side</code> and then you don't need to worry about the last-applied-configuration annotation.
 
 <br>
 To delete the deployment: <code>kubectl -n playground delete deploy api</code> and then create it declaratively: <code>kubectl apply -f api.yaml --server-side</code> check last-applied-configuration annotation: <code>kubectl -n playground get deploy api -o yaml | grep -i "last-applied-configuration" -A 10</code>
