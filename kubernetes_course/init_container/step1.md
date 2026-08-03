@@ -2,7 +2,7 @@
 ### Init container
 
 
-* Spin-up nginx pod, by running `kubectl  apply -f deploy.yaml`{{exec}} (give it a few seconds for `deploy.yaml` file to be serialized)
+* Spin-up nginx pod, by running `kubectl  apply -f deploy.yaml`{{copy}} 
 
 * Wait for the pod to have STATUS Running `kubectl get po`{{exec}} 
 
