@@ -9,7 +9,7 @@ kubectl create cronjob sleep-cron \
   -- sh -c "sleep 90; echo done"
 ```{{copy}}
 
-* Inspect cron: `kubectl get cronjob sleep-cron -o yaml`{{copy}}. What can it be changed not allow overlapping execution? 
+* Inspect cron: `kubectl get cronjob sleep-cron -o yaml`{{copy}}. Which field should be modified to prevent overlapping job executions? 
 
 
 * Delete the cronjob and create a new one with the following specs:
