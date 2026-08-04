@@ -34,8 +34,6 @@ Since <code>concurrencyPolicy: Allow</code> it allows overlapping execution. Exe
 Update the concurency policy, not allow concurrent runs: <code>  concurrencyPolicy: Forbid</code>
 <br>
 
-Rerun one of the cronjob's jobs aka create another job: <code>kubectl create job report-rerun --from=cronjob/report</code>
-<br>
 
 Simply edit <code>failedJobsHistoryLimit: 1</code> to crontrol failed job accumulation.
 
