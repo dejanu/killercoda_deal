@@ -14,7 +14,8 @@ Create cronjob imperatively: <code>kubectl create cronjob cronjob-example --sche
 
 <br>
 
-Create hello cronjob <code>kubectl create cronjob report --schedule='01 21 * * *' --image=alpine -- /bin/sh -c "echo Sending Report" </code>
+Create report cronjob <code>kubectl create cronjob report --schedule='01 21 * * *' --image=alpine -- /bin/sh -c "echo Sending Report" </code>
+
 <br>
 
 Rerun one of the cronjob's jobs aka create another job: <code>kubectl create job report-rerun --from=cronjob/report</code>
