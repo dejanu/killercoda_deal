@@ -70,6 +70,7 @@ rules:
 
 - Create a RoleBinding for Service Account and ClusterRole 😉:
 ```
+apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
   name: global-read
