@@ -25,8 +25,9 @@
 <details>
 <summary>Hint</summary>
 Check on which node each component is running: <code>kubectl get po -n kube-system -owide </code>
-<br>
 control plane (API, scheduler, controllers, etcd), the networking layer (CNI Cilium), and cluster DNS (CoreDNS)
+<br>
+Identify kubelet service <code>systemctl list-units --type=service | grep kubelet</code> and check unit file <code>systemctl cat kubelet.service</code>
 </details>
 
 
