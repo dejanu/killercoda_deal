@@ -6,9 +6,11 @@
 
 * Startup Probe (if configured), it disables liveness and readiness checks until it succeeds, is only executed at startup, unlike liveness and readiness probes, which are run periodically.
 
-Create a pod without any probes and **add liveness probe** : `kubectl run nginxpod --image=nginx --port 80 --dry-run=client -oyaml | tee  po.yaml`{{copy}} do a `kubectl apply -f po.yaml`{{copy}}, inspect the pod, `kubectl get po nginxpod -oyaml | grep restartPolicy`{{copy}} , check if it has any probes? 
+Create a naked nginx pod: `kubectl run nginxpod --image=nginx --port 80 --dry-run=client -oyaml | tee  po.yaml`{{copy}} do a `kubectl apply -f po.yaml`{{copy}}, inspect the pod, `kubectl get po nginxpod -oyaml | grep restartPolicy`{{copy}}, check if it has any probes? 
 
-**Delete the pod** and create the following pod with `kubectl apply -f pod.yaml`{{copy}}. What happens? Inspect the pod: `kubectl describe po nginx`{{copy}}
+If you don't explicitly define probes in your pods specification, Kubernetes will not configure the.
+
+Delete the latter pod and create a new nginxpod with **liveness probe**. Create the `pod.yaml` manifest and `kubectl apply -f pod.yaml`{{copy}}. 
 
 ```bash
 cat<<EOF>>pod.yaml
@@ -37,6 +39,8 @@ spec:
 status: {}
 EOF
 ```{{exec}}
+
+What happens? Inspect the pod: `kubectl describe po nginx`{{copy}}
 
 <details>
 <summary>Hint</summary>
