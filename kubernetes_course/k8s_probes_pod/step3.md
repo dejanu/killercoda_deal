@@ -4,7 +4,7 @@
 
 * What will be the output of: `kubectl get pods`{{copy}} vs `kubectl get po -A --field-selector=status.phase!=Running`{{exec}}
 
-* Phase is a summary of the pod lifecycle: `kubectl  explain po.status.phase`{{copy}} vs. STATUS (column) which is a computation done on the fly by kubectl (the client).
+* Phase is a summary of the pod lifecycle: `kubectl  explain po.status.phase`{{copy}} vs. STATUS (column) `kubectl get po`{{copy}} which is a "computation" done on the fly by kubectl (the client).
 
 ⚠️ When a pod is in `CrashLoopBackOff` or `Error` its `status.phase` is actually **running** , because the pod has been scheduled, bound to a node, and Kubernetes is actively tring to keep it running by restarting the failing container.
 
@@ -27,7 +27,7 @@ kubectl logs probe-lab --previous
 <code>state.waiting.reason</code> exists only when a container is in waiting state, <code>CrashLoopBackOff</code> is a waiting reason.
 <code>kubectl get po -A -ojsonpath="{.items[*].status.containerStatuses[*].state.waiting.reason}"</code>
 
-kill nginx process inside the container: `kubectl  exec test-6bb654b8f8-w4vn6 -- /bin/sh -c 'kill -TERM 1` 
+kill nginx process inside the container: `kubectl  exec test-6bb654b8f8-w4vn6 -- /bin/sh -c 'kill -TERM 1'` 
 
 Pods do not RESTART; containers inside the Pod are restarted by the kubelet. 
 
