@@ -1,8 +1,12 @@
 ## Phase vs. State: CrashLoopBackOff
 
-* Spin up a pod and check its phase: `kubectl run onfail1 --image=alpine --restart=OnFailure -- /bin/sh -c "exit 1"`{{exec}}
+* Spin up a pod `onfail1` pod: `kubectl run onfail1 --image=alpine --restart=OnFailure -- /bin/sh -c "exit 1"`{{exec}}
 
 * What will be the output of: `kubectl get pods`{{copy}} vs `kubectl get po -A --field-selector=status.phase!=Running`{{exec}}
+
+* Phase is a summary of the pod lifecycle: `kubectl  explain po.status.phase`{{copy}} vs. STATUS (column) which is a computation done on the fly by kubectl (the client).
+
+⚠️ When a pod is in `CrashLoopBackOff` or `Error` its `status.phase` is actually **running** , because the pod has been scheduled, bound to a node, and Kubernetes is actively tring to keep it running by restarting the failing container.
 
 * Create a simple nginx deployment: `kubectl  create deployment test --image=nginx`{{exec}} then kill the nginx process inside the container. What happens to the Pod?
 
