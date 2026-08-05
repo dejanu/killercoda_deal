@@ -41,3 +41,32 @@ spec:
             - name: data
               mountPath: /usr/share/nginx/html
 EOF
+
+cat > sidecar_pod.yaml <<- "EOF"
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-with-logging-sidecar
+spec:
+  volumes:
+    - name: shared-logs
+      emptyDir: {}
+
+  containers:
+    - name: nginx
+      image: nginx:latest
+      ports:
+        - containerPort: 80
+      volumeMounts:
+        - name: shared-logs
+          mountPath: /var/log/nginx
+
+  initContainers:
+    - name: log-shipper
+      image: busybox:latest
+      restartPolicy: Always   # <- this makes it a sidecar, not a one-shot init container
+      command: ["sh", "-c", "tail -F /var/log/nginx/access.log"]
+      volumeMounts:
+        - name: shared-logs
+          mountPath: /var/log/nginx
+EOF

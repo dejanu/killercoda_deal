@@ -1,8 +1,8 @@
 
-### Init container
+### Sidecar container
 
 
-* Spin-up nginx pod, by running `kubectl  apply -f deploy.yaml`{{copy}} 
+* Spin-up another nginx pod, by running `kubectl  apply -f sidecar_pod.yaml`{{copy}} 
 
 * Wait for the pod to have STATUS Running `kubectl get po`{{exec}} 
 
