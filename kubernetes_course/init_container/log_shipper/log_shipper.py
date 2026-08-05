@@ -5,10 +5,18 @@ Usage: python3 log_shipper.py /var/log/nginx/access.log
 """
 import sys
 import time
+import os
 from datetime import datetime, timezone
 
 
+def wait_for_file(path):
+    while not os.path.exists(path):
+        print(f"Waiting for {path} to exist...", flush=True)
+        time.sleep(1)
+
+
 def tail(path):
+    wait_for_file(path)
     with open(path, "r") as f:
         f.seek(0, 2)  # seek to end of file, only ship new lines
         while True:
@@ -30,6 +38,3 @@ if __name__ == "__main__":
         tail(file_path)
     except KeyboardInterrupt:
         sys.exit(0)
-    except FileNotFoundError:
-        print(f"File not found: {file_path}", file=sys.stderr)
-        sys.exit(1)

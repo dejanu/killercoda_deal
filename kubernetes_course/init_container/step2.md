@@ -9,6 +9,6 @@
 
 * Inspect the pod `kubectl describe nginx-with-logging-sidecar`{{copy}}. 
 
-* `log-shipper` is a sidecar container (in a real setup, you'd replace the tail-like app with something like FlunetBit or Filebeat that actually ships logs somewhere)
+* `log-shipper` is a sidecar container (in a real setup, you'd replace the tail-like app with something like FluentBit or Filebeat that actually ships logs somewhere)
 
 * `nginx` main app container does not know/care that the sidecar exists, Pod termination continues to only depend on the main containers.
