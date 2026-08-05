@@ -1,6 +1,6 @@
 {
   "title": "Init Container",
-  "description": "This scenario shows how to define and use a init container in a Pod.",
+  "description": "This scenario showcases the use of init and sidecar containers",
   "details": {
     "intro": {
       "text": "intro.md",
@@ -8,8 +8,12 @@
     },
     "steps": [
       {
-        "title": "Start pod",
+        "title": "Init container",
         "text": "step1.md"
+      },
+      {
+        "title": "Sidecar container",
+        "text": "step2.md"
       }
     ],
     "finish": {
