@@ -65,7 +65,7 @@ spec:
     - name: log-shipper
       image: busybox:latest
       restartPolicy: Always   # <- this makes it a sidecar, not a one-shot init container
-      command: ["sh", "-c", "tail -F /var/log/nginx/access.log"]
+      args: ["/var/log/nginx/access.log"]
       volumeMounts:
         - name: shared-logs
           mountPath: /var/log/nginx

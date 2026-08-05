@@ -4,26 +4,11 @@
 
 * Spin-up another nginx pod, by running `kubectl  apply -f sidecar_pod.yaml`{{copy}} 
 
-* Wait for the pod to have STATUS Running `kubectl get po`{{exec}} 
+* Sidecar container are just init containers with [restartPolicy: Always](https://kubernetes.io/blog/2023/08/25/native-sidecar-containers/#what-are-sidecar-containers-in-1-28)  `kubectl get po  nginx-with-logging-sidecar -ojsonpath="{.spec.initContainers[*].name} AND {.spec.containers[*].name} "`{{exec}}
 
 
-* Forward connection to a local port i.e. 8080 to pod's port 80
-`kubectl port-forward $(kubectl  get po -oname) 8080:80 &`{{copy}} (hit ENTER and send it in the background).
+* Inspect the pod `kubectl describe nginx-with-logging-sidecar`{{copy}}. 
 
-* Call the service: `curl localhost:8080`{{exec}}
+* `log-shipper` is a sidecar container (in a real setup, you'd replace the `tail` command with something like FlunetBit or Filebeat that actually ships logs somewhere)
 
-* Describe what happens in the pod: `kubectl describe deploy nginx-deployment`{{exec}} , `kubectl  describe po nginx-deployment-xxxx`{{copy}}, `kubectl get deploy/nginx-deployment -oyaml | grep -A20 containers:`{{copy}}
-
-<details>
-
-Our init container `nginx-init` will write the ascii art to `index.html` that will be served by the main `nginx` container, the sequence of events is as follows:
-
-<br>
-
-0. Shared emptyDir volume named <code>data</code> (lives for the lifetime of the Pod)
-1. Pod starts
-2. initContainer runs → mounts <code>data</code> volume at <code>/usr/share/nginx/html</code> and generates HTML file
-3. initContainer exits
-4. nginx container starts: mounts same volume <code>data</code> at <code>/usr/share/nginx/html</code> mount point
-5. nginx serves generated file.
-</details>
+* `nginx` main app container does not know/care that the sidecar exists, Pod termination continues to only depend on the main containers.
