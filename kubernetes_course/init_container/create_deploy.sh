@@ -63,7 +63,7 @@ spec:
 
   initContainers:
     - name: log-shipper
-      image: busybox:latest
+      image: dejanualex/log-shipper:1.0
       restartPolicy: Always   # <- this makes it a sidecar, not a one-shot init container
       args: ["/var/log/nginx/access.log"]
       volumeMounts:
