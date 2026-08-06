@@ -41,7 +41,7 @@ EOF
 <summary>Hint</summary>
 Inspect the job created by the cron <code>kubectl -n playground describe job  scale-down-nginx-... </code>
 
-We cron setup needs to create a ServiceAccount a Role and a Rolebinding with the right permissions to scale the deployment. 
+The cron setup needs to create a ServiceAccount a Role and a Rolebinding with the right permissions to scale the deployment. 
 
 Inspect and apply: <code>kubectl apply -f rbac.yaml</code>
 To manually trigger a CronJob withou waiting for next scheduled time: <code>kubectl create job manual-scale-down --from=cronjob/scale-down-nginx -n playground</code>
