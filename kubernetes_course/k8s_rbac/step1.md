@@ -11,17 +11,16 @@
 
 * Bind the role to the service account.
 
-* Create `dev` namespace: `kubectl create ns dev`{{copy}} test the service account for this ns: `kubectl auth can-i list pods
-  --as=system:serviceaccount:default:dev-sa -n dev`{{copy}}
+* Create `dev` namespace: `kubectl create ns dev`{{copy}} and test the service account for this ns: `kubectl auth can-i list pods --as=system:serviceaccount:default:dev-sa -n dev`{{copy}}  .Roles are namespace-scoped what we need to in order to allows `dev-sa` to allow it to list pods in other namespaces?
 
-* Create `rbac-test` pod that uses `dev-sa` service account: `kubectl exec -it rbac-test -- sh`{{copy}} and  `kubectl get pods`{{copy}}
+* Create `rbac-test` pod (based in `bitnami/kubectl` image) that uses `dev-sa` service account: `kubectl exec -it rbac-test -- sh`{{copy}} and  `kubectl get pods`{{copy}}
 
 <details>
 <summary>Hint</summary>
 Test the actions/verbs for  dev-sa service account: <code>kubectl auth can-i get pods --as=system:serviceaccount:default:dev-sa</code> 
 <br>
 
-- Create role pod-reader for the dev-sa service account (⚠️ Roles are namespace-scoped):
+- Create role pod-reader for the dev-sa service account :
 ```
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
@@ -53,6 +52,7 @@ roleRef:
   apiGroup: rbac.authorization.k8s.io
 ```
 
+- ⚠️ Roles are namespace-scoped
 - Create a ClusterRole 
 
 ```
