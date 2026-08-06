@@ -13,7 +13,9 @@
 
 * Create `dev` namespace: `kubectl create ns dev`{{copy}} and test the service account for this ns: `kubectl auth can-i list pods --as=system:serviceaccount:default:dev-sa -n dev`{{copy}}  .Roles are namespace-scoped what we need to in order to allows `dev-sa` to allow it to list pods in other namespaces?
 
-* Create `rbac-test` pod (based in `bitnami/kubectl` image) that uses `dev-sa` service account: `kubectl exec -it rbac-test -- sh`{{copy}} and  `kubectl get pods`{{copy}}
+* Create  a pod called `rbac-test` (based in `bitnami/kubectl`)  in `dev` namespace, and `kubectl exec -it rbac-test -- sh`{{copy}} and  `kubectl get pods`{{copy}}. What are the issues ? Is there any service account being used?
+
+* Delete the `rbac-test` pod an recreate it, but this time  it needs to use `dev-sa` service account, redo the test `kubectl exec -it rbac-test -- sh`{{copy}} and  `kubectl get pods`{{copy}}
 
 <details>
 <summary>Hint</summary>
@@ -52,7 +54,8 @@ roleRef:
   apiGroup: rbac.authorization.k8s.io
 ```
 
-- ⚠️ Roles are namespace-scoped
+⚠️ Roles are namespace-scoped
+
 - Create a ClusterRole 
 
 ```
@@ -84,6 +87,8 @@ roleRef:
   apiGroup: rbac.authorization.k8s.io
 ```
 <br>
+
+⚠️ If you do not define a serviceAccountName in your pod configuration, Kubernetes automatically assigns the default ServiceAccount of that namespace .
 
 - Create a pod that uses <code>dev-sa</code> service account:
 
