@@ -1,7 +1,10 @@
 
 ### Deploy Prometheus
 
-* Create deployment for Prometheus
+
+* Imperative way: deployment `kubectl create deployment prometheus --image=prom/prometheus --port=9090`{{copy}} and service `kubectl expose deployment prometheus --name=prometheus --port=9090 --target-port=9090`{{copy}}
+
+* Declarative way: Create deployment and service for Prometheus
 
 ```bash
 apiVersion: apps/v1
@@ -36,6 +39,8 @@ spec:
       targetPort: 9090
   type: ClusterIP
 ```
+
+* Check k8s objects in the default namespace: `kubectl port-forward --address 0.0.0.0 svc/prometheus 9090:9090`{{copy}}
 
 * Expose service (bind to all interfaces not just `localhost`)
 
