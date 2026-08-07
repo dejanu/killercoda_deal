@@ -40,7 +40,7 @@ spec:
   type: ClusterIP
 ```
 
-* Check k8s objects in the default namespace: `kubectl port-forward --address 0.0.0.0 svc/prometheus 9090:9090`{{copy}}
+* Check k8s objects in the default namespace: `kubectl get all`{{copy}}
 
 * Expose service (bind to all interfaces not just `localhost`)
 
