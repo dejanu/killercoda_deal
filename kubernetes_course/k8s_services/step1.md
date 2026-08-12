@@ -10,7 +10,9 @@
 
 * Next create a service called `pythonapp-svc`{{copy}}. And try to reach the endpoint using the service name `curl -s pythonapp-svc.default.svc.cluster.local:8081`
 
-* Delete the **ClusterIP** service `kubectl delete svc pythonapp-svc`{{exec}} and **create** a new one to be of type **NodePort**. Can you reach the endpoint using the node IP and NodePort? `NodePort` Exposes the Service on each Node's IP at a static port (the NodePort). To make the node port available, Kubernetes sets up a cluster IP address.
+* Delete the **ClusterIP** service `kubectl delete svc pythonapp-svc`{{exec}} and **create** a new one to be of type **NodePort**. Can you reach the endpoint using the nodeIP:NodePort? 
+
+* **NodePort** exposes the Service on each Node's IP at a static port (the NodePort). To make the node port available, Kubernetes sets up a cluster IP address.
 
 
 <details>
