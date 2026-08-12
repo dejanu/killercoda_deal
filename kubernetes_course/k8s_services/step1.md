@@ -4,7 +4,7 @@
 
 * Deploy app: `kubectl create deployment pythonapp --image=dejanualex/pythonhello:1.1`{{exec}}
 
-* Spin-up a "naked" pod in `test` namespace and try to reach app endpoint whithout any service: `kubectl -n test run curlopenssl --rm -i --tty --image=dejanualex/curlopenssl:1.0  -- sh`{{exec}}
+* Create a namespace called `test` and using a curl "naked pod" try to reach app endpoint whithout any service: `kubectl -n test run curlopenssl --rm -i --tty --image=dejanualex/curlopenssl:1.0  -- sh`{{exec}} (if you delete the pods what happens )
 
 * Next create a service called `pythonapp-svc`{{copy}}. And try to reach the endpoint using the service name `curl -s pythonapp-svc.default.svc.cluster.local:8081`
 
