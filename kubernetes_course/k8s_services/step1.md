@@ -4,7 +4,9 @@
 
 * Deploy app: `kubectl create deployment pythonapp --image=dejanualex/pythonhello:1.1`{{exec}}
 
-* Create a namespace called `test` and using a curl "naked pod" try to reach app endpoint whithout any service: `kubectl -n test run curlopenssl --rm -i --tty --image=dejanualex/curlopenssl:1.0  -- sh`{{exec}} (if you delete the pods what happens )
+* Create a namespace called `test` and using a curl "naked pod" try to reach app endpoint whithout any service: `kubectl -n test run curlopenssl --rm -i --tty --image=dejanualex/curlopenssl:1.0  -- sh`{{exec}}
+
+* Pod IPs can't be relied on for stable communication, since they change whenever a pod is recreated, do a quick check: `kubectl get po -owide`{{copy}} followed by `kubectl  delete po -l app=pythonapp`{{copy}}.
 
 * Next create a service called `pythonapp-svc`{{copy}}. And try to reach the endpoint using the service name `curl -s pythonapp-svc.default.svc.cluster.local:8081`
 
