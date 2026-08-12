@@ -1,7 +1,7 @@
 
 ### PostgreSQL database with a StatefulSet
 
-* Create a StatefulSet that manages a PostgreSQL database with persistent storage. Run the following command to create the StatefulSet:
+* Create a StatefulSet that manages a PostgreSQL database with persistent storage. Run the following command to create the StatefulSet manifest:
 
 ```bash
 cat <<EOF>postgres-statefulset.yaml
@@ -42,7 +42,7 @@ spec:
 EOF
 ```{{exec}}
 
-* Apply the StatefulSet configuration `kubectl apply -f postgres-statefulset.yaml`{{exec}} , what is the status of the StatefulSet? `kubectl get statefulsets`{{exec}} , ` kubectl describe sts postgres`{{exec}}
+* Apply it `kubectl apply -f postgres-statefulset.yaml`{{exec}} , why the statefullset is not created? `kubectl get statefulsets`{{exec}} 
 
 * Scale the sts to **3 replicas** and connect to the PostgreSQL database running in the pod using [psql](https://www.postgresql.org/docs/9.1/app-psql.html)
 `kubectl run -it --rm psql-client --image=postgres:15 --restart=Never --env="PGPASSWORD=mysecretpassword" -- psql -h postgres-0.postgres.default.svc.cluster.local -U admin -d mydb`{{copy}} and try to list the databases: `\l+`{{copy}} 
