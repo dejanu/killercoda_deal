@@ -16,8 +16,9 @@ saving to 'index.html'
 <details>
 <summary>Hint</summary>
 Get IP : <code>web_ip=$(kubectl -n test get po web-server -ojsonpath="{.status.podIP}")</code>
+
 <br>
-Spin up pod: <code>kubectl run busybox -l app-tier=cache --image=busybox --env="web_ip=$web_ip" --rm -it /bin/sh</code> and run <code>wget $web_ip</code>
+Spin up pod: <code>kubectl run busybox -l app-tier=cache --image=busybox --env="web_ip=$web_ip" --rm -it /bin/sh</code> and run <code>wget $web_ip:80</code>
 <br>
 </details>
 
