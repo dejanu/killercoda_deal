@@ -3,8 +3,7 @@
     "description": "This scenario shows how to use Harbor as a proxy cache",
     "details": {
       "intro": {
-        "text": "intro.md",
-        "background": "create_structure.sh"
+        "text": "intro.md"
       },
       "steps": [
         {

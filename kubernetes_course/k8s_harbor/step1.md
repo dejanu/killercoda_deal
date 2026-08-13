@@ -18,8 +18,8 @@ helm install harbor-release ./harbor \
   --set expose.tls.auto.commonName=localhost \
   --set externalURL=https://localhost:8443
 
-# port forward
-kubectl port-forward services/harbor 8080:443
+# verify installation
+helm list  
 
 # keep port-forward running; bind all interfaces
 kubectl port-forward --address 0.0.0.0 services/harbor 8080:443
@@ -32,5 +32,5 @@ kubectl port-forward --address 0.0.0.0 services/harbor 8080:443
 helm upgrade harbor-release ./harbor  --reuse-values --set expose.tls.enabled=false  --set externalURL=https://<your-killercoda-host>
 
 #  port forward on a different port
-kubectl port-forward --address 0.0.0.0 services/harbor 8088:80
+kubectl port-forward --address 0.0.0.0 services/harbor 8080:80
 ```
