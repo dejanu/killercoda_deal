@@ -2,5 +2,17 @@
 
 ### WELL DONE !
 
-* We've containerized the application into a Docker image and rolled out its deployment on Kubernetes.
-* Kubernetes objects used: **deployment**(to mange the pod) and **service** (expose the application that is running inside the Pod).
+* By using Harbor as proxy cache you can eliminate rate limit errors, dramatically speed up builds, reduce cloud egress costs, and protect against external registry outages.
+
+* The process is identical for other supported registries:
+
+```
+Docker Hub
+Docker registry
+AWS Elastic Container Registry
+Azure Container Registry
+Google Container Registry
+Quay
+Github Container Registry
+JFrog Artifactory Regi
+```
