@@ -1,6 +1,6 @@
 {
-    "title": "App deployment",
-    "description": "This scenario shows how to deploy app in Kubernetes.",
+    "title": "Harbor",
+    "description": "This scenario shows how to use Harbor as a proxy cache",
     "details": {
       "intro": {
         "text": "intro.md",
@@ -8,7 +8,7 @@
       },
       "steps": [
         {
-          "title": "Create and package app",
+          "title": "Harbor as a proxy cache",
           "text": "step1.md"
         }
       ],
