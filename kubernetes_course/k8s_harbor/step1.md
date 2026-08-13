@@ -19,7 +19,8 @@ helm install harbor-release ./harbor \
   --set externalURL=https://localhost:8443
 
 # verify installation
-helm list  
+helm list 
+kubectl get po
 
 # keep port-forward running; bind all interfaces
 kubectl port-forward --address 0.0.0.0 services/harbor 8080:443
@@ -30,10 +31,10 @@ kubectl port-forward --address 0.0.0.0 services/harbor 8080:443
 ```bash
 export url="https://b8d41e0788ff-10-244-8-169-8080.spca.r.killercoda.com/"
 
-# get URL from browser then update current release i.e. 98bf0b64edb5-10-244-10-178-8088.spca.r.killercoda.com
+# get URL from browser then update current release i.e. 98bf0b64edb5-10-244-10-178-8088.spca.r.killercoda.com 
 helm upgrade harbor-release ./harbor  --reuse-values --set expose.tls.enabled=false  --set externalURL=$url
 
-# port forward on a different port
+# port forward HTTP port 80
 kubectl port-forward --address 0.0.0.0 services/harbor 8080:80
 ```
 
@@ -45,3 +46,15 @@ kubectl port-forward --address 0.0.0.0 services/harbor 8080:80
 * Create a project named `proxyproject`. We’ll then pull the nginx image, which is **not yet available** in Harbor. Now that the proxy cache is set up, let’s interact with it.
 
 ![Scan results](./assets/project.png)
+
+* In a new tab
+
+```bash
+
+# Login with Harbor12345
+docker login 98bf0b64edb5-10-244-10-178-8088.spca.r.killercoda.com -u admin
+
+# pull nginx image from docker
+# manifest <harbor>/<proxy-project>/<dockerhub-namespace>/<image>:<tag>
+docker pull 98bf0b64edb5-10-244-10-178-8088.spca.r.killercoda.com/proxyproject/library/nginx:latest
+```
