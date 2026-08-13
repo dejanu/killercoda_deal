@@ -1,0 +1,23 @@
+{
+    "title": "App deployment",
+    "description": "This scenario shows how to deploy app in Kubernetes.",
+    "details": {
+      "intro": {
+        "text": "intro.md",
+        "background": "create_structure.sh"
+      },
+      "steps": [
+        {
+          "title": "Create and package app",
+          "text": "step1.md"
+        }
+      ],
+      "finish": {
+        "text": "finish.md"
+      }
+    },
+    "backend": {
+      "imageid": "kubernetes-kubeadm-2nodes"
+    }
+  }
+  

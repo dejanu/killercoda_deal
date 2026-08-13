@@ -18,6 +18,7 @@
       { "path": "k8s_statefulset"},
       { "path": "storage" },
       { "path": "k8s_services" },
-      { "path": "k8s_networkpolicies" }
+      { "path": "k8s_networkpolicies" },
+      { "path": "harbor" }
     ]
 }
