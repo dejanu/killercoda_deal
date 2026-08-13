@@ -19,6 +19,6 @@
       { "path": "storage" },
       { "path": "k8s_services" },
       { "path": "k8s_networkpolicies" },
-      { "path": "harbor" }
+      { "path": "k8s_harbor" }
     ]
 }
