@@ -25,12 +25,23 @@ helm list
 kubectl port-forward --address 0.0.0.0 services/harbor 8080:443
 ```
 
-* Get the DNS for the LB and then update current release
+* Get the provisioned external URL:
 
 ```bash
-# get the DNS for the LB and then update current release i.e. 98bf0b64edb5-10-244-10-178-8088.spca.r.killercoda.com
-helm upgrade harbor-release ./harbor  --reuse-values --set expose.tls.enabled=false  --set externalURL=https://<your-killercoda-host>
+export url="https://b8d41e0788ff-10-244-8-169-8080.spca.r.killercoda.com/"
 
-#  port forward on a different port
+# get URL from browser then update current release i.e. 98bf0b64edb5-10-244-10-178-8088.spca.r.killercoda.com
+helm upgrade harbor-release ./harbor  --reuse-values --set expose.tls.enabled=false  --set externalURL=$url
+
+# port forward on a different port
 kubectl port-forward --address 0.0.0.0 services/harbor 8080:80
 ```
+
+* Configure Harbor as a proxy cache (use Docker Hub as external registry) . Navigate to Administration > Registries > New Endpoint and add **Docker Hub** provider
+
+![Scan results](./assets/endpoint.png)
+
+
+* Create a project named `proxyproject`. We’ll then pull the nginx image, which is **not yet available** in Harbor. Now that the proxy cache is set up, let’s interact with it.
+
+![Scan results](./assets/project.png)
