@@ -22,7 +22,7 @@ helm install harbor-release ./harbor \
 helm list 
 kubectl get po
 
-# keep port-forward running; bind all interfaces
+# port-forward bind all interfaces
 kubectl port-forward --address 0.0.0.0 services/harbor 8080:443
 ```
 
@@ -47,7 +47,7 @@ kubectl port-forward --address 0.0.0.0 services/harbor 8080:80
 
 ![Scan results](./assets/project.png)
 
-* In a new tab
+* In a new tab pull `nginx` image and check in harbor the `proxyproject` repos
 
 ```bash
 
@@ -55,6 +55,8 @@ kubectl port-forward --address 0.0.0.0 services/harbor 8080:80
 docker login 98bf0b64edb5-10-244-10-178-8088.spca.r.killercoda.com -u admin
 
 # pull nginx image from docker
-# manifest <harbor>/<proxy-project>/<dockerhub-namespace>/<image>:<tag>
+# manifest <harbor>/<harbor-project>/<dockerhub-namespace>/<image>:<tag>
 docker pull 98bf0b64edb5-10-244-10-178-8088.spca.r.killercoda.com/proxyproject/library/nginx:latest
 ```
+
+![Scan results](./assets/nginx.png)
