@@ -26,7 +26,12 @@ kubectl get po
 kubectl port-forward --address 0.0.0.0 services/harbor 8080:443
 ```
 
-* Get the provisioned external URL:
+* In the nav on top right got to `Traffic/Ports` and update `Custom Ports` (8080 in this case) and hit access. Killercoda will generate public a HTTPS URL.
+
+![Scan results](./assets/trafficports.png)
+
+* Get the provisioned external URL, and then update the **externalURL** and **disable TLS** inside Harbor and let Killercoda handle HTTPS externally. Upgrade the existing Helm release public HTTPS URL generated for the forwarded port:
+
 
 ```bash
 export url="https://b8d41e0788ff-10-244-8-169-8080.spca.r.killercoda.com/"
