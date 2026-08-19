@@ -8,11 +8,11 @@
 
 ```
 Docker Hub
-Docker registry
+Docker Registry
 AWS Elastic Container Registry
 Azure Container Registry
 Google Container Registry
 Quay
 Github Container Registry
-JFrog Artifactory Regi
+JFrog Artifactory Registry
 ```
