@@ -52,15 +52,15 @@ kubectl port-forward --address 0.0.0.0 services/harbor 8080:80
 
 ![Scan results](./assets/project.png)
 
-* In a new tab pull `nginx` image and check in harbor the `proxyproject` repos
+* In a new tab pull `nginx` image and check in Harbor the `proxyproject` repos. 
 
 ```bash
 
 # Login with Harbor12345
-docker login 98bf0b64edb5-10-244-10-178-8088.spca.r.killercoda.com -u admin
+docker login $url -u admin
 
-# pull nginx image from docker
-# manifest <harbor>/<harbor-project>/<dockerhub-namespace>/<image>:<tag>
+# we need only the registry host from the $URL in order to pull the image
+# and to have a valid reference format manifest: <harbor>/<harbor-project>/<dockerhub-namespace>/<image>:<tag>
 docker pull 98bf0b64edb5-10-244-10-178-8088.spca.r.killercoda.com/proxyproject/library/nginx:latest
 ```
 
