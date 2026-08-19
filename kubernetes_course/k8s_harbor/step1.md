@@ -60,7 +60,7 @@ kubectl port-forward --address 0.0.0.0 services/harbor 8080:80
 docker login $url -u admin
 
 # we need only the registry host from the $URL in order to pull the image
-# and to have a valid reference format manifest: <harbor>/<harbor-project>/<dockerhub-namespace>/<image>:<tag>
+# and to have a valid reference format manifest: <harbor-registry-host>/<harbor-project>/<dockerhub-namespace>/<image>:<tag>
 docker pull 98bf0b64edb5-10-244-10-178-8088.spca.r.killercoda.com/proxyproject/library/nginx:latest
 ```
 
