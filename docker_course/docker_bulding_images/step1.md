@@ -31,7 +31,7 @@ CMD ["python","test.py"]
 EOF
 ```{{exec}}
 
-* Now we can do: `docker build someimage -f dev.Dockerfile .`...don't forget about `test.py`
+* Now we can do: `docker build -t imagename -f dev.Dockerfile .`...don't forget about `test.py`
 
 
 <details>
