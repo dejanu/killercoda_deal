@@ -27,7 +27,7 @@ EOF
 
 * Start container based on the image that you've build: `docker run --rm test`
 
-* `docker save` your image aka produce a tarred repository to the standard output stream ( that contains all parent layers, and all tags + versions, or specified repo:tag) i.e. `test.tar`
+* `docker save test -o test.tar` your image aka produce a tarred repository to the standard output stream ( that contains all parent layers, and all tags + versions, or specified repo:tag) i.e. `test.tar`
 
 * extract tarball: `mkdir oci && tar -xvf test.tar -C oci`{{copy}}
 
