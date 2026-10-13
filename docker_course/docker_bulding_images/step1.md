@@ -37,5 +37,7 @@ EOF
 <details>
 <summary>Hint</summary>
 The positional argument that you pass to the build command specifies the context that you want to use for the build so YES, we can use a remote build context such as a github remote repo: <code>docker build -t demo https://github.com/dejanu/sretoolkit.git#remotebuild:docker_stuff --no-cache</code>
+
+We're passing a URL as a build context more exactly <code>docker_stuff</code> directory from <code>sretoolkit</code> repo and <code>remotebuid</code> branch.
 </details>
 
