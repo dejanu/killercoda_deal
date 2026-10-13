@@ -21,8 +21,10 @@
  Show pods and their labels <code>kubectl get pods --show-labels</code>. The <code>app</code> label was atomatically generated and set to the deployment's name.
  <br><br>
 
- Get container image: <code>kubectl get po <podname> -ojsonpath="{.spec.containers[*].image}"</code>
- <br>
+ Use the label selector to get the pods created by the deployment <code>pod=$(kubectl  get po -l app=nginx-deployment -oname)</code>
+ <br><br>
+ Get container image: <code>kubectl get $pod <podname> -ojsonpath="{.spec.containers[*].image}"</code>
+ <br><br>
  Get containers images: <code>kubectl get po -ojsonpath="{.items[*].spec.containers[*].image}"</code> 
  <br><br>
  
