@@ -10,7 +10,6 @@ Building images flavours ... `docker build .`
 * Inspect/run the image.
 
 * What is a **build-context**? The **build context is the set of files that your build can access**.
-We're passing a URL as a build context more exactly `docker_stuff` directory from `sretoolkit` repo and `remotebuid` branch.
 
 * The default filename to use for a Dockerfile is `Dockerfile`, another common convention is to use 
 `something.Dockerfile`

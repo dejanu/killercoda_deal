@@ -8,7 +8,7 @@ Images layers...creating images from containers
 * Start a container based on minimal python image and spawn interactive terminal:
 `docker run --rm --name=baseimage -ti --entrypoint=/bin/sh python:3.9.22-alpine`{{copy}}
 
-* Within the interactive session create a file:
+* Within the interactive session create a `test.py` file and make it executable `chmod +x /tmp/test.py`:
 
 ```bash
 cat<<EOF>/tmp/test.py
@@ -16,6 +16,7 @@ cat<<EOF>/tmp/test.py
 print("Sallot")
 EOF
 ```
+
 
 * Open a new tab/terminal, and create a **new image layer manually** based on the running baseimage container `docker ps` : `docker container commit -m "Add script" baseimage newimage`{{copy}}
 
