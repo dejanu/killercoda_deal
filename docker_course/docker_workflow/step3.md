@@ -1,7 +1,7 @@
 ### Deploy it to k8s
 
 * Try-it on your local machine [repo here](https://hub.docker.com/repository/docker/dejanualex/dockersay/general)
-`docker run --rm dejanualex/dockersay:1.0`{{copy}} for arm64 and `docker run --rm dejanualex/dockersay:2.0`{{copy}} for amd64. 
+`docker run --rm dejanualex/dockersay:1.0`{{copy}} for whalesay and `docker run --rm dejanualex/dockersay:2.0`{{copy}} for cowsay . 
 
 
 * Usefull command to check the architecture of the image: `docker inspect --format='{{.Os}}/{{.Architecture}}' <image>`{{copy}}, check other tag `dejanualex/dockersay:3.0`
