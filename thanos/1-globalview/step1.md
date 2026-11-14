@@ -28,7 +28,7 @@ Switch on to the Editor tab and make a `prometheus0_eu1.yml` file and paste the 
 
 First, for the EU Prometheus server that scrapes itself:
 
-```
+```yaml
 global:
   scrape_interval: 15s
   evaluation_interval: 15s
@@ -47,7 +47,7 @@ For the second cluster we set two replicas:
 
 Make a `prometheus0_us1.yml` file and paste the above code in it.
 
-```
+```yaml
 global:
   scrape_interval: 15s
   evaluation_interval: 15s
@@ -64,7 +64,7 @@ scrape_configs:
 
 Make a `prometheus1_us1.yml` file and paste the above code in it.
 
-```
+```yaml
 global:
   scrape_interval: 15s
   evaluation_interval: 15s
