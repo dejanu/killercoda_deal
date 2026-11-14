@@ -176,8 +176,8 @@ Tip: Look for `prometheus_tsdb_head_series` metric.
 
 <details>
 <summary>Answer</summary>
-Here, `prometheus_tsdb_head_series` is the current number of series in a Prometheus server's TSDB head. Each Prometheus server scrapes this metric from its configured targets, so the query results show one value per target.
-<br>
+Here, <code>prometheus_tsdb_head_series</code> is the current number of series in a Prometheus server's TSDB head. Each Prometheus server scrapes this metric from its configured targets, so the query results show one value per target.
+
 Add the EU1 result to the US1 result to get the total across all three Prometheus TSDBs. Use only one US dashboard: both US servers scrape the same two targets, so either dashboard can provide the pair of US readings. Since scrapes happen at different times, the live values may differ slightly. Do not add the results from both US dashboards, or you will count the US replicas twice.
 
 Because the US Prometheus servers are replicas scraping the same targets, this physical total counts the US data twice, once per replica. For a logical count with the US HA pair treated as one source, count only one US replica instead. Thanos Querier can provide that deduplicated view in the next step.
