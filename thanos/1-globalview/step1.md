@@ -173,11 +173,19 @@ our multi-cluster setup: **How many series (metrics) we collect overall on all P
 
 Tip: Look for `prometheus_tsdb_head_series` metric.
 
-🕵️‍♂️
 
-Try to get this information from the current setup!
+<details>
+<summary>Answer</summary>
+Here, `prometheus_tsdb_head_series` is the current number of series in a Prometheus server's TSDB head. Each Prometheus server scrapes this metric from its configured targets, so the query results show one value per target.
+<br>
+Add the EU1 result to the US1 result to get the total across all three Prometheus TSDBs. Use only one US dashboard: both US servers scrape the same two targets, so either dashboard can provide the pair of US readings. Since scrapes happen at different times, the live values may differ slightly. Do not add the results from both US dashboards, or you will count the US replicas twice.
 
-To see the answer to this question click SHOW SOLUTION below.
+Because the US Prometheus servers are replicas scraping the same targets, this physical total counts the US data twice, once per replica. For a logical count with the US HA pair treated as one source, count only one US replica instead. Thanos Querier can provide that deduplicated view in the next step.
+
+As you can see this is not very convenient for both human as well as automation on top of metrics (e.g Alerting).
+
+The feature we are missing here is called **Global View** and it might be necessary once you scale out Prometheus to multiple instances.
+</details>
 
 ## Next
 
