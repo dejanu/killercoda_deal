@@ -32,9 +32,9 @@ docker run -d --net=host --rm \
     query \
     --http-address 0.0.0.0:29090 \
     --query.replica-label replica \
-    --store 172.17.0.1:19190 \
-    --store 172.17.0.1:19191 \
-    --store 172.17.0.1:19192 && echo "Started Thanos Querier"
+    --endpoint 172.17.0.1:19190 \
+    --endpoint 172.17.0.1:19191 \
+    --endpoint 172.17.0.1:19192 && echo "Started Thanos Querier"
 ```{{execute}}
 
 ## Setup verification
