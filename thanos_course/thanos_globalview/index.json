@@ -1,0 +1,22 @@
+{
+    "title": "Intro: Global View and seamless HA for Prometheus",
+    "description": "Learn how to easily transform Prometheus into centralized, highly available monitoring using Thanos",
+    "details": {
+      "intro": {
+        "text": "intro.md"
+      },
+      "steps": [
+        {
+          "title": "Thanos binary and configuration",
+          "text": "step1.md"
+        }
+      ],
+      "finish": {
+        "text": "finish.md"
+      }
+    },
+    "backend": {
+      "imageid": "ubuntu"
+    }
+  }
+  

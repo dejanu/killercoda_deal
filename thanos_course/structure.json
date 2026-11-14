@@ -1,0 +1,7 @@
+{
+    "title": "Thanos Labs",
+    "description": "Hands-on observability scenarios: Thanos, Prometheus",
+    "items": [
+      { "path": "thanos_globalview" }
+    ]
+}
