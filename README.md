@@ -1,2 +1,3 @@
-# killercoda_deal
-Scenario examples for Killercoda available at [killercoda/dejanualex](https://killercoda.com/dejanualex)
+# killercoda
+
+Cloud Native Labs: Quick and quirky: 1-minute interactive labs available at [killercoda/dejanualex](https://killercoda.com/dejanualex)
