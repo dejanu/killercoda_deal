@@ -8,8 +8,7 @@
       {
         "title": "Initial Prometheus Setup",
         "text": "step1.md",
-        "verify": "step1-verify.sh",
-        "answer": "step1-answer.md"
+        "verify": "step1-verify.sh"
       },
       {
         "title": "Thanos Sidecars",
