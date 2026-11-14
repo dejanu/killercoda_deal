@@ -13,7 +13,7 @@ For this course, let's imagine the following situation:
 
 ![initial-case](https://docs.google.com/drawings/d/e/2PACX-1vQ5n5dAJSJPRXWA9INOViJJy9Ci6TUwlCrDv7_TtV9vE41rFOpg26V3jQv9gf1NQjVWSFyauG5XgzOW/pub?w=1061&h=604)
 
-1. We have one Prometheus server in some `eu1` cluster.
+1. We have 1 Prometheus server in some `eu1` cluster.
 2. We have 2 replica Prometheus servers in some `us1` cluster that scrapes the same targets.
 
 Let's start this initial Prometheus setup for now.
