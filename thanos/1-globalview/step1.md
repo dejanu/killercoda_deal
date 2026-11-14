@@ -181,6 +181,6 @@ To see the answer to this question click SHOW SOLUTION below.
 
 ## Next
 
-Great! We have now running 3 Prometheus instances.
+Great! We now have 3 Prometheus instances.
 
 In the next steps, we will learn how we can install Thanos on top of our initial Prometheus setup to solve problems shown in the challenge.
