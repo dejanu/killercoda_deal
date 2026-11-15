@@ -28,4 +28,5 @@ Thanos Querier exposes very similar UI to the Prometheus, but on top of many Sto
 
 To check if the Querier works as intended let's look on [Querier UI `Store` page]({{TRAFFIC_HOST1_29090}}/stores).
 
-**Querier is capable of deduplicating StoreAPIs that are in the same HA group**
+**Querier is capable of deduplicating StoreAPIs that are in the same HA group**. 
+For this we need to Start Thanos Query with `--query.replica-label=replica`

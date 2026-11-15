@@ -6,12 +6,14 @@ A good metric to check the cardinality of a Prometheus instance is `prometheus_t
 
 <details>
 <summary>Answer</summary>
-The **total number of series** across all Prometheus instances can be obtained by summing the values of the `prometheus_tsdb_head_series` metric from each instance.
+The total number of series across all Prometheus instances can be obtained by summing the values of the `prometheus_tsdb_head_series` metric from each instance.
 
 The series scraped by those two US Prometheus instances are identical, and if we simply sum the values from all three Prometheus instances, we will double-count the series from the US cluster. 
 
+<code>
 total series = series per target * 5
 unique series = series per target * 3
+</code>
 </details>
 
 ## Thanos Sidecars
@@ -120,3 +122,6 @@ scrape_configs:
     static_configs:
       - targets: ['172.17.0.1:19091','172.17.0.1:19092']
 ```{{copy}}
+
+Since now Prometheus has access to sidecar metrics we can query for [`thanos_sidecar_prometheus_up`]({{TRAFFIC_HOST1_9090}}/graph?g0.expr=thanos_sidecar_prometheus_up&g0.tab=1)
+to check if sidecar has access to Prometheus.
