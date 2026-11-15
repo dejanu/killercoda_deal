@@ -14,6 +14,10 @@
           {
         "title": "Thanos Sidecars",
         "text": "step2.md"
+      },
+      {
+        "title": "Thanos Querier",
+        "text": "step3.md"
       }
       ],
       "finish": {
