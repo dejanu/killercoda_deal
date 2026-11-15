@@ -3,6 +3,7 @@
     "description": "Hands-on observability scenarios: Thanos, Prometheus",
     "items": [
       { "path": "prometheus_setup"},
-      { "path": "thanos_globalview"}
+      { "path": "thanos_globalview"},
+      { "path": "thanos_lts" }
     ]
 }
