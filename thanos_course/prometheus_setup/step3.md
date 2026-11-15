@@ -3,7 +3,9 @@
 
 * Restart the Prometheus pod: `kubectl  delete po -l app=prometheus`
 
-* Prometheus [TSDB](https://github.com/prometheus/prometheus/blob/release-2.38/tsdb/docs/format/README.md) lives on the container's ephemeral filesystem in **data** dir: `kubectl exec -it prometheus-767cfdcb8b-rgjtg -- sh`
+* Prometheus [TSDB](https://github.com/prometheus/prometheus/blob/release-2.38/tsdb/docs/format/README.md) lives on the container's ephemeral filesystem in **data** dir. 
+
+Get an interactive shell: `kubectl exec -it $(kubectl get po -o name -l app=prometheus) -- sh`{{copy}} or since the deployment has only one replica: `kubectl exec -it deployments/prometheus -- sh`{{copy}}
 
 ```
 ls -ltr /prometheus/data
