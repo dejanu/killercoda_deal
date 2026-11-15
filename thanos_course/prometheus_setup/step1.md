@@ -6,7 +6,7 @@
 
 * Declarative way: Create deployment and service for Prometheus
 
-```bash
+```yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -38,7 +38,7 @@ spec:
     - port: 9090
       targetPort: 9090
   type: ClusterIP
-```
+```{{copy}}
 
 * Check k8s objects in the default namespace: `kubectl get all`{{copy}}
 
@@ -49,3 +49,5 @@ kubectl port-forward --address 0.0.0.0 svc/prometheus 9090:9090
 ```
 
 * Access HTTP Prometheus service which run in your environment
+
+![Port Forwarding](./assets/port-forward.png)
