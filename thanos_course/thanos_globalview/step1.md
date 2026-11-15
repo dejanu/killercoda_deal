@@ -115,3 +115,11 @@ docker run -d --net=host --rm \
     --web.enable-lifecycle \
     --web.enable-admin-api && echo "Prometheus 1 US1 started!"
 ```{{execute}}
+
+## Setup Verification
+
+Once started you should be able to reach all of those Prometheus instances:
+
+* [Prometheus-0 EU1]({{TRAFFIC_HOST1_9090}}/)
+* [Prometheus-1 US1]({{TRAFFIC_HOST1_9091}}/)
+* [Prometheus-2 US1]({{TRAFFIC_HOST1_9092}}/)
