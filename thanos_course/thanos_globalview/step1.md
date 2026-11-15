@@ -54,3 +54,64 @@ scrape_configs:
     static_configs:
       - targets: ['172.17.0.1:9091','172.17.0.1:9092']
 ```{{copy}}
+
+External labels are used to identify the Prometheus server, are used by Thanos Querier to deduplicate metrics from multiple Prometheus servers and are also used to identify the source of the metrics in Thanos Querier.
+
+## Starting Prometheus Instances
+
+Let's now start the 3 containers representing our three different Prometheus instances.  Note the extra flags we're passing to Prometheus:
+
+* `--web.enable-admin-api` allows Thanos Sidecar to get metadata from Prometheus like `external labels`.
+* `--web.enable-lifecycle` allows Thanos Sidecar to reload Prometheus configuration and rule files if used.
+
+### Deploying "EU1"
+
+```
+docker run -d --net=host --rm \
+    -v $(pwd)/prometheus0_eu1.yml:/etc/prometheus/prometheus.yml \
+    -v $(pwd)/prometheus0_eu1_data:/prometheus \
+    -u root \
+    --name prometheus-0-eu1 \
+    quay.io/prometheus/prometheus:v3.13.5 \
+    --config.file=/etc/prometheus/prometheus.yml \
+    --storage.tsdb.path=/prometheus \
+    --web.listen-address=:9090 \
+    --web.external-url={{TRAFFIC_HOST1_9090}} \
+    --web.enable-lifecycle \
+    --web.enable-admin-api && echo "Prometheus EU1 started!"
+```{{execute}}
+
+
+### Deploying "US1"
+
+```
+docker run -d --net=host --rm \
+    -v $(pwd)/prometheus0_us1.yml:/etc/prometheus/prometheus.yml \
+    -v $(pwd)/prometheus0_us1_data:/prometheus \
+    -u root \
+    --name prometheus-0-us1 \
+    quay.io/prometheus/prometheus:v3.13.5 \
+    --config.file=/etc/prometheus/prometheus.yml \
+    --storage.tsdb.path=/prometheus \
+    --web.listen-address=:9091 \
+    --web.external-url={{TRAFFIC_HOST1_9091}} \
+    --web.enable-lifecycle \
+    --web.enable-admin-api && echo "Prometheus 0 US1 started!"
+```{{execute}}
+
+and
+
+```
+docker run -d --net=host --rm \
+    -v $(pwd)/prometheus1_us1.yml:/etc/prometheus/prometheus.yml \
+    -v $(pwd)/prometheus1_us1_data:/prometheus \
+    -u root \
+    --name prometheus-1-us1 \
+    quay.io/prometheus/prometheus:v3.13.5 \
+    --config.file=/etc/prometheus/prometheus.yml \
+    --storage.tsdb.path=/prometheus \
+    --web.listen-address=:9092 \
+    --web.external-url={{TRAFFIC_HOST1_9092}} \
+    --web.enable-lifecycle \
+    --web.enable-admin-api && echo "Prometheus 1 US1 started!"
+```{{execute}}
