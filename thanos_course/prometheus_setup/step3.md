@@ -24,10 +24,10 @@ Ingested data is grouped into blocks, and each 2-hour block consists of a direct
 * lock — Lock file preventing multiple Prometheus processes from using the same data dir simultaneously
 
 
-* Delete prometheus objects: `kubectl delete -f prometheus.yaml `
+* Delete prometheus objects: `kubectl delete -f prometheus.yaml ` and deploy the following setup with persistent storage:
 
 ```yaml
-# --------COnfig map ----
+# --------Config map ----
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -45,6 +45,7 @@ data:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
+  # PVC is mounted at /prometheus, which is the --storage.tsdb.path
   name: prometheus-data
 spec:
   accessModes:
