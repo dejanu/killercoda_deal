@@ -21,6 +21,9 @@ docker run -d --net=host --rm \
     --endpoint 172.17.0.1:19192 && echo "Started Thanos Querier"
 ```{{execute}}
 
+
+![Scan results](./assets/querier_setup.png)
+
 Thanos Querier exposes very similar UI to the Prometheus, but on top of many StoreAPIs you wish to connect to.
 
 To check if the Querier works as intended let's look on [Querier UI `Store` page]({{TRAFFIC_HOST1_29090}}/stores).
