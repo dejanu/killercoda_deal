@@ -118,7 +118,7 @@ docker run -d --net=host --rm \
 
 ## Setup Verification
 
-Once started you should be able to reach all of those Prometheus instances:
+Once started you should be able to reach all of those Prometheus instances (check target health):
 
 * [Prometheus-0 EU1]({{TRAFFIC_HOST1_9090}}/)
 * [Prometheus-1 US1]({{TRAFFIC_HOST1_9091}}/)
