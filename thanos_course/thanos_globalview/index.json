@@ -10,7 +10,11 @@
           "title": "Thanos binary and configuration",
           "text": "step1.md",
           "background": "pullimages.sh"
-        }
+        },
+          {
+        "title": "Thanos Sidecars",
+        "text": "step2.md"
+      }
       ],
       "finish": {
         "text": "finish.md"
