@@ -48,6 +48,11 @@ spec:
 kubectl port-forward --address 0.0.0.0 svc/prometheus 9090:9090
 ```
 
-* Access HTTP Prometheus service which run in your environment
+* Access HTTP Prometheus service which run in your environment, using the **Traffic/Port** from the top right corner of the page. 
 
 ![Port Forwarding](./assets/port-forward.png)
+
+* Explore available metrics, is `node_cpu_seconds_total` metric available?
+![Prometheus Metrics](./assets/prometheus-metrics.png)
+
+* Cleanup: `kubectl delete deployment prometheus`{{copy}} and `kubectl delete service prometheus`{{copy}}
