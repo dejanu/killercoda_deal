@@ -1,6 +1,6 @@
 {
-    "title": "Thanos Labs",
-    "description": "Hands-on observability scenarios: Thanos, Prometheus",
+    "title": "Observability Labs",
+    "description": "Hands-on observability scenarios: Prometheus,Thanos,OpenTelemetry",
     "items": [
       { "path": "prometheus_setup"},
       { "path": "thanos_globalview"},
