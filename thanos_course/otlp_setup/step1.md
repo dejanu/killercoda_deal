@@ -7,4 +7,6 @@
 
 * Deploy the app `kubectl apply -f app.yaml`{{copy}} and inspect it check the logs 
 
-* Explore the app `kubectl  -n otel-tutorial exec <POD-NAME> -- cat app.py`{{copy}} .`app.py` never imports OpenTelemetry , the way the container is started allows OpenTelemetry libs/SDK to inject instrumentation into the app.
+* Explore the app `kubectl  -n otel-tutorial exec <POD-NAME> -- cat app.py`{{copy}} .`app.py` never imports OpenTelemetry , 
+
+* Describe the pod `kubectl -n otel-tutorial describe po <POD-NAME>`{{copy}}, check the Environment vars.
