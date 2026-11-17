@@ -12,11 +12,11 @@
         "text": "step1.md"
       },
       {
-        "title": "Deploy Prometheus and Node Exporter",
+        "title": "Backends",
         "text": "step2.md"
       },
       {
-        "title": "TSDB",
+        "title": "Collector",
         "text": "step3.md"
       }
     ],
