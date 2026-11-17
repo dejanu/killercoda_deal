@@ -4,6 +4,7 @@
     "items": [
       { "path": "prometheus_setup"},
       { "path": "thanos_globalview"},
-      { "path": "thanos_lts" }
+      { "path": "thanos_lts" },
+      { "path": "otlp_setup" }
     ]
 }
