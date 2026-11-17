@@ -1,0 +1,30 @@
+{
+  "title": "OpenTelemetry",
+  "description": "Open source observability framework for cloud native software",
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "background": "create_manifests.sh"
+    },
+    "steps": [
+      {
+        "title": "Inspect the setup",
+        "text": "step1.md"
+      },
+      {
+        "title": "Deploy Prometheus and Node Exporter",
+        "text": "step2.md"
+      },
+      {
+        "title": "TSDB",
+        "text": "step3.md"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-2nodes"
+  }
+}
