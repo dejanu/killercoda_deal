@@ -1,5 +1,8 @@
 
-### Inspect the setup
+### Create the setup
 
 
-*  Check the pods in the `otel-tutorial` namespace: `kubectl get pods -n otel-tutorial`{{copy}}
+*  Create the namespace `otel-tutorial`: `kubectl create namespace otel-tutorial`{{copy}}
+
+
+* Deploy the app `kubectl apply -f app.yaml`{{copy}} and inspect it check the logs 

@@ -1,4 +1,5 @@
 
-### The setup relies on the open telemetry collector
+### Backends
 
-![Scan results](./assets/otlp_setup.png)
+
+* Deploy the backends: `kubectl apply -f jaeger.yaml -f prometheus.yaml -f loki.yaml -f grafana.yaml`{{copy}}

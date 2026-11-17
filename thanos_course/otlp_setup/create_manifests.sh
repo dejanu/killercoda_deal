@@ -1,10 +1,3 @@
-cat > 00-namespace.yaml <<- "EOF"
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: otel-tutorial
-EOF
-
 cat > app.yaml <<- "EOF"
 # Flask app with zero-code instrumentation. The image's CMD is
 # `opentelemetry-instrument python app.py`; all telemetry config comes from the env below.
