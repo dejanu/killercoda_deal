@@ -4,7 +4,7 @@
 * Create a deployment named `api` with 5 pods, based on an `nginx` image:
 
 * **Imperative** way, directly against the API:
-`kubectl -n playground create deployment api --image=nginx`{{copy}}, scale the deployment in the `playground` namespace: `kubectl -n playground scale deployment api --replicas=5`{{exec}}, 
+`kubectl -n playground create deployment api --image=nginx`{{copy}}, scale the deployment in the `playground` namespace: `kubectl -n playground scale deployment api --replicas=5`{{exec}}
 
 * **Declarative** way, get the  `api` deployment object as a manifest `web_app.yaml`, `kubectl -n playground get deploy api -o yaml > api.yaml`{{exec}}. 
 
