@@ -12,7 +12,7 @@ metadata: # metadata about the object, such as name, namespace, labels, and anno
 spec: # desired state for the object
 ```
 
-* To obtain a comprehensive list of available objects/kinds/resources, simply run the command: `kubectl api-resources`{{exec}}
+* To obtain a comprehensive list of available objects/kinds/resources, simply run the command: `kubectl api-resources`{{copy}}
 
 * To obtain a view of registered API groups and their versions, use: `kubectl get apiservices`{{copy}} or `kubectl api-versions`{{copy}}
 
@@ -30,9 +30,9 @@ spec: # desired state for the object
 
 * Scale up one of the deployments: `kubectl -n playground scale deployment notbasic --replicas 6`{{copy}}. Check the pods `kubectl -n playground get po`{{exec}} . 
 
-* Change the image `kubectl -n playground set image deploy notbasic nginx=nginx:1.27.1-alpine`{{exec}}. Check the pods `kubectl -n playground get po`{{exec}}
+* Change the image `kubectl -n playground set image deploy notbasic prometheus=prom/prometheus:v3.16.0`{{exec}}. Check the pods `kubectl -n playground get po`{{exec}}
 
-* Update the strategy type to `Recreate`, and change the image `kubectl -n playground set image deploy notbasic nginx=nginx`{{exec}}.  `kubectl -n playground get po`{{exec}} What are the differences?
+* Update the strategy type to `Recreate`, and change the image `kubectl -n playground set image deploy notbasic prometheus=prom/prometheus`{{exec}}.  `kubectl -n playground get po`{{exec}} What are the differences?
 
 * You can use apply to reference remote manifests: `kubectl apply -f https://raw.githubusercontent.com/dejanu/k8s_logging/refs/heads/main/nginx_pod.yaml`{{copy}}
 
