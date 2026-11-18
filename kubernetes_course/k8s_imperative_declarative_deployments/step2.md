@@ -1,12 +1,12 @@
 
 ### Creating Objects
 
-* Create a deployment named `api` with 5 pods, based on an `nginx` image:
+* Create a deployment named `api` with 5 pods, based on `prometheus` image:
 
 * **Imperative** way, directly against the API:
 `kubectl -n playground create deployment api --image=prom/prometheus`{{copy}}, scale the deployment in the `playground` namespace: `kubectl -n playground scale deployment api --replicas=5`{{exec}}
 
-* **Declarative** way, get the  `api` deployment object as a manifest `web_app.yaml`, `kubectl -n playground get deploy api -o yaml > api.yaml`{{exec}}. 
+* **Declarative** way, get the `api` deployment object as a manifest: `kubectl -n playground get deploy api -o yaml > api.yaml`{{exec}} 
 
 * Check the drift: `kubectl diff -f api.yaml`{{copy}} 
 
