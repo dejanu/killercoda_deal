@@ -1,7 +1,11 @@
 
 ### TSDB
 
+* Query `node_cpu_seconds_total{cpu="0", mode="idle"}` metric in the Graph view.
+
 * Restart the Prometheus pod: `kubectl  delete po -l app=prometheus`
+
+* Query again `node_cpu_seconds_total{cpu="0", mode="idle"}` metric in the Graph view.
 
 * Prometheus [TSDB](https://github.com/prometheus/prometheus/blob/release-2.38/tsdb/docs/format/README.md) lives on the container's ephemeral filesystem in **data** dir. 
 
@@ -22,7 +26,6 @@ Ingested data is grouped into blocks, and each 2-hour block consists of a direct
 * chunks_head/ — In-memory head block's on-disk chunks (recent data, not yet flushed to a persisted block).
 * queries.active — Tracks currently-running queries (for crash debugging), not metric data.
 * lock — Lock file preventing multiple Prometheus processes from using the same data dir simultaneously
-
 
 * Delete prometheus objects: `kubectl delete -f prometheus.yaml ` and deploy the following setup with persistent storage:
 
