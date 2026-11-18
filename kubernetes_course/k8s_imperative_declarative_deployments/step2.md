@@ -3,14 +3,13 @@
 
 * Create a deployment named `api` with 5 pods, based on `prometheus` image:
 
-* **Imperative** way, directly against the API:
-`kubectl -n playground create deployment api --image=prom/prometheus`{{copy}}, scale the deployment in the `playground` namespace: `kubectl -n playground scale deployment api --replicas=5`{{exec}}
+* **Imperative** way, directly against the API:`kubectl -n playground create deployment api --image=prom/prometheus`{{copy}}, scale the deployment in the `playground` namespace: `kubectl -n playground scale deployment api --replicas=5`{{copy}}
 
 * **Declarative** way, get the `api` deployment object as a manifest: `kubectl -n playground get deploy api -o yaml > api.yaml`{{exec}} 
 
 * Check the drift: `kubectl diff -f api.yaml`{{copy}} 
 
-* Scale up the deployment to 3 replicas: `kubectl -n playground scale deployment api --replicas=3`{{copy}}. Check the drift again. Can yoy apply the manifest?
+* Scale up the deployment to 3 replicas: `kubectl -n playground scale deployment api --replicas=3`{{copy}}. Check the drift again. Can you apply the manifest?
 
 * Delete the deployment: `kubectl -n playground delete deploy api`{{exec}}. And created declaratively: `kubectl apply -f api.yaml`{{exec}}. What happens ?
 
