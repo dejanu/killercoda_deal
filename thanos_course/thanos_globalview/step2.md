@@ -71,6 +71,8 @@ docker run -d --net=host --rm \
 
 Modify Prometheus scrape configuration to include our added sidecars.
 
+* `prometheus0_eu1.yml`
+
 ```yaml
 global:
   scrape_interval: 15s
@@ -88,6 +90,8 @@ scrape_configs:
       - targets: ['172.17.0.1:19090']
 ```{{copy}}
 
+* prometheus0_us1.yml
+
 ```yaml
 global:
   scrape_interval: 15s
@@ -104,6 +108,8 @@ scrape_configs:
     static_configs:
       - targets: ['172.17.0.1:19091','172.17.0.1:19092']
 ```{{copy}}
+
+* prometheus1_us1.yml
 
 ```
 global:
@@ -122,5 +128,5 @@ scrape_configs:
       - targets: ['172.17.0.1:19091','172.17.0.1:19092']
 ```{{copy}}
 
-Since now Prometheus has access to sidecar metrics we can query for [`thanos_sidecar_prometheus_up`]({{TRAFFIC_HOST1_9090}}/graph?g0.expr=thanos_sidecar_prometheus_up&g0.tab=1)
+Since now Prometheus has access to sidecar metrics (check `docker ps --format '{{.Names}}'`{{copy}}) we can query for [`thanos_sidecar_prometheus_up`]({{TRAFFIC_HOST1_9090}}/graph?g0.expr=thanos_sidecar_prometheus_up&g0.tab=1)
 to check if sidecar has access to Prometheus.
