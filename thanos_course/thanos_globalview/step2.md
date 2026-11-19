@@ -10,10 +10,9 @@ The total number of series across all Prometheus instances can be obtained by su
 
 The series scraped by those two US Prometheus instances are identical, and if we simply sum the values from all three Prometheus instances, we will double-count the series from the US cluster. 
 
-<code>
-total series = series per target * 5
-unique series = series per target * 3
-</code>
+<code>total series = series per target * 5</code>
+
+<code>unique series = series per target * 3</code>
 </details>
 
 ## Thanos Sidecars
