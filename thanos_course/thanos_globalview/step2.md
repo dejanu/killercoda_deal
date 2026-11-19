@@ -20,7 +20,7 @@ The series scraped by those two US Prometheus instances are identical, and if we
 Thanos is a single Go binary capable to run in different modes. Each mode represents a different **component** and can be invoked in a single command. Let's take a look at all the Thanos commands:
 
 ```bash
-docker pull quay.io/thanos/thanos:v0.42.5 --help
+docker run quay.io/thanos/thanos:v0.42.5 --help
 ```{{execute}}
 
 Sidecar as the name suggests should be deployed together with Prometheus. Primarely  Sidecar exposes Prometheus metrics as a common Thanos [StoreAPI](https://thanos.io/tip/thanos/integrations.md/#storeapi). StoreAPI
@@ -90,7 +90,7 @@ scrape_configs:
       - targets: ['172.17.0.1:19090']
 ```{{copy}}
 
-* prometheus0_us1.yml
+* `prometheus0_us1.yml`
 
 ```yaml
 global:
@@ -109,7 +109,7 @@ scrape_configs:
       - targets: ['172.17.0.1:19091','172.17.0.1:19092']
 ```{{copy}}
 
-* prometheus1_us1.yml
+* `prometheus1_us1.yml`
 
 ```
 global:
